@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/morcillosanz/Desktop/Dev/WaveLab
+CMAKE_SOURCE_DIR = /home/morcillosanz/Desktop/GitHub/WaveLab
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/morcillosanz/Desktop/Dev/WaveLab/build
+CMAKE_BINARY_DIR = /home/morcillosanz/Desktop/GitHub/WaveLab/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles /home/morcillosanz/Desktop/Dev/WaveLab/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles /home/morcillosanz/Desktop/GitHub/WaveLab/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -345,6 +345,78 @@ src/WaveLab.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/WaveLab.cpp.s
 .PHONY : src/WaveLab.cpp.s
 
+src/opengl/buffer/VertexArray.o: src/opengl/buffer/VertexArray.cpp.o
+.PHONY : src/opengl/buffer/VertexArray.o
+
+# target to build an object file
+src/opengl/buffer/VertexArray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o
+.PHONY : src/opengl/buffer/VertexArray.cpp.o
+
+src/opengl/buffer/VertexArray.i: src/opengl/buffer/VertexArray.cpp.i
+.PHONY : src/opengl/buffer/VertexArray.i
+
+# target to preprocess a source file
+src/opengl/buffer/VertexArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.i
+.PHONY : src/opengl/buffer/VertexArray.cpp.i
+
+src/opengl/buffer/VertexArray.s: src/opengl/buffer/VertexArray.cpp.s
+.PHONY : src/opengl/buffer/VertexArray.s
+
+# target to generate assembly for a file
+src/opengl/buffer/VertexArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.s
+.PHONY : src/opengl/buffer/VertexArray.cpp.s
+
+src/opengl/buffer/VertexBuffer.o: src/opengl/buffer/VertexBuffer.cpp.o
+.PHONY : src/opengl/buffer/VertexBuffer.o
+
+# target to build an object file
+src/opengl/buffer/VertexBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o
+.PHONY : src/opengl/buffer/VertexBuffer.cpp.o
+
+src/opengl/buffer/VertexBuffer.i: src/opengl/buffer/VertexBuffer.cpp.i
+.PHONY : src/opengl/buffer/VertexBuffer.i
+
+# target to preprocess a source file
+src/opengl/buffer/VertexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.i
+.PHONY : src/opengl/buffer/VertexBuffer.cpp.i
+
+src/opengl/buffer/VertexBuffer.s: src/opengl/buffer/VertexBuffer.cpp.s
+.PHONY : src/opengl/buffer/VertexBuffer.s
+
+# target to generate assembly for a file
+src/opengl/buffer/VertexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.s
+.PHONY : src/opengl/buffer/VertexBuffer.cpp.s
+
+src/opengl/shader/Shader.o: src/opengl/shader/Shader.cpp.o
+.PHONY : src/opengl/shader/Shader.o
+
+# target to build an object file
+src/opengl/shader/Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o
+.PHONY : src/opengl/shader/Shader.cpp.o
+
+src/opengl/shader/Shader.i: src/opengl/shader/Shader.cpp.i
+.PHONY : src/opengl/shader/Shader.i
+
+# target to preprocess a source file
+src/opengl/shader/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.i
+.PHONY : src/opengl/shader/Shader.cpp.i
+
+src/opengl/shader/Shader.s: src/opengl/shader/Shader.cpp.s
+.PHONY : src/opengl/shader/Shader.s
+
+# target to generate assembly for a file
+src/opengl/shader/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.s
+.PHONY : src/opengl/shader/Shader.cpp.s
+
 src/window/Window.o: src/window/Window.cpp.o
 .PHONY : src/window/Window.o
 
@@ -405,6 +477,15 @@ help:
 	@echo "... src/WaveLab.o"
 	@echo "... src/WaveLab.i"
 	@echo "... src/WaveLab.s"
+	@echo "... src/opengl/buffer/VertexArray.o"
+	@echo "... src/opengl/buffer/VertexArray.i"
+	@echo "... src/opengl/buffer/VertexArray.s"
+	@echo "... src/opengl/buffer/VertexBuffer.o"
+	@echo "... src/opengl/buffer/VertexBuffer.i"
+	@echo "... src/opengl/buffer/VertexBuffer.s"
+	@echo "... src/opengl/shader/Shader.o"
+	@echo "... src/opengl/shader/Shader.i"
+	@echo "... src/opengl/shader/Shader.s"
 	@echo "... src/window/Window.o"
 	@echo "... src/window/Window.i"
 	@echo "... src/window/Window.s"

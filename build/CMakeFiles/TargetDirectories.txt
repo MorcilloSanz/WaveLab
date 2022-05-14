@@ -1,3 +1,3 @@
-/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles/WaveLab.dir
-/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles/edit_cache.dir
-/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles/rebuild_cache.dir
+/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles/WaveLab.dir
+/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles/edit_cache.dir
+/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles/rebuild_cache.dir

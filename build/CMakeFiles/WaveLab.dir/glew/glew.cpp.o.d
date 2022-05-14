@@ -1,7 +1,7 @@
 CMakeFiles/WaveLab.dir/glew/glew.cpp.o: \
- /home/morcillosanz/Desktop/Dev/WaveLab/glew/glew.cpp \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.cpp \
  /usr/include/stdc-predef.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/glew/glew.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -18,7 +18,8 @@ CMakeFiles/WaveLab.dir/glew/glew.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/GL/glu.h \
- /usr/include/GL/gl.h /home/morcillosanz/Desktop/Dev/WaveLab/glew/glxew.h \
+ /usr/include/GL/gl.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glxew.h \
  /usr/include/X11/Xlib.h /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \

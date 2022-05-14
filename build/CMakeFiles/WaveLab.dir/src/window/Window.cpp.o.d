@@ -1,7 +1,7 @@
 CMakeFiles/WaveLab.dir/src/window/Window.cpp.o: \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/window/Window.cpp \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/Window.cpp \
  /usr/include/stdc-predef.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/window/Window.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/Window.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -168,5 +168,5 @@ CMakeFiles/WaveLab.dir/src/window/Window.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/window/../../glew/glew.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/../../glew/glew.h \
  /usr/include/GL/glu.h /usr/include/GL/gl.h /usr/include/GLFW/glfw3.h

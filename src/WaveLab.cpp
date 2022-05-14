@@ -9,6 +9,10 @@
 #include "../imgui/backends/imgui_impl_opengl3.h"
 #include "../imgui/backends/imgui_impl_glfw.h"
 
+#include "opengl/buffer/VertexArray.h"
+#include "opengl/buffer/VertexBuffer.h"
+#include "opengl/shader/Shader.h"
+
 int main(void) {
 
     Window window("WaveLab", 600, 600);
@@ -21,7 +25,8 @@ int main(void) {
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;         // Enable Multi-Viewport / Platform Windows
 
-    ImGui::StyleColorsClassic();
+    //ImGui::StyleColorsClassic();
+    ImGui::StyleColorsDark();
 
     ImGuiStyle& style = ImGui::GetStyle();
     if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
@@ -34,7 +39,24 @@ int main(void) {
     ImGui_ImplOpenGL3_Init(glsl_version);
 
     // Our state
-    ImVec4 clear_color = ImVec4(0.3f, 0.3f, 0.3f, 1.00f);
+    ImVec4 clear_color = ImVec4(0.1f, 0.1f, 0.1f, 1.00f);
+    bool meshWire = false;
+
+    // OpenGL
+    Shader vertexShader = Shader::fromFile("../src/opengl/glsl/vertex_shader.glsl", Shader::ShaderType::Vertex);
+    Shader fragmentShader = Shader::fromFile("../src/opengl/glsl/fragment_shader.glsl", Shader::ShaderType::Fragment);
+    ShaderProgram shaderProgram(vertexShader, fragmentShader);
+
+    std::vector<Vec3f> vertices = {
+        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
+        Vec3f(0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
+    };
+    VertexArray vertexArray;
+    VertexBuffer vertexBuffer(vertices);
+
+    vertexArray.unbind();
+    vertexBuffer.unbind();
 
     // Main loop
     while (!window.windowShouldClose()) {
@@ -44,6 +66,14 @@ int main(void) {
         glClear(GL_COLOR_BUFFER_BIT);
 
         // OpenGL rendering
+        shaderProgram.useProgram();
+        vertexArray.bind();
+
+        if(meshWire)
+            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        else
+            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
 
         // ImGUI
         {
@@ -66,13 +96,14 @@ int main(void) {
                     ImGui::EndMainMenuBar();
                 }
             }
-            // Window 1
+            // Window
             {
                 static float f = 0.0f;
                 static int counter = 0;
                 ImGui::Begin("Hello, world!");                         
                 ImGui::Text("This is some useful text.");              
-                ImGui::SliderFloat("float", &f, 0.0f, 1.0f);           
+                ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
+                ImGui::Checkbox("Mesh wire", &meshWire);            
                 ImGui::ColorEdit3("clear color", (float*)&clear_color);
                 if (ImGui::Button("Button")) counter++;
                 ImGui::SameLine();

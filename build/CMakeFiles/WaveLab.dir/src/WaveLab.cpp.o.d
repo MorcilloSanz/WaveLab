@@ -1,5 +1,5 @@
 CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/WaveLab.cpp \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/WaveLab.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -145,9 +145,9 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/../glew/glew.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/../glew/glew.h \
  /usr/include/GL/glu.h /usr/include/GL/gl.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/window/Window.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/Window.h \
  /usr/include/c++/11/functional /usr/include/c++/11/tuple \
  /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
@@ -169,11 +169,16 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/window/../../glew/glew.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/../../glew/glew.h \
  /usr/include/GLFW/glfw3.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/../imgui/imgui.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/../imgui/imconfig.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/../imgui/imgui.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/../imgui/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h /usr/include/string.h \
  /usr/include/strings.h /usr/include/assert.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/../imgui/backends/imgui_impl_opengl3.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/src/../imgui/backends/imgui_impl_glfw.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/../imgui/backends/imgui_impl_opengl3.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/../imgui/backends/imgui_impl_glfw.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexArray.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/Buffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexBuffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/../../../glew/glew.h
