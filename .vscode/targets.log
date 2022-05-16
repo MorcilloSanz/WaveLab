@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May 16 16:03:23 2022
+# Make data base, printed on Mon May 16 20:51:15 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-74d01bab-e06b-4265-b101-cf0c4f46ca48.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ac1477db-fc1c-47d5-a467-01c5d4d80b87.sock
 # environment
 LC_NAME = es_ES.UTF-8
 # environment
@@ -73,7 +73,7 @@ CURDIR := /home/morcillosanz/Desktop/GitHub/WaveLab
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # automatic
@@ -97,7 +97,7 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 3589
+VSCODE_PID = 20990
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -187,7 +187,7 @@ MANAGERPID = 1524
 # environment
 LC_MEASUREMENT = es_ES.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3589
+GIO_LAUNCHED_DESKTOP_FILE_PID = 20990
 # environment
 _ = /usr/share/code/code
 # environment
@@ -233,9 +233,9 @@ LC_IDENTIFICATION = es_ES.UTF-8
 
 # Directories
 
-# . (device 2050, inode 16123056): 14 files, no impossibilities.
+# . (device 2050, inode 16123056): 13 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -285,13 +285,13 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 183 B / avg = 8 B
-# current buf: size = 8162 B / used = 183 B / count = 22 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 21 / storage = 172 B / avg = 8 B
+# current buf: size = 8162 B / used = 172 B / count = 21 / avg = 8 B
 
-# strcache performance: lookups = 25 / hit rate = 12%
+# strcache performance: lookups = 24 / hit rate = 12%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Mon May 16 16:03:23 2022
  
+# Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
+# Finished Make data base on Mon May 16 20:51:15 2022
 
  
