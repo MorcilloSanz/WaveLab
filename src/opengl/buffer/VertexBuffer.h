@@ -26,6 +26,9 @@ private:
 public:
     VertexBuffer();
     VertexBuffer(const std::vector<Vec3f>& _vertices);
+    VertexBuffer(const VertexBuffer& vertexBuffer);
+    VertexBuffer(VertexBuffer&& vertexBuffer) noexcept;
+    VertexBuffer& operator=(const VertexBuffer& vertexBuffer);
     ~VertexBuffer();
 protected:
     void initBuffer() override;

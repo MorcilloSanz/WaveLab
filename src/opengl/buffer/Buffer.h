@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 class Buffer {
 protected:
     virtual void initBuffer() = 0;

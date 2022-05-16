@@ -171,6 +171,7 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /usr/include/c++/11/bits/uniform_int_dist.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/../../glew/glew.h \
  /usr/include/GLFW/glfw3.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/ImguiStyles.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/../imgui/imgui.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/../imgui/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h /usr/include/string.h \

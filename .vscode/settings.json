@@ -36,6 +36,7 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "cstddef": "cpp",
-        "cstring": "cpp"
+        "cstring": "cpp",
+        "map": "cpp"
     }
 }

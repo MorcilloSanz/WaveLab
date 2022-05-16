@@ -4,13 +4,25 @@
 
 #include "../../../glew/glew.h"
 
-VertexBuffer::VertexBuffer() : vertexBufferID(0) {
-    initBuffer();
-}
+VertexBuffer::VertexBuffer() : vertexBufferID(0) { }
 
 VertexBuffer::VertexBuffer(const std::vector<Vec3f>& _vertices)
     : vertices(_vertices), vertexBufferID(0) {
     initBuffer();
+}
+
+VertexBuffer::VertexBuffer(const VertexBuffer& vertexBuffer) 
+    : vertices(vertexBuffer.vertices), vertexBufferID(vertexBuffer.vertexBufferID) {
+}
+
+VertexBuffer::VertexBuffer(VertexBuffer&& vertexBuffer) noexcept 
+    : vertices(std::move(vertexBuffer.vertices)), vertexBufferID(vertexBuffer.vertexBufferID) {
+}
+
+VertexBuffer& VertexBuffer::operator=(const VertexBuffer& vertexBuffer) {
+    vertices = vertexBuffer.vertices;
+    vertexBufferID = vertexBuffer.vertexBufferID;
+    return *this;
 }
 
 VertexBuffer::~VertexBuffer() {

@@ -5,9 +5,7 @@
 
 #include "window/Window.h"
 
-#include "../imgui/imgui.h"
-#include "../imgui/backends/imgui_impl_opengl3.h"
-#include "../imgui/backends/imgui_impl_glfw.h"
+#include "ImguiStyles.h"
 
 #include "opengl/buffer/VertexArray.h"
 #include "opengl/buffer/VertexBuffer.h"
@@ -25,8 +23,8 @@ int main(void) {
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;         // Enable Multi-Viewport / Platform Windows
 
-    //ImGui::StyleColorsClassic();
-    ImGui::StyleColorsDark();
+    //ImGui::StyleColorsDark();
+    Style();
 
     ImGuiStyle& style = ImGui::GetStyle();
     if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
@@ -58,6 +56,13 @@ int main(void) {
     vertexArray.unbind();
     vertexBuffer.unbind();
 
+    // Enable blending
+    glEnable(GL_BLEND | GL_DEPTH_TEST);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    // Anti aliasing
+    glEnable(GL_MULTISAMPLE);
+
     // Main loop
     while (!window.windowShouldClose()) {
 
@@ -69,11 +74,19 @@ int main(void) {
         shaderProgram.useProgram();
         vertexArray.bind();
 
-        if(meshWire)
-            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-        else
-            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        if(meshWire) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        else         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         glDrawArrays(GL_TRIANGLES, 0, 3);
+
+        // Update test vbo vertices
+        static float offset = 0.01f;
+        vertices = {
+            Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
+            Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
+            Vec3f(0.0f + offset,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
+        };
+        vertexBuffer.updateVertices(vertices);
+        offset += 0.001;
 
         // ImGUI
         {
@@ -100,7 +113,7 @@ int main(void) {
             {
                 static float f = 0.0f;
                 static int counter = 0;
-                ImGui::Begin("Hello, world!");                         
+                ImGui::Begin("Test window");                         
                 ImGui::Text("This is some useful text.");              
                 ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
                 ImGui::Checkbox("Mesh wire", &meshWire);            
@@ -111,7 +124,11 @@ int main(void) {
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
                 ImGui::End();
             }
-
+            // Render window
+            {
+                ImGui::Begin("Render");                         
+                ImGui::End();
+            }
             // Rendering
             ImGui::Render();
             int display_w, display_h;

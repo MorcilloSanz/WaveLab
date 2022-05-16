@@ -7,6 +7,9 @@ private:
     unsigned int vertexArrayID;
 public:
     VertexArray();
+    VertexArray(const VertexArray& vertexArray);
+    VertexArray(VertexArray&& vertexArray) noexcept;
+    VertexArray& operator=(const VertexArray& vertexArray);
     ~VertexArray();
 protected:
     void initBuffer() override;
