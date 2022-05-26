@@ -1612,7 +1612,10 @@ CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: ../src/group/Polytope.cpp \
   /usr/include/c++/11/pstl/execution_defs.h \
   ../src/opengl/buffer/VertexArray.h \
   ../src/opengl/buffer/Buffer.h \
-  ../src/opengl/buffer/VertexBuffer.h
+  ../src/opengl/buffer/VertexBuffer.h \
+  ../glew/glew.h \
+  /usr/include/GL/glu.h \
+  /usr/include/GL/gl.h
 
 CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o: ../src/opengl/buffer/VertexArray.cpp \
   /usr/include/stdc-predef.h \

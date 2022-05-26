@@ -19,6 +19,7 @@ public:
 public:
     void bind();
     void unbind();
+    void draw(unsigned int primitive, bool showWire = false);
 public:
     inline std::shared_ptr<VertexArray>& getVertexArray() {
         return vertexArray;

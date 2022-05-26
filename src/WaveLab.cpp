@@ -52,27 +52,7 @@ int main(void) {
         Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
         Vec3f(0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
     };
-    VertexArray vertexArray;
-    VertexBuffer vertexBuffer(vertices);
-    vertexArray.unbind();
-    vertexBuffer.unbind();
-
-    std::vector<Vec3f> vertices2 = {
-        Vec3f(0.25f, -0.25f, 0.0f,  0.0f, 0.0f, 1.0f),
-        Vec3f(-0.25f, -0.25f, 0.0f,  1.0f, 0.0f, 0.0f),
-        Vec3f(0.0f,  0.25f, 0.0f,  0.0f, 0.0f, 1.0f)
-    };
-    VertexArray vertexArray2;
-    VertexBuffer vertexBuffer2(vertices2);
-    vertexArray2.unbind();
-    vertexBuffer2.unbind();
-
-    std::vector<Vec3f> vertices3 = {
-        Vec3f(0.25f, -0.25f, 0.0f,  1.0f, 0.0f, 1.0f),
-        Vec3f(-0.25f, -0.25f, 0.0f,  1.0f, 0.0f, 1.0f),
-        Vec3f(0.0f,  0.25f, 0.0f,  1.0f, 0.0f, 1.0f)
-    };
-    Polytope polytope(vertices3);
+    Polytope polytope(vertices);
 
     // Enable blending
     glEnable(GL_BLEND | GL_DEPTH_TEST);
@@ -91,33 +71,17 @@ int main(void) {
         // OpenGL rendering
         shaderProgram.useProgram();
 
-        // First vertex Array
-        vertexArray.bind();
-        if(meshWire) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-        else         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-        vertexArray.unbind();
+        // Draw Polytope 
+        polytope.draw(GL_TRIANGLES, true);
 
-        // Second vertex Array
-        vertexArray2.bind();
-        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-        vertexArray2.unbind();
-
-        // Polytope 
-        polytope.bind();
-        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-        polytope.unbind();
-
-        // Update vbo 1 vertices
+        // Update polytope vbo vertices
         static float offset = 0.01f;
         vertices = {
             Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
             Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
             Vec3f(0.0f + offset,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
         };
-        vertexBuffer.updateVertices(vertices);
+        polytope.getVertexBuffer()->updateVertices(vertices);
         offset += 0.001;
 
         // ImGUI
