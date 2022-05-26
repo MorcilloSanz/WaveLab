@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o"
   "CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o.d"
+  "CMakeFiles/WaveLab.dir/src/group/Group.cpp.o"
+  "CMakeFiles/WaveLab.dir/src/group/Group.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o"
   "CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o"

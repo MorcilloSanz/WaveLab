@@ -11,7 +11,6 @@ class Polytope {
 private:
     std::shared_ptr<VertexArray> vertexArray;
     std::shared_ptr<VertexBuffer> vertexBuffer;
-    bool visible;
 public:
     Polytope(const std::vector<Vec3f>& vertices);
     Polytope() = default;
@@ -27,13 +26,5 @@ public:
 
     inline std::shared_ptr<VertexBuffer>& getVertexBuffer() {
         return vertexBuffer;
-    }
-
-    inline void setVisible(bool visible) {
-        this->visible = visible;
-    }
-
-    inline bool isVisible() const {
-        return visible;
     }
 };

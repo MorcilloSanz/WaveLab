@@ -22,6 +22,7 @@ set(HEADERS
         src/opengl/buffer/VertexBuffer.h
         src/opengl/shader/Shader.h
         src/group/Polytope.h
+        src/group/Group.h
 )
 
 set(SOURCES
@@ -41,6 +42,7 @@ set(SOURCES
         src/opengl/buffer/VertexBuffer.cpp
         src/opengl/shader/Shader.cpp
         src/group/Polytope.cpp
+        src/group/Group.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})

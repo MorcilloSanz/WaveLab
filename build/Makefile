@@ -345,6 +345,30 @@ src/WaveLab.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/WaveLab.cpp.s
 .PHONY : src/WaveLab.cpp.s
 
+src/group/Group.o: src/group/Group.cpp.o
+.PHONY : src/group/Group.o
+
+# target to build an object file
+src/group/Group.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Group.cpp.o
+.PHONY : src/group/Group.cpp.o
+
+src/group/Group.i: src/group/Group.cpp.i
+.PHONY : src/group/Group.i
+
+# target to preprocess a source file
+src/group/Group.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Group.cpp.i
+.PHONY : src/group/Group.cpp.i
+
+src/group/Group.s: src/group/Group.cpp.s
+.PHONY : src/group/Group.s
+
+# target to generate assembly for a file
+src/group/Group.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Group.cpp.s
+.PHONY : src/group/Group.cpp.s
+
 src/group/Polytope.o: src/group/Polytope.cpp.o
 .PHONY : src/group/Polytope.o
 
@@ -501,6 +525,9 @@ help:
 	@echo "... src/WaveLab.o"
 	@echo "... src/WaveLab.i"
 	@echo "... src/WaveLab.s"
+	@echo "... src/group/Group.o"
+	@echo "... src/group/Group.i"
+	@echo "... src/group/Group.s"
 	@echo "... src/group/Polytope.o"
 	@echo "... src/group/Polytope.i"
 	@echo "... src/group/Polytope.s"

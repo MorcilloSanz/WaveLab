@@ -12,6 +12,7 @@
 #include "opengl/shader/Shader.h"
 
 #include "group/Polytope.h"
+#include "group/Group.h"
 
 int main(void) {
 
@@ -42,17 +43,36 @@ int main(void) {
     ImVec4 clear_color = ImVec4(0.1f, 0.1f, 0.1f, 1.00f);
     bool meshWire = false;
 
-    // OpenGL
+
+
+    // Shaders
     Shader vertexShader = Shader::fromFile("../src/opengl/glsl/vertex_shader.glsl", Shader::ShaderType::Vertex);
     Shader fragmentShader = Shader::fromFile("../src/opengl/glsl/fragment_shader.glsl", Shader::ShaderType::Fragment);
     ShaderProgram shaderProgram(vertexShader, fragmentShader);
 
+    // Polytopes
     std::vector<Vec3f> vertices = {
         Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
         Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
         Vec3f(0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
     };
     Polytope polytope(vertices);
+
+    std::vector<Vec3f> vertices2 = {
+        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 2.0f, 1.0f),
+        Vec3f(-0.5f, -0.5f, 0.0f,  1.0f, 2.0f, 1.0f),
+        Vec3f(0.0f,  0.5f, 0.0f,  0.1f, 2.0f, 1.0f)
+    };
+    Polytope polytope2(vertices2);
+
+    // Group
+    Group group;
+    group.add(polytope2);
+    group.add(polytope);
+    //group.setVisible(false);
+
+
+
 
     // Enable blending
     glEnable(GL_BLEND | GL_DEPTH_TEST);
@@ -72,8 +92,10 @@ int main(void) {
         shaderProgram.useProgram();
 
         // Draw Polytope 
-        polytope.draw(GL_TRIANGLES, true);
-
+        //group.draw(GL_TRIANGLES, true);
+        if(group.isVisible())
+            group.draw(GL_TRIANGLES);
+        
         // Update polytope vbo vertices
         static float offset = 0.01f;
         vertices = {

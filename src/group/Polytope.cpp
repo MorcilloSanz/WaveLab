@@ -2,8 +2,7 @@
 
 #include "../../glew/glew.h"
 
-Polytope::Polytope(const std::vector<Vec3f>& vertices) 
-    : visible(true) {
+Polytope::Polytope(const std::vector<Vec3f>& vertices) {
     vertexArray = std::make_shared<VertexArray>();
     vertexBuffer = std::make_shared<VertexBuffer>(vertices);
     unbind();
