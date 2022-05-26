@@ -37,6 +37,8 @@
         "utility": "cpp",
         "cstddef": "cpp",
         "cstring": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "bit": "cpp",
+        "memory": "cpp"
     }
 }

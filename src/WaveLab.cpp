@@ -11,6 +11,8 @@
 #include "opengl/buffer/VertexBuffer.h"
 #include "opengl/shader/Shader.h"
 
+#include "group/Polytope.h"
+
 int main(void) {
 
     Window window("WaveLab", 600, 600);
@@ -65,6 +67,13 @@ int main(void) {
     vertexArray2.unbind();
     vertexBuffer2.unbind();
 
+    std::vector<Vec3f> vertices3 = {
+        Vec3f(0.25f, -0.25f, 0.0f,  1.0f, 0.0f, 1.0f),
+        Vec3f(-0.25f, -0.25f, 0.0f,  1.0f, 0.0f, 1.0f),
+        Vec3f(0.0f,  0.25f, 0.0f,  1.0f, 0.0f, 1.0f)
+    };
+    Polytope polytope(vertices3);
+
     // Enable blending
     glEnable(GL_BLEND | GL_DEPTH_TEST);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -94,6 +103,12 @@ int main(void) {
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         glDrawArrays(GL_TRIANGLES, 0, 3);
         vertexArray2.unbind();
+
+        // Polytope 
+        polytope.bind();
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+        polytope.unbind();
 
         // Update vbo 1 vertices
         static float offset = 0.01f;
