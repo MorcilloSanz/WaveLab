@@ -5,9 +5,10 @@
 
 #include "../../../glew/glew.h"
 
-/*
-    TODO: Add uniforms to ShaderProgram
-*/
+#include "../../../glm/vec3.hpp"
+#include "../../../glm/vec4.hpp"
+#include "../../../glm/mat4x4.hpp"
+#include "../../../glm/gtc/type_ptr.hpp"
 
 class Shader {
 public:
@@ -67,6 +68,8 @@ public:
     ShaderProgram& operator=(const ShaderProgram& shaderProgram);
 private:
     void link();
+public:
+    void uniformMat4(const std::string& uniform, const glm::mat4& mat);
 public:
     inline void useProgram() {
         glUseProgram(shaderProgramID);

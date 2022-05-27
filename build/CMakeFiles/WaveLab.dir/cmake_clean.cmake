@@ -27,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o"
   "CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o.d"
+  "CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o"
+  "CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o"
   "CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/window/Window.cpp.o"

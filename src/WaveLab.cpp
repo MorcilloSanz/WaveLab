@@ -1,8 +1,5 @@
 #include <iostream>
 
-#define GLEW_STATIC
-#include "../glew/glew.h"
-
 #include "window/Window.h"
 
 #include "ImguiStyles.h"

@@ -24,6 +24,7 @@ set(HEADERS
         src/group/Polytope.h
         src/group/Group.h
         src/renderer/Renderer.h
+        src/renderer/Camera.h
 )
 
 set(SOURCES
@@ -45,6 +46,7 @@ set(SOURCES
         src/group/Polytope.cpp
         src/group/Group.cpp
         src/renderer/Renderer.cpp
+        src/renderer/Camera.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})

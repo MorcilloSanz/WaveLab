@@ -1,7 +1,7 @@
 #include "Group.h"
 
 Group::Group(unsigned int _primitive, bool _showWire) 
-    : primitive(_primitive), showWire(_showWire), visible(true) {
+    : primitive(_primitive), showWire(_showWire), modelMatrix(1.f), visible(true) {
 }
 
 void Group::draw() {

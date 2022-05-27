@@ -78,5 +78,10 @@
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
   "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.cpp",
   "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.cpp"
+},
+{
+  "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.cpp"
 }
 ]

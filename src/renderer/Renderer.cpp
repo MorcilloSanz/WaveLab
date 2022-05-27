@@ -2,7 +2,7 @@
 
 #include "../../glew/glew.h"
 
-Renderer::Renderer() {
+Renderer::Renderer() : hasCamera(false) {
     Shader vertexShader = Shader::fromFile("../src/opengl/glsl/vertex_shader.glsl", Shader::ShaderType::Vertex);
     Shader fragmentShader = Shader::fromFile("../src/opengl/glsl/fragment_shader.glsl", Shader::ShaderType::Fragment);
     shaderProgram = std::make_shared<ShaderProgram>(vertexShader, fragmentShader);
@@ -19,12 +19,27 @@ void Renderer::enableAntialiasing() {
     glEnable(GL_MULTISAMPLE);
 }
 
+void Renderer::setCamera(const Camera& camera) {
+    hasCamera = true;
+    this->camera = camera;
+}
+
 void Renderer::render() {
     shaderProgram->useProgram();
+
+    glm::mat4 projection(1.f);
+    glm::mat4 view(1.f);
+    if(hasCamera) {
+        projection = camera.getProjectionMatrix();
+        view = camera.getViewMatrix();
+    }
+
     for(Group& group : groups) {
         if(group.isVisible()) {
-            // Update mvp matrix (get model matrix from group)
-            // ......
+            // Update ModelViewProjection matrix
+            glm::mat4 model = group.getModelMatrix();
+            glm::mat4 mvp = projection * view * model;
+            shaderProgram->uniformMat4("mvp", mvp);
             // Draw call
             group.draw();
         }

@@ -112,3 +112,8 @@ void ShaderProgram::link() {
     vertexShader.deleteShader();
     fragmentShader.deleteShader();
 }
+
+void ShaderProgram::uniformMat4(const std::string& uniform, const glm::mat4& mat) {
+    int location = glGetUniformLocation(shaderProgramID, uniform.c_str());
+    glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(mat));
+}
