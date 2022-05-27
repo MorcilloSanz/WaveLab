@@ -23,6 +23,7 @@ set(HEADERS
         src/opengl/shader/Shader.h
         src/group/Polytope.h
         src/group/Group.h
+        src/renderer/Renderer.h
 )
 
 set(SOURCES
@@ -43,6 +44,7 @@ set(SOURCES
         src/opengl/shader/Shader.cpp
         src/group/Polytope.cpp
         src/group/Group.cpp
+        src/renderer/Renderer.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})

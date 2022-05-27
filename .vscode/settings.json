@@ -39,6 +39,15 @@
         "cstring": "cpp",
         "map": "cpp",
         "bit": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "atomic": "cpp",
+        "cstdarg": "cpp",
+        "deque": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "cinttypes": "cpp"
     }
 }

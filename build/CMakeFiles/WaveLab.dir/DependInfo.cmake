@@ -22,6 +22,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexArray.cpp" "CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexBuffer.cpp" "CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.cpp" "CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o.d"
+  "/home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.cpp" "CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/window/Window.cpp" "CMakeFiles/WaveLab.dir/src/window/Window.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/window/Window.cpp.o.d"
   )
 

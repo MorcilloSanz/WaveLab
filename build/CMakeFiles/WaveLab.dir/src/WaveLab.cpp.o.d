@@ -178,12 +178,7 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /usr/include/strings.h /usr/include/assert.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/../imgui/backends/imgui_impl_opengl3.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/../imgui/backends/imgui_impl_glfw.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexArray.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/Buffer.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexBuffer.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/../../../glew/glew.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Polytope.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.h \
  /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
@@ -198,4 +193,10 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Group.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/Group.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/Polytope.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/../opengl/buffer/VertexArray.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/../opengl/buffer/Buffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/../opengl/buffer/VertexBuffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../opengl/shader/Shader.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../opengl/shader/../../../glew/glew.h

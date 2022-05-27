@@ -7,12 +7,7 @@
 
 #include "ImguiStyles.h"
 
-#include "opengl/buffer/VertexArray.h"
-#include "opengl/buffer/VertexBuffer.h"
-#include "opengl/shader/Shader.h"
-
-#include "group/Polytope.h"
-#include "group/Group.h"
+#include "renderer/Renderer.h"
 
 int main(void) {
 
@@ -39,17 +34,10 @@ int main(void) {
     ImGui_ImplGlfw_InitForOpenGL(window.getGLFWwindow(), true);
     ImGui_ImplOpenGL3_Init(glsl_version);
 
-    // Our state
-    ImVec4 clear_color = ImVec4(0.1f, 0.1f, 0.1f, 1.00f);
-    bool meshWire = false;
 
-
-
-    // Shaders
-    Shader vertexShader = Shader::fromFile("../src/opengl/glsl/vertex_shader.glsl", Shader::ShaderType::Vertex);
-    Shader fragmentShader = Shader::fromFile("../src/opengl/glsl/fragment_shader.glsl", Shader::ShaderType::Fragment);
-    ShaderProgram shaderProgram(vertexShader, fragmentShader);
-
+    // Renderer
+    Renderer renderer;
+    
     // Polytopes
     std::vector<Vec3f> vertices = {
         Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
@@ -66,35 +54,21 @@ int main(void) {
     Polytope polytope2(vertices2);
 
     // Group
-    Group group;
+    Group group(GL_TRIANGLES);
     group.add(polytope2);
     group.add(polytope);
-    //group.setVisible(false);
 
-
-
-
-    // Enable blending
-    glEnable(GL_BLEND | GL_DEPTH_TEST);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-    // Anti aliasing
-    glEnable(GL_MULTISAMPLE);
+    renderer.addGroup(group);
 
     // Main loop
     while (!window.windowShouldClose()) {
 
+
         // Clear
-        glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w);
-        glClear(GL_COLOR_BUFFER_BIT);
+        renderer.clear();
 
-        // OpenGL rendering
-        shaderProgram.useProgram();
-
-        // Draw Polytope 
-        //group.draw(GL_TRIANGLES, true);
-        if(group.isVisible())
-            group.draw(GL_TRIANGLES);
+        // Render
+        renderer.render();
         
         // Update polytope vbo vertices
         static float offset = 0.01f;
@@ -105,6 +79,7 @@ int main(void) {
         };
         polytope.getVertexBuffer()->updateVertices(vertices);
         offset += 0.001;
+
 
         // ImGUI
         {
@@ -134,8 +109,6 @@ int main(void) {
                 ImGui::Begin("Test window");                         
                 ImGui::Text("This is some useful text.");              
                 ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
-                ImGui::Checkbox("Mesh wire", &meshWire);            
-                ImGui::ColorEdit3("clear color", (float*)&clear_color);
                 if (ImGui::Button("Button")) counter++;
                 ImGui::SameLine();
                 ImGui::Text("counter = %d", counter);

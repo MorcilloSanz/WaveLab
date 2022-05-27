@@ -465,6 +465,30 @@ src/opengl/shader/Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.s
 .PHONY : src/opengl/shader/Shader.cpp.s
 
+src/renderer/Renderer.o: src/renderer/Renderer.cpp.o
+.PHONY : src/renderer/Renderer.o
+
+# target to build an object file
+src/renderer/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o
+.PHONY : src/renderer/Renderer.cpp.o
+
+src/renderer/Renderer.i: src/renderer/Renderer.cpp.i
+.PHONY : src/renderer/Renderer.i
+
+# target to preprocess a source file
+src/renderer/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.i
+.PHONY : src/renderer/Renderer.cpp.i
+
+src/renderer/Renderer.s: src/renderer/Renderer.cpp.s
+.PHONY : src/renderer/Renderer.s
+
+# target to generate assembly for a file
+src/renderer/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.s
+.PHONY : src/renderer/Renderer.cpp.s
+
 src/window/Window.o: src/window/Window.cpp.o
 .PHONY : src/window/Window.o
 
@@ -540,6 +564,9 @@ help:
 	@echo "... src/opengl/shader/Shader.o"
 	@echo "... src/opengl/shader/Shader.i"
 	@echo "... src/opengl/shader/Shader.s"
+	@echo "... src/renderer/Renderer.o"
+	@echo "... src/renderer/Renderer.i"
+	@echo "... src/renderer/Renderer.s"
 	@echo "... src/window/Window.o"
 	@echo "... src/window/Window.i"
 	@echo "... src/window/Window.s"

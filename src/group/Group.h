@@ -8,12 +8,13 @@
 class Group {
 private:
     std::vector<Polytope> polytopes;
-    bool visible;
+    unsigned int primitive;
+    bool showWire, visible;
 public:
-    Group();
+    Group(unsigned int _primitive, bool _showWire = false);
     ~Group() = default;
 public:
-    void draw(unsigned int primitive, bool showWire = false);
+    void draw();
 public:
     inline void add(const Polytope& polytope) {
         polytopes.push_back(polytope);
@@ -29,5 +30,21 @@ public:
 
     inline bool isVisible() const {
         return visible;
+    }
+
+    inline void setShowWire(bool showWire) {
+        this->showWire = showWire;
+    }
+
+    inline bool isShowWire() const {
+        return showWire;
+    }
+
+    inline void setPrimitive(unsigned int primitive) {
+        this->primitive = primitive;
+    }
+
+    inline unsigned int getPrimitive() const {
+        return primitive;
     }
 };
