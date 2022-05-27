@@ -25,6 +25,6 @@ void Polytope::draw(unsigned int primitive, bool showWire) {
     bind();
     if(!showWire)   glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     else            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(primitive, 0, 3);
     unbind();
 }

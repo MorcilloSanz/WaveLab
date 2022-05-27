@@ -47,9 +47,9 @@ int main(void) {
     Polytope polytope(vertices);
 
     std::vector<Vec3f> vertices2 = {
-        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 2.0f, 1.0f),
-        Vec3f(-0.5f, -0.5f, 0.0f,  1.0f, 2.0f, 1.0f),
-        Vec3f(0.0f,  0.5f, 0.0f,  0.1f, 2.0f, 1.0f)
+        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.2f, 1.0f),
+        Vec3f(-0.5f, -0.5f, 0.0f,  1.0f, 0.2f, 1.0f),
+        Vec3f(0.0f,  0.5f, 0.0f,  1.0f, 0.2f, 1.0f)
     };
     Polytope polytope2(vertices2);
 
@@ -62,7 +62,6 @@ int main(void) {
 
     // Main loop
     while (!window.windowShouldClose()) {
-
 
         // Clear
         renderer.clear();
