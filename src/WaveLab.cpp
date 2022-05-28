@@ -1,13 +1,10 @@
 #include <iostream>
 
-#define GLEW_STATIC
-#include "../glew/glew.h"
-
 #include "window/Window.h"
 
-#include "../imgui/imgui.h"
-#include "../imgui/backends/imgui_impl_opengl3.h"
-#include "../imgui/backends/imgui_impl_glfw.h"
+#include "ImguiStyles.h"
+
+#include "renderer/Renderer.h"
 
 int main(void) {
 
@@ -21,7 +18,8 @@ int main(void) {
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;         // Enable Multi-Viewport / Platform Windows
 
-    ImGui::StyleColorsClassic();
+    //ImGui::StyleColorsDark();
+    Style();
 
     ImGuiStyle& style = ImGui::GetStyle();
     if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
@@ -33,17 +31,51 @@ int main(void) {
     ImGui_ImplGlfw_InitForOpenGL(window.getGLFWwindow(), true);
     ImGui_ImplOpenGL3_Init(glsl_version);
 
-    // Our state
-    ImVec4 clear_color = ImVec4(0.3f, 0.3f, 0.3f, 1.00f);
+
+    // Renderer
+    Renderer renderer;
+    
+    // Polytopes
+    std::vector<Vec3f> vertices = {
+        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
+        Vec3f(0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
+    };
+    Polytope polytope(vertices);
+
+    std::vector<Vec3f> vertices2 = {
+        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.2f, 1.0f),
+        Vec3f(-0.5f, -0.5f, 0.0f,  1.0f, 0.2f, 1.0f),
+        Vec3f(0.0f,  0.5f, 0.0f,  1.0f, 0.2f, 1.0f)
+    };
+    Polytope polytope2(vertices2);
+
+    // Group
+    Group group(GL_TRIANGLES);
+    group.add(polytope2);
+    group.add(polytope);
+
+    renderer.addGroup(group);
 
     // Main loop
     while (!window.windowShouldClose()) {
 
         // Clear
-        glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w);
-        glClear(GL_COLOR_BUFFER_BIT);
+        renderer.clear();
 
-        // OpenGL rendering
+        // Render
+        renderer.render();
+        
+        // Update polytope vbo vertices
+        static float offset = 0.01f;
+        vertices = {
+            Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
+            Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
+            Vec3f(0.0f + offset,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
+        };
+        polytope.getVertexBuffer()->updateVertices(vertices);
+        offset += 0.001;
+
 
         // ImGUI
         {
@@ -66,21 +98,24 @@ int main(void) {
                     ImGui::EndMainMenuBar();
                 }
             }
-            // Window 1
+            // Window
             {
                 static float f = 0.0f;
                 static int counter = 0;
-                ImGui::Begin("Hello, world!");                         
+                ImGui::Begin("Test window");                         
                 ImGui::Text("This is some useful text.");              
-                ImGui::SliderFloat("float", &f, 0.0f, 1.0f);           
-                ImGui::ColorEdit3("clear color", (float*)&clear_color);
+                ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
                 if (ImGui::Button("Button")) counter++;
                 ImGui::SameLine();
                 ImGui::Text("counter = %d", counter);
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
                 ImGui::End();
             }
-
+            // Render window
+            {
+                ImGui::Begin("Render");                         
+                ImGui::End();
+            }
             // Rendering
             ImGui::Render();
             int display_w, display_h;

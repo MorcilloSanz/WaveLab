@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/morcillosanz/Desktop/Dev/WaveLab
+CMAKE_SOURCE_DIR = /home/morcillosanz/Desktop/GitHub/WaveLab
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/morcillosanz/Desktop/Dev/WaveLab/build
+CMAKE_BINARY_DIR = /home/morcillosanz/Desktop/GitHub/WaveLab/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/WaveLab.dir/depend.make
@@ -72,142 +72,240 @@ include CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/glew/glew.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/glew/glew.cpp.o: ../glew/glew.cpp
 CMakeFiles/WaveLab.dir/glew/glew.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/WaveLab.dir/glew/glew.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/glew/glew.cpp.o -MF CMakeFiles/WaveLab.dir/glew/glew.cpp.o.d -o CMakeFiles/WaveLab.dir/glew/glew.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/glew/glew.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/WaveLab.dir/glew/glew.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/glew/glew.cpp.o -MF CMakeFiles/WaveLab.dir/glew/glew.cpp.o.d -o CMakeFiles/WaveLab.dir/glew/glew.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.cpp
 
 CMakeFiles/WaveLab.dir/glew/glew.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/glew/glew.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/glew/glew.cpp > CMakeFiles/WaveLab.dir/glew/glew.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.cpp > CMakeFiles/WaveLab.dir/glew/glew.cpp.i
 
 CMakeFiles/WaveLab.dir/glew/glew.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/glew/glew.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/glew/glew.cpp -o CMakeFiles/WaveLab.dir/glew/glew.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.cpp -o CMakeFiles/WaveLab.dir/glew/glew.cpp.s
 
 CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o: ../imgui/imgui.cpp
 CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui.cpp
 
 CMakeFiles/WaveLab.dir/imgui/imgui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/imgui/imgui.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui.cpp > CMakeFiles/WaveLab.dir/imgui/imgui.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui.cpp > CMakeFiles/WaveLab.dir/imgui/imgui.cpp.i
 
 CMakeFiles/WaveLab.dir/imgui/imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/imgui/imgui.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui.cpp.s
 
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o: ../imgui/backends/imgui_impl_glfw.cpp
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/imgui/backends/imgui_impl_glfw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_glfw.cpp
 
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.i
 
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_glfw.cpp.s
 
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o: ../imgui/backends/imgui_impl_opengl3.cpp
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/imgui/backends/imgui_impl_opengl3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_opengl3.cpp
 
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/imgui/backends/imgui_impl_opengl3.cpp > CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_opengl3.cpp > CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.i
 
 CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/imgui/backends/imgui_impl_opengl3.cpp -o CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_opengl3.cpp -o CMakeFiles/WaveLab.dir/imgui/backends/imgui_impl_opengl3.cpp.s
 
 CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o: ../imgui/imgui_demo.cpp
 CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_demo.cpp
 
 CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_demo.cpp > CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_demo.cpp > CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.i
 
 CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_demo.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_demo.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.s
 
 CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o: ../imgui/imgui_draw.cpp
 CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_draw.cpp
 
 CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_draw.cpp > CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_draw.cpp > CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.i
 
 CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_draw.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_draw.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui_draw.cpp.s
 
 CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o: ../imgui/imgui_tables.cpp
 CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_tables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_tables.cpp
 
 CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_tables.cpp > CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_tables.cpp > CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.i
 
 CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_tables.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_tables.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.s
 
 CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o: ../imgui/imgui_widgets.cpp
 CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_widgets.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o -MF CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_widgets.cpp
 
 CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_widgets.cpp > CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_widgets.cpp > CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.i
 
 CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_widgets.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_widgets.cpp -o CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.s
 
 CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp
 CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o -MF CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o.d -o CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/src/WaveLab.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o -MF CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o.d -o CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/WaveLab.cpp
 
 CMakeFiles/WaveLab.dir/src/WaveLab.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/WaveLab.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/src/WaveLab.cpp > CMakeFiles/WaveLab.dir/src/WaveLab.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/WaveLab.cpp > CMakeFiles/WaveLab.dir/src/WaveLab.cpp.i
 
 CMakeFiles/WaveLab.dir/src/WaveLab.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/WaveLab.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/src/WaveLab.cpp -o CMakeFiles/WaveLab.dir/src/WaveLab.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/WaveLab.cpp -o CMakeFiles/WaveLab.dir/src/WaveLab.cpp.s
 
 CMakeFiles/WaveLab.dir/src/window/Window.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/src/window/Window.cpp.o: ../src/window/Window.cpp
 CMakeFiles/WaveLab.dir/src/window/Window.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/WaveLab.dir/src/window/Window.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/window/Window.cpp.o -MF CMakeFiles/WaveLab.dir/src/window/Window.cpp.o.d -o CMakeFiles/WaveLab.dir/src/window/Window.cpp.o -c /home/morcillosanz/Desktop/Dev/WaveLab/src/window/Window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/WaveLab.dir/src/window/Window.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/window/Window.cpp.o -MF CMakeFiles/WaveLab.dir/src/window/Window.cpp.o.d -o CMakeFiles/WaveLab.dir/src/window/Window.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/Window.cpp
 
 CMakeFiles/WaveLab.dir/src/window/Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/window/Window.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/Dev/WaveLab/src/window/Window.cpp > CMakeFiles/WaveLab.dir/src/window/Window.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/Window.cpp > CMakeFiles/WaveLab.dir/src/window/Window.cpp.i
 
 CMakeFiles/WaveLab.dir/src/window/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/window/Window.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/Dev/WaveLab/src/window/Window.cpp -o CMakeFiles/WaveLab.dir/src/window/Window.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/Window.cpp -o CMakeFiles/WaveLab.dir/src/window/Window.cpp.s
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o: CMakeFiles/WaveLab.dir/flags.make
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o: ../src/opengl/buffer/VertexArray.cpp
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o -MF CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o.d -o CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexArray.cpp
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexArray.cpp > CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.i
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexArray.cpp -o CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.s
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o: CMakeFiles/WaveLab.dir/flags.make
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o: ../src/opengl/buffer/VertexBuffer.cpp
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o -MF CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o.d -o CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexBuffer.cpp
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexBuffer.cpp > CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.i
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexBuffer.cpp -o CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.s
+
+CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o: CMakeFiles/WaveLab.dir/flags.make
+CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o: ../src/opengl/shader/Shader.cpp
+CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o -MF CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o.d -o CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.cpp
+
+CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.cpp > CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.i
+
+CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.cpp -o CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.s
+
+CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: CMakeFiles/WaveLab.dir/flags.make
+CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: ../src/group/Polytope.cpp
+CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o -MF CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o.d -o CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Polytope.cpp
+
+CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Polytope.cpp > CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.i
+
+CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Polytope.cpp -o CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.s
+
+CMakeFiles/WaveLab.dir/src/group/Group.cpp.o: CMakeFiles/WaveLab.dir/flags.make
+CMakeFiles/WaveLab.dir/src/group/Group.cpp.o: ../src/group/Group.cpp
+CMakeFiles/WaveLab.dir/src/group/Group.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/WaveLab.dir/src/group/Group.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/group/Group.cpp.o -MF CMakeFiles/WaveLab.dir/src/group/Group.cpp.o.d -o CMakeFiles/WaveLab.dir/src/group/Group.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Group.cpp
+
+CMakeFiles/WaveLab.dir/src/group/Group.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/group/Group.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Group.cpp > CMakeFiles/WaveLab.dir/src/group/Group.cpp.i
+
+CMakeFiles/WaveLab.dir/src/group/Group.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/group/Group.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Group.cpp -o CMakeFiles/WaveLab.dir/src/group/Group.cpp.s
+
+CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o: CMakeFiles/WaveLab.dir/flags.make
+CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o: ../src/renderer/Renderer.cpp
+CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o -MF CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o.d -o CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.cpp
+
+CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.cpp > CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.i
+
+CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.cpp -o CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.s
+
+CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o: CMakeFiles/WaveLab.dir/flags.make
+CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o: ../src/renderer/Camera.cpp
+CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o -MF CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o.d -o CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.cpp
+
+CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.cpp > CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.i
+
+CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.cpp -o CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.s
 
 # Object files for target WaveLab
 WaveLab_OBJECTS = \
@@ -220,7 +318,14 @@ WaveLab_OBJECTS = \
 "CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o" \
 "CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o" \
 "CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o" \
-"CMakeFiles/WaveLab.dir/src/window/Window.cpp.o"
+"CMakeFiles/WaveLab.dir/src/window/Window.cpp.o" \
+"CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o" \
+"CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o" \
+"CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o" \
+"CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o" \
+"CMakeFiles/WaveLab.dir/src/group/Group.cpp.o" \
+"CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o" \
+"CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o"
 
 # External object files for target WaveLab
 WaveLab_EXTERNAL_OBJECTS =
@@ -235,9 +340,16 @@ WaveLab: CMakeFiles/WaveLab.dir/imgui/imgui_tables.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/imgui/imgui_widgets.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/src/window/Window.cpp.o
+WaveLab: CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o
+WaveLab: CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o
+WaveLab: CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o
+WaveLab: CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o
+WaveLab: CMakeFiles/WaveLab.dir/src/group/Group.cpp.o
+WaveLab: CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o
+WaveLab: CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/build.make
 WaveLab: CMakeFiles/WaveLab.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable WaveLab"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable WaveLab"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/WaveLab.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -249,6 +361,6 @@ CMakeFiles/WaveLab.dir/clean:
 .PHONY : CMakeFiles/WaveLab.dir/clean
 
 CMakeFiles/WaveLab.dir/depend:
-	cd /home/morcillosanz/Desktop/Dev/WaveLab/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/morcillosanz/Desktop/Dev/WaveLab /home/morcillosanz/Desktop/Dev/WaveLab /home/morcillosanz/Desktop/Dev/WaveLab/build /home/morcillosanz/Desktop/Dev/WaveLab/build /home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles/WaveLab.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/morcillosanz/Desktop/GitHub/WaveLab/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/morcillosanz/Desktop/GitHub/WaveLab /home/morcillosanz/Desktop/GitHub/WaveLab /home/morcillosanz/Desktop/GitHub/WaveLab/build /home/morcillosanz/Desktop/GitHub/WaveLab/build /home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles/WaveLab.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/WaveLab.dir/depend
 

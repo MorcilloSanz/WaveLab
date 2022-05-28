@@ -1,8 +1,8 @@
 CMakeFiles/WaveLab.dir/imgui/imgui_demo.cpp.o: \
- /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui_demo.cpp \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui_demo.cpp \
  /usr/include/stdc-predef.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imgui.h \
- /home/morcillosanz/Desktop/Dev/WaveLab/imgui/imconfig.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h /usr/include/string.h \

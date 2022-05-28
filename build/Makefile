@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/morcillosanz/Desktop/Dev/WaveLab
+CMAKE_SOURCE_DIR = /home/morcillosanz/Desktop/GitHub/WaveLab
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/morcillosanz/Desktop/Dev/WaveLab/build
+CMAKE_BINARY_DIR = /home/morcillosanz/Desktop/GitHub/WaveLab/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles /home/morcillosanz/Desktop/Dev/WaveLab/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles /home/morcillosanz/Desktop/GitHub/WaveLab/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/morcillosanz/Desktop/Dev/WaveLab/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -345,6 +345,174 @@ src/WaveLab.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/WaveLab.cpp.s
 .PHONY : src/WaveLab.cpp.s
 
+src/group/Group.o: src/group/Group.cpp.o
+.PHONY : src/group/Group.o
+
+# target to build an object file
+src/group/Group.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Group.cpp.o
+.PHONY : src/group/Group.cpp.o
+
+src/group/Group.i: src/group/Group.cpp.i
+.PHONY : src/group/Group.i
+
+# target to preprocess a source file
+src/group/Group.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Group.cpp.i
+.PHONY : src/group/Group.cpp.i
+
+src/group/Group.s: src/group/Group.cpp.s
+.PHONY : src/group/Group.s
+
+# target to generate assembly for a file
+src/group/Group.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Group.cpp.s
+.PHONY : src/group/Group.cpp.s
+
+src/group/Polytope.o: src/group/Polytope.cpp.o
+.PHONY : src/group/Polytope.o
+
+# target to build an object file
+src/group/Polytope.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o
+.PHONY : src/group/Polytope.cpp.o
+
+src/group/Polytope.i: src/group/Polytope.cpp.i
+.PHONY : src/group/Polytope.i
+
+# target to preprocess a source file
+src/group/Polytope.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.i
+.PHONY : src/group/Polytope.cpp.i
+
+src/group/Polytope.s: src/group/Polytope.cpp.s
+.PHONY : src/group/Polytope.s
+
+# target to generate assembly for a file
+src/group/Polytope.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.s
+.PHONY : src/group/Polytope.cpp.s
+
+src/opengl/buffer/VertexArray.o: src/opengl/buffer/VertexArray.cpp.o
+.PHONY : src/opengl/buffer/VertexArray.o
+
+# target to build an object file
+src/opengl/buffer/VertexArray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o
+.PHONY : src/opengl/buffer/VertexArray.cpp.o
+
+src/opengl/buffer/VertexArray.i: src/opengl/buffer/VertexArray.cpp.i
+.PHONY : src/opengl/buffer/VertexArray.i
+
+# target to preprocess a source file
+src/opengl/buffer/VertexArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.i
+.PHONY : src/opengl/buffer/VertexArray.cpp.i
+
+src/opengl/buffer/VertexArray.s: src/opengl/buffer/VertexArray.cpp.s
+.PHONY : src/opengl/buffer/VertexArray.s
+
+# target to generate assembly for a file
+src/opengl/buffer/VertexArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.s
+.PHONY : src/opengl/buffer/VertexArray.cpp.s
+
+src/opengl/buffer/VertexBuffer.o: src/opengl/buffer/VertexBuffer.cpp.o
+.PHONY : src/opengl/buffer/VertexBuffer.o
+
+# target to build an object file
+src/opengl/buffer/VertexBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o
+.PHONY : src/opengl/buffer/VertexBuffer.cpp.o
+
+src/opengl/buffer/VertexBuffer.i: src/opengl/buffer/VertexBuffer.cpp.i
+.PHONY : src/opengl/buffer/VertexBuffer.i
+
+# target to preprocess a source file
+src/opengl/buffer/VertexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.i
+.PHONY : src/opengl/buffer/VertexBuffer.cpp.i
+
+src/opengl/buffer/VertexBuffer.s: src/opengl/buffer/VertexBuffer.cpp.s
+.PHONY : src/opengl/buffer/VertexBuffer.s
+
+# target to generate assembly for a file
+src/opengl/buffer/VertexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.s
+.PHONY : src/opengl/buffer/VertexBuffer.cpp.s
+
+src/opengl/shader/Shader.o: src/opengl/shader/Shader.cpp.o
+.PHONY : src/opengl/shader/Shader.o
+
+# target to build an object file
+src/opengl/shader/Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o
+.PHONY : src/opengl/shader/Shader.cpp.o
+
+src/opengl/shader/Shader.i: src/opengl/shader/Shader.cpp.i
+.PHONY : src/opengl/shader/Shader.i
+
+# target to preprocess a source file
+src/opengl/shader/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.i
+.PHONY : src/opengl/shader/Shader.cpp.i
+
+src/opengl/shader/Shader.s: src/opengl/shader/Shader.cpp.s
+.PHONY : src/opengl/shader/Shader.s
+
+# target to generate assembly for a file
+src/opengl/shader/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.s
+.PHONY : src/opengl/shader/Shader.cpp.s
+
+src/renderer/Camera.o: src/renderer/Camera.cpp.o
+.PHONY : src/renderer/Camera.o
+
+# target to build an object file
+src/renderer/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o
+.PHONY : src/renderer/Camera.cpp.o
+
+src/renderer/Camera.i: src/renderer/Camera.cpp.i
+.PHONY : src/renderer/Camera.i
+
+# target to preprocess a source file
+src/renderer/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.i
+.PHONY : src/renderer/Camera.cpp.i
+
+src/renderer/Camera.s: src/renderer/Camera.cpp.s
+.PHONY : src/renderer/Camera.s
+
+# target to generate assembly for a file
+src/renderer/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.s
+.PHONY : src/renderer/Camera.cpp.s
+
+src/renderer/Renderer.o: src/renderer/Renderer.cpp.o
+.PHONY : src/renderer/Renderer.o
+
+# target to build an object file
+src/renderer/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o
+.PHONY : src/renderer/Renderer.cpp.o
+
+src/renderer/Renderer.i: src/renderer/Renderer.cpp.i
+.PHONY : src/renderer/Renderer.i
+
+# target to preprocess a source file
+src/renderer/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.i
+.PHONY : src/renderer/Renderer.cpp.i
+
+src/renderer/Renderer.s: src/renderer/Renderer.cpp.s
+.PHONY : src/renderer/Renderer.s
+
+# target to generate assembly for a file
+src/renderer/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.s
+.PHONY : src/renderer/Renderer.cpp.s
+
 src/window/Window.o: src/window/Window.cpp.o
 .PHONY : src/window/Window.o
 
@@ -405,6 +573,27 @@ help:
 	@echo "... src/WaveLab.o"
 	@echo "... src/WaveLab.i"
 	@echo "... src/WaveLab.s"
+	@echo "... src/group/Group.o"
+	@echo "... src/group/Group.i"
+	@echo "... src/group/Group.s"
+	@echo "... src/group/Polytope.o"
+	@echo "... src/group/Polytope.i"
+	@echo "... src/group/Polytope.s"
+	@echo "... src/opengl/buffer/VertexArray.o"
+	@echo "... src/opengl/buffer/VertexArray.i"
+	@echo "... src/opengl/buffer/VertexArray.s"
+	@echo "... src/opengl/buffer/VertexBuffer.o"
+	@echo "... src/opengl/buffer/VertexBuffer.i"
+	@echo "... src/opengl/buffer/VertexBuffer.s"
+	@echo "... src/opengl/shader/Shader.o"
+	@echo "... src/opengl/shader/Shader.i"
+	@echo "... src/opengl/shader/Shader.s"
+	@echo "... src/renderer/Camera.o"
+	@echo "... src/renderer/Camera.i"
+	@echo "... src/renderer/Camera.s"
+	@echo "... src/renderer/Renderer.o"
+	@echo "... src/renderer/Renderer.i"
+	@echo "... src/renderer/Renderer.s"
 	@echo "... src/window/Window.o"
 	@echo "... src/window/Window.i"
 	@echo "... src/window/Window.s"
