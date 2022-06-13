@@ -10,11 +10,16 @@ Renderer renderer;  // Renderer creates a camera automatically
 
 // Polytopes (Vertices format: x y z r g b)
 std::vector<Vec3f> vertices = {
-    Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
-    Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
-    Vec3f(0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
+    Vec3f(0.5f,  0.5f, 0.0f , 1.0f, 0.0f, 0.0f),  // top right
+    Vec3f( 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f),  // bottom right
+    Vec3f(-0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f),  // bottom left
+    Vec3f(-0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 1.0f)   // top left 
 };
-Polytope polytope(vertices);
+std::vector<unsigned int> indices = {
+    0, 1, 3,  // first Triangle
+    1, 2, 3   // second Triangle
+};
+Polytope polytope(vertices, indices);
 
 std::vector<Vec3f> vertices2 = {
     Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.2f, 1.0f),
