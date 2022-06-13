@@ -35,4 +35,12 @@ public:
     inline bool windowShouldClose() const {
         return glfwWindowShouldClose(window);
     }
+
+    inline unsigned int getWidth() const {
+        return width;
+    }
+
+    inline unsigned int getHeight() const {
+        return height;
+    }
 };

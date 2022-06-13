@@ -31,15 +31,19 @@ int main(void) {
     ImGui_ImplGlfw_InitForOpenGL(window.getGLFWwindow(), true);
     ImGui_ImplOpenGL3_Init(glsl_version);
 
-
     // Renderer
     Renderer renderer;
     
     // Polytopes
     std::vector<Vec3f> vertices = {
-        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
-        Vec3f(0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
+        // first triangle
+        Vec3f(0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f),  // top right
+        Vec3f(0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 0.0f),  // bottom right
+        Vec3f(-0.5f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f),  // top left 
+        // Second triangle
+        Vec3f(0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f),  // bottom right
+        Vec3f(-0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 0.0f),  // bottom left
+        Vec3f(-0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f)   // top left
     };
     Polytope polytope(vertices);
 
@@ -52,9 +56,10 @@ int main(void) {
 
     // Group
     Group group(GL_TRIANGLES);
-    group.add(polytope2);
     group.add(polytope);
-
+    group.add(polytope2);
+    group.rotate(45, glm::vec3(0, 0, 1));
+    
     renderer.addGroup(group);
 
     // Main loop
@@ -73,9 +78,8 @@ int main(void) {
             Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
             Vec3f(0.0f + offset,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
         };
-        polytope.getVertexBuffer()->updateVertices(vertices);
+        polytope2.updateVertices(vertices);
         offset += 0.001;
-
 
         // ImGUI
         {

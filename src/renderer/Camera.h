@@ -13,8 +13,8 @@ private:
 public:
     Camera() = default;
     ~Camera() = default;
-    Camera orthoCamera(float left, float right, float bottom, float top, float zNear, float zFar);
-    Camera perspectiveCamera(float fovy, float aspect, float zNear, float zFar);
+    static Camera orthoCamera(float left, float right, float bottom, float top, float zNear, float zFar);
+    static Camera perspectiveCamera(float fovy, float aspect, float zNear, float zFar);
 public:
     inline void lookAt(const glm::vec3& eye, const glm::vec3& center, const glm::vec3& up) {
         viewMatrix = glm::lookAt(eye, center, up);

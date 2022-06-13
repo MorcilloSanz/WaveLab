@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 26 17:45:11 2022
+# Make data base, printed on Sun Jun 12 19:38:08 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c55dd564-6e72-49ac-9cce-65713275e58d.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5493ee6e-171c-4368-820a-58e170ed88bd.sock
 # environment
 LC_NAME = es_ES.UTF-8
 # environment
@@ -57,7 +57,7 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/morcillosanz/.config/Code/CachedData/da15b6fd3ef856477bf6f4fb29ba1b7af717770d
+VSCODE_CODE_CACHE_PATH = /home/morcillosanz/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 LANG = C
 # environment
@@ -97,13 +97,13 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 9894
+VSCODE_PID = 15886
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/morcillosanz:@/tmp/.ICE-unix/1849,unix/morcillosanz:/tmp/.ICE-unix/1849
+SESSION_MANAGER = local/morcillosanz:@/tmp/.ICE-unix/1984,unix/morcillosanz:/tmp/.ICE-unix/1984
 # automatic
 *F = $(notdir $*)
 # environment
@@ -143,7 +143,7 @@ LC_MONETARY = es_ES.UTF-8
 # environment
 LC_TIME = es_ES.UTF-8
 # environment
-INVOCATION_ID = 045e9976588e4b25affc9332118bd7be
+INVOCATION_ID = ae581c8a9573476d868890176cb24b66
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -173,7 +173,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1876
+SYSTEMD_EXEC_PID = 2028
 # environment
 DISPLAY = :1
 # environment
@@ -183,11 +183,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1566
+MANAGERPID = 1725
 # environment
 LC_MEASUREMENT = es_ES.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 9894
+GIO_LAUNCHED_DESKTOP_FILE_PID = 15886
 # environment
 _ = /usr/share/code/code
 # environment
@@ -197,7 +197,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:29186
+JOURNAL_STREAM = 8:34130
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -209,7 +209,7 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-3fce6564-1.67.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-3fce6564-1.67.2-main.sock
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -288,10 +288,10 @@ GNUmakefile:
 # strcache buffers: 1 (0) / strings = 21 / storage = 172 B / avg = 8 B
 # current buf: size = 8162 B / used = 172 B / count = 21 / avg = 8 B
 
+ 
 # strcache performance: lookups = 24 / hit rate = 12%
 # hash-table stats:
- 
 # Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Thu May 26 17:45:11 2022
+# Finished Make data base on Sun Jun 12 19:38:08 2022
 
  
