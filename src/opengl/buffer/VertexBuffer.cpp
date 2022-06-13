@@ -2,32 +2,44 @@
 
 #include <string.h>
 
-#include "../../../glew/glew.h"
-
-VertexBuffer::VertexBuffer() : vertexBufferID(0) { }
+VertexBuffer::VertexBuffer() : Buffer() { }
 
 VertexBuffer::VertexBuffer(const std::vector<Vec3f>& _vertices)
-    : vertices(_vertices), vertexBufferID(0) {
+    : Buffer(), vertices(_vertices), hasIndexBuffer(false) {
+    initBuffer();
+}
+
+VertexBuffer::VertexBuffer(const std::vector<Vec3f>& _vertices, const std::vector<unsigned int> _indices) 
+    : Buffer(), vertices(_vertices), hasIndexBuffer(true), indices(_indices) {
     initBuffer();
 }
 
 VertexBuffer::VertexBuffer(const VertexBuffer& vertexBuffer) 
-    : vertices(vertexBuffer.vertices), vertexBufferID(vertexBuffer.vertexBufferID) {
+    : vertices(vertexBuffer.vertices), hasIndexBuffer(vertexBuffer.hasIndexBuffer) {
+    id = vertexBuffer.id;
+    if(vertexBuffer.indexBuffer != nullptr)
+        indexBuffer = vertexBuffer.indexBuffer;
 }
 
 VertexBuffer::VertexBuffer(VertexBuffer&& vertexBuffer) noexcept 
-    : vertices(std::move(vertexBuffer.vertices)), vertexBufferID(vertexBuffer.vertexBufferID) {
+    : vertices(std::move(vertexBuffer.vertices)), hasIndexBuffer(vertexBuffer.hasIndexBuffer) {
+    id = vertexBuffer.id;
+    if(indexBuffer != nullptr)
+        indexBuffer = std::move(vertexBuffer.indexBuffer);
 }
 
 VertexBuffer& VertexBuffer::operator=(const VertexBuffer& vertexBuffer) {
     vertices = vertexBuffer.vertices;
-    vertexBufferID = vertexBuffer.vertexBufferID;
+    id = vertexBuffer.id;
+    hasIndexBuffer = vertexBuffer.hasIndexBuffer;
+    if(indexBuffer != nullptr)
+        indexBuffer = vertexBuffer.indexBuffer;
     return *this;
 }
 
 VertexBuffer::~VertexBuffer() {
     unbind();
-    glDeleteBuffers(1, &vertexBufferID);
+    glDeleteBuffers(1, &id);
 }
 
 void VertexBuffer::initBuffer() {
@@ -40,10 +52,12 @@ void VertexBuffer::initBuffer() {
         index += 6;
     }
     // Vertex buffer
-    glGenBuffers(1, &vertexBufferID);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+    glGenBuffers(1, &id);
+    glBindBuffer(GL_ARRAY_BUFFER, id);
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float) * 6, glVertices, GL_DYNAMIC_DRAW);
     delete[] glVertices;
+    // Index Buffer
+    if(hasIndexBuffer) indexBuffer = std::make_shared<IndexBuffer>(indices);
     // position attribute
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
@@ -52,8 +66,9 @@ void VertexBuffer::initBuffer() {
     glEnableVertexAttribArray(1);
 }
 
-void VertexBuffer::updateVertices(std::vector<Vec3f>& vertices) {
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+void VertexBuffer::updateVertices(std::vector<Vec3f>& vertices, bool copy2memory) {
+    if(copy2memory) this->vertices = vertices;
+    glBindBuffer(GL_ARRAY_BUFFER, id);
     float* ptr = (float*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
 
     unsigned int index = 0;
@@ -68,7 +83,7 @@ void VertexBuffer::updateVertices(std::vector<Vec3f>& vertices) {
 }
 
 void VertexBuffer::bind() {
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+    glBindBuffer(GL_ARRAY_BUFFER, id);
 }
 
 void VertexBuffer::unbind() {

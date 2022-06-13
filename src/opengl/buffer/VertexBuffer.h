@@ -2,8 +2,10 @@
 
 #include <iostream>
 #include <vector>
+#include <memory>
 
 #include "Buffer.h"
+#include "IndexBuffer.h"
 
 template<typename T>
 struct Vec3 {
@@ -22,10 +24,13 @@ typedef Vec3<int> Vec3i;
 class VertexBuffer : public Buffer {
 private:
     std::vector<Vec3f> vertices;
-    unsigned int vertexBufferID;
+    std::vector<unsigned int> indices;
+    std::shared_ptr<IndexBuffer> indexBuffer;
+    bool hasIndexBuffer;
 public:
     VertexBuffer();
     VertexBuffer(const std::vector<Vec3f>& _vertices);
+    VertexBuffer(const std::vector<Vec3f>& _vertices, const std::vector<unsigned int> _indices);
     VertexBuffer(const VertexBuffer& vertexBuffer);
     VertexBuffer(VertexBuffer&& vertexBuffer) noexcept;
     VertexBuffer& operator=(const VertexBuffer& vertexBuffer);
@@ -33,7 +38,7 @@ public:
 protected:
     void initBuffer() override;
 public:
-    void updateVertices(std::vector<Vec3f>& vertices);
+    void updateVertices(std::vector<Vec3f>& vertices, bool copy2memory = false);
     void bind() override;
     void unbind() override;
 public:
@@ -41,7 +46,15 @@ public:
         return vertices;
     }
 
-    inline unsigned int getVertexBufferID() const {
-        return vertexBufferID;
+    inline float* getMapBuffer() {
+        return (float*)glMapBuffer(GL_ARRAY_BUFFER, GL_READ_ONLY);
+    }
+
+    inline std::shared_ptr<IndexBuffer>& getIndexBuffer() {
+        return indexBuffer;
+    }
+
+    inline bool HasIndexBuffer() const {
+        return hasIndexBuffer;
     }
 };

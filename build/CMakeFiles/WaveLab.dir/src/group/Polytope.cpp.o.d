@@ -172,6 +172,8 @@ CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/../opengl/buffer/VertexArray.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/../opengl/buffer/Buffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/../opengl/buffer/../../../glew/glew.h \
+ /usr/include/GL/glu.h /usr/include/GL/gl.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/../opengl/buffer/VertexBuffer.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/../../glew/glew.h \
- /usr/include/GL/glu.h /usr/include/GL/gl.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/../opengl/buffer/IndexBuffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/../../glew/glew.h

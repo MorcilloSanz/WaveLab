@@ -402,7 +402,9 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/Polytope.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/../opengl/buffer/VertexArray.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/../opengl/buffer/Buffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/../opengl/buffer/../../../glew/glew.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/../opengl/buffer/VertexBuffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/../opengl/buffer/IndexBuffer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../opengl/shader/Shader.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../opengl/shader/../../../glew/glew.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.h

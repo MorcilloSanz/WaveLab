@@ -237,10 +237,24 @@ CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexBuffer.cpp -o CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.s
 
+CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o: CMakeFiles/WaveLab.dir/flags.make
+CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o: ../src/opengl/buffer/IndexBuffer.cpp
+CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o -MF CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o.d -o CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/IndexBuffer.cpp
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/IndexBuffer.cpp > CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.i
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/IndexBuffer.cpp -o CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.s
+
 CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o: ../src/opengl/shader/Shader.cpp
 CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o -MF CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o.d -o CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.cpp
 
 CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.s: cmake_force
 CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: ../src/group/Polytope.cpp
 CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o -MF CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o.d -o CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Polytope.cpp
 
 CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.s: cmake_force
 CMakeFiles/WaveLab.dir/src/group/Group.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/src/group/Group.cpp.o: ../src/group/Group.cpp
 CMakeFiles/WaveLab.dir/src/group/Group.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/WaveLab.dir/src/group/Group.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/WaveLab.dir/src/group/Group.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/group/Group.cpp.o -MF CMakeFiles/WaveLab.dir/src/group/Group.cpp.o.d -o CMakeFiles/WaveLab.dir/src/group/Group.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Group.cpp
 
 CMakeFiles/WaveLab.dir/src/group/Group.cpp.i: cmake_force
@@ -282,7 +296,7 @@ CMakeFiles/WaveLab.dir/src/group/Group.cpp.s: cmake_force
 CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o: ../src/renderer/Renderer.cpp
 CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o -MF CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o.d -o CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.cpp
 
 CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.s: cmake_force
 CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o: CMakeFiles/WaveLab.dir/flags.make
 CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o: ../src/renderer/Camera.cpp
 CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o: CMakeFiles/WaveLab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o -MF CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o.d -o CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.cpp
 
 CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.i: cmake_force
@@ -321,6 +335,7 @@ WaveLab_OBJECTS = \
 "CMakeFiles/WaveLab.dir/src/window/Window.cpp.o" \
 "CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o" \
 "CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o" \
+"CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o" \
 "CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o" \
 "CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o" \
 "CMakeFiles/WaveLab.dir/src/group/Group.cpp.o" \
@@ -342,6 +357,7 @@ WaveLab: CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/src/window/Window.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o
+WaveLab: CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/src/group/Group.cpp.o
@@ -349,7 +365,7 @@ WaveLab: CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o
 WaveLab: CMakeFiles/WaveLab.dir/build.make
 WaveLab: CMakeFiles/WaveLab.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable WaveLab"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/morcillosanz/Desktop/GitHub/WaveLab/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable WaveLab"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/WaveLab.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

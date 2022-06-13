@@ -11,9 +11,10 @@ class Polytope {
 private:
     std::shared_ptr<VertexArray> vertexArray;
     std::shared_ptr<VertexBuffer> vertexBuffer;
-    unsigned int vertexLength;
+    unsigned int vertexLength, indicesLength;
 public:
     Polytope(const std::vector<Vec3f>& vertices);
+    Polytope(const std::vector<Vec3f>& vertices, const std::vector<unsigned int> indices);
     Polytope() = default;
     ~Polytope() = default;
 public:

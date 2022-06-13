@@ -1607,7 +1607,9 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp \
   ../src/group/Polytope.h \
   ../src/opengl/buffer/VertexArray.h \
   ../src/opengl/buffer/Buffer.h \
+  ../glew/glew.h \
   ../src/opengl/buffer/VertexBuffer.h \
+  ../src/opengl/buffer/IndexBuffer.h \
   ../src/opengl/shader/Shader.h \
   ../glew/glew.h \
   ../src/renderer/Camera.h
@@ -2038,7 +2040,11 @@ CMakeFiles/WaveLab.dir/src/group/Group.cpp.o: ../src/group/Group.cpp \
   /usr/include/c++/11/pstl/execution_defs.h \
   ../src/opengl/buffer/VertexArray.h \
   ../src/opengl/buffer/Buffer.h \
-  ../src/opengl/buffer/VertexBuffer.h
+  ../glew/glew.h \
+  /usr/include/GL/glu.h \
+  /usr/include/GL/gl.h \
+  ../src/opengl/buffer/VertexBuffer.h \
+  ../src/opengl/buffer/IndexBuffer.h
 
 CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: ../src/group/Polytope.cpp \
   /usr/include/stdc-predef.h \
@@ -2252,15 +2258,16 @@ CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: ../src/group/Polytope.cpp \
   /usr/include/c++/11/pstl/execution_defs.h \
   ../src/opengl/buffer/VertexArray.h \
   ../src/opengl/buffer/Buffer.h \
-  ../src/opengl/buffer/VertexBuffer.h \
   ../glew/glew.h \
   /usr/include/GL/glu.h \
-  /usr/include/GL/gl.h
+  /usr/include/GL/gl.h \
+  ../src/opengl/buffer/VertexBuffer.h \
+  ../src/opengl/buffer/IndexBuffer.h \
+  ../glew/glew.h
 
-CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o: ../src/opengl/buffer/VertexArray.cpp \
+CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o: ../src/opengl/buffer/IndexBuffer.cpp \
   /usr/include/stdc-predef.h \
-  ../src/opengl/buffer/VertexArray.h \
-  ../src/opengl/buffer/Buffer.h \
+  ../src/opengl/buffer/IndexBuffer.h \
   /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -2439,7 +2446,41 @@ CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o: ../src/opengl/buffer
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc \
+  ../src/opengl/buffer/Buffer.h \
   ../glew/glew.h \
+  /usr/include/GL/glu.h \
+  /usr/include/GL/gl.h \
+  /usr/include/string.h \
+  /usr/include/strings.h
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o: ../src/opengl/buffer/VertexArray.cpp \
+  /usr/include/stdc-predef.h \
+  ../src/opengl/buffer/VertexArray.h \
+  ../src/opengl/buffer/Buffer.h \
+  ../glew/glew.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/GL/glu.h \
   /usr/include/GL/gl.h
 
@@ -2629,12 +2670,37 @@ CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o: ../src/opengl/buffe
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_tempbuf.h \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
   ../src/opengl/buffer/Buffer.h \
-  /usr/include/string.h \
-  /usr/include/strings.h \
   ../glew/glew.h \
   /usr/include/GL/glu.h \
-  /usr/include/GL/gl.h
+  /usr/include/GL/gl.h \
+  ../src/opengl/buffer/IndexBuffer.h \
+  /usr/include/string.h \
+  /usr/include/strings.h
 
 CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o: ../src/opengl/shader/Shader.cpp \
   /usr/include/stdc-predef.h \
@@ -3755,11 +3821,13 @@ CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o: ../src/renderer/Renderer.cpp
   ../src/group/Polytope.h \
   ../src/opengl/buffer/VertexArray.h \
   ../src/opengl/buffer/Buffer.h \
-  ../src/opengl/buffer/VertexBuffer.h \
-  ../src/opengl/shader/Shader.h \
   ../glew/glew.h \
   /usr/include/GL/glu.h \
   /usr/include/GL/gl.h \
+  ../src/opengl/buffer/VertexBuffer.h \
+  ../src/opengl/buffer/IndexBuffer.h \
+  ../src/opengl/shader/Shader.h \
+  ../glew/glew.h \
   ../src/renderer/Camera.h \
   ../glew/glew.h
 
@@ -3988,6 +4056,8 @@ CMakeFiles/WaveLab.dir/src/window/Window.cpp.o: ../src/window/Window.cpp \
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
 ../src/opengl/buffer/VertexBuffer.cpp:
+
+../src/opengl/buffer/IndexBuffer.cpp:
 
 ../src/group/Polytope.cpp:
 
@@ -4362,6 +4432,8 @@ CMakeFiles/WaveLab.dir/src/window/Window.cpp.o: ../src/window/Window.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
+
+../src/opengl/buffer/IndexBuffer.h:
 
 ../glm/detail/type_vec2.inl:
 

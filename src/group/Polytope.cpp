@@ -3,9 +3,16 @@
 #include "../../glew/glew.h"
 
 Polytope::Polytope(const std::vector<Vec3f>& vertices)
-    : vertexLength(vertices.size()) {
+    : vertexLength(vertices.size()), indicesLength(0) {
     vertexArray = std::make_shared<VertexArray>();
     vertexBuffer = std::make_shared<VertexBuffer>(vertices);
+    unbind();
+}
+
+Polytope::Polytope(const std::vector<Vec3f>& vertices, const std::vector<unsigned int> indices) 
+    : vertexLength(vertices.size()), indicesLength(indices.size()) {
+    vertexArray = std::make_shared<VertexArray>();
+    vertexBuffer = std::make_shared<VertexBuffer>(vertices, indices);
     unbind();
 }
 
@@ -33,6 +40,7 @@ void Polytope::draw(unsigned int primitive, bool showWire) {
     bind();
     if(!showWire)   glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     else            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    glDrawArrays(primitive, 0, vertexLength);
+    if(!vertexBuffer->HasIndexBuffer()) glDrawArrays(primitive, 0, vertexLength);
+    else    glDrawElements(primitive, indicesLength, GL_UNSIGNED_INT, 0);
     unbind();
 }
