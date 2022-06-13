@@ -29,11 +29,17 @@ std::vector<Vec3f> vertices2 = {
 Polytope polytope2(vertices2);
 
 // Group
-Group group(GL_TRIANGLES);      // OpenGL primitive for drawing
-group.add(polytope2);           // Add polytopes to group
-group.add(polytope);            // Add polytopes to group
+Group group(GL_TRIANGLES);
+group.add(polytope);
+group.add(polytope2);
+group.rotate(45, glm::vec3(0, 0, 1));
 
-renderer.addGroup(group);       // Add group to renderer
+renderer.addGroup(group);
+
+// Main loop
+while (!window.windowShouldClose()) {
+    . . .
+}
 ```
 
 ## Basic drawing
