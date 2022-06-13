@@ -20,6 +20,7 @@ set(HEADERS
         src/opengl/buffer/Buffer.h
         src/opengl/buffer/VertexArray.h
         src/opengl/buffer/VertexBuffer.h
+        src/opengl/buffer/IndexBuffer.h
         src/opengl/shader/Shader.h
         src/group/Polytope.h
         src/group/Group.h
@@ -42,6 +43,7 @@ set(SOURCES
         src/window/Window.cpp
         src/opengl/buffer/VertexArray.cpp
         src/opengl/buffer/VertexBuffer.cpp
+        src/opengl/buffer/IndexBuffer.cpp
         src/opengl/shader/Shader.cpp
         src/group/Polytope.cpp
         src/group/Group.cpp

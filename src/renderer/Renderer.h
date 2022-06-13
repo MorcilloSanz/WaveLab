@@ -18,11 +18,10 @@ private:
 public:
     Renderer();
     ~Renderer() = default;
-private:
-    void enableBlending();
-    void enableAntialiasing();
 public:
     void setCamera(const Camera& camera);
+    void enableBlending();
+    void enableAntialiasing();
     void render();
     void clear();
 public:

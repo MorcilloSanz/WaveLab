@@ -1,36 +1,35 @@
 #include "VertexArray.h"
 
-#include "../../../glew/glew.h"
-
-VertexArray::VertexArray() {
+VertexArray::VertexArray() 
+    : Buffer() {
     initBuffer();
 }
 
-VertexArray::VertexArray(const VertexArray& vertexArray)
-    : vertexArrayID(vertexArray.vertexArrayID) {
+VertexArray::VertexArray(const VertexArray& vertexArray) {
+    id = vertexArray.id;
 }
 
-VertexArray::VertexArray(VertexArray&& vertexArray) noexcept 
-    : vertexArrayID(vertexArray.vertexArrayID) {
+VertexArray::VertexArray(VertexArray&& vertexArray) noexcept {
+    id = vertexArray.id;
 }
 
 VertexArray& VertexArray::operator=(const VertexArray& vertexArray) {
-    vertexArrayID = vertexArray.vertexArrayID;
+    id = vertexArray.id;
     return *this;
 }
 
 VertexArray::~VertexArray() {
     unbind();
-    glDeleteVertexArrays(1, &vertexArrayID);
+    glDeleteVertexArrays(1, &id);
 }
 
 void VertexArray::initBuffer() {
-    glGenVertexArrays(1, &vertexArrayID);
-    glBindVertexArray(vertexArrayID);
+    glGenVertexArrays(1, &id);
+    glBindVertexArray(id);
 }
 
 void VertexArray::bind() {
-    glBindVertexArray(vertexArrayID);
+    glBindVertexArray(id);
 }
 
 void VertexArray::unbind() {

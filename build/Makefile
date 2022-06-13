@@ -393,6 +393,30 @@ src/group/Polytope.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.s
 .PHONY : src/group/Polytope.cpp.s
 
+src/opengl/buffer/IndexBuffer.o: src/opengl/buffer/IndexBuffer.cpp.o
+.PHONY : src/opengl/buffer/IndexBuffer.o
+
+# target to build an object file
+src/opengl/buffer/IndexBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o
+.PHONY : src/opengl/buffer/IndexBuffer.cpp.o
+
+src/opengl/buffer/IndexBuffer.i: src/opengl/buffer/IndexBuffer.cpp.i
+.PHONY : src/opengl/buffer/IndexBuffer.i
+
+# target to preprocess a source file
+src/opengl/buffer/IndexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.i
+.PHONY : src/opengl/buffer/IndexBuffer.cpp.i
+
+src/opengl/buffer/IndexBuffer.s: src/opengl/buffer/IndexBuffer.cpp.s
+.PHONY : src/opengl/buffer/IndexBuffer.s
+
+# target to generate assembly for a file
+src/opengl/buffer/IndexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.s
+.PHONY : src/opengl/buffer/IndexBuffer.cpp.s
+
 src/opengl/buffer/VertexArray.o: src/opengl/buffer/VertexArray.cpp.o
 .PHONY : src/opengl/buffer/VertexArray.o
 
@@ -579,6 +603,9 @@ help:
 	@echo "... src/group/Polytope.o"
 	@echo "... src/group/Polytope.i"
 	@echo "... src/group/Polytope.s"
+	@echo "... src/opengl/buffer/IndexBuffer.o"
+	@echo "... src/opengl/buffer/IndexBuffer.i"
+	@echo "... src/opengl/buffer/IndexBuffer.s"
 	@echo "... src/opengl/buffer/VertexArray.o"
 	@echo "... src/opengl/buffer/VertexArray.i"
 	@echo "... src/opengl/buffer/VertexArray.s"
