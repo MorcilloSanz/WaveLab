@@ -14,6 +14,8 @@ public:
         updateViewPort(width, height);
     }
 
+    TextureRenderer() = default;
+
     ~TextureRenderer() {
         glDeleteBuffers(1, &framebuffer);
         glDeleteBuffers(1, &textureColorbuffer);
@@ -39,11 +41,13 @@ public:
         if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
             std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
+        glViewport(0, 0, width, height);
     }
 
     void renderToTexture() {
         glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
         glEnable(GL_DEPTH_TEST); // enable depth testing (is disabled for rendering screen-space quad)
+        glEnable(GL_MULTISAMPLE);
     }
 
     void renderToDefault() {

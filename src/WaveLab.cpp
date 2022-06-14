@@ -9,7 +9,7 @@
 
 int main(void) {
 
-    Window window("WaveLab", 600, 600);
+    Window window("WaveLab", 800, 500);
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -49,20 +49,19 @@ int main(void) {
     Polytope polytope(vertices, indices);
 
     std::vector<Vec3f> vertices2 = {
-        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.2f, 1.0f),
-        Vec3f(-0.5f, -0.5f, 0.0f,  1.0f, 0.2f, 1.0f),
-        Vec3f(0.0f,  0.5f, 0.0f,  1.0f, 0.2f, 1.0f)
+        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
+        Vec3f(0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
     };
     Polytope polytope2(vertices2);
 
     // Group
     Group group(GL_TRIANGLES);
-    group.add(polytope);
     group.add(polytope2);
+    group.add(polytope);
     group.rotate(45, glm::vec3(0, 0, 1));
     
     renderer.addGroup(group);
-
 
     TextureRenderer textureRenderer(window.getWidth(), window.getHeight());
 
@@ -73,6 +72,7 @@ int main(void) {
         renderer.clear();
 
         // Draw to texture instead of default
+        textureRenderer.updateViewPort(window.getWidth(), window.getHeight());
         textureRenderer.renderToTexture();
 
         // Render
@@ -89,7 +89,7 @@ int main(void) {
             Vec3f(0.0f + offset,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
         };
         polytope2.updateVertices(vertices);
-        offset += 0.001;
+        offset += 0.005;
 
         // ImGUI
         {
@@ -127,8 +127,11 @@ int main(void) {
             }
             // Render window
             {
-                ImGui::Begin("Render");       
-                //ImGui::Image((void*)(intptr_t)textureColorbuffer, ImVec2(window.getWidth(), window.getHeight()));    
+                /*
+                bool p_open = true;
+                ImGui::Begin("Render", &p_open, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);   
+                */    
+                ImGui::Begin("Renderer");       
                 ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());      
                 ImGui::End();
             }
