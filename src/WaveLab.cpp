@@ -5,6 +5,7 @@
 #include "ImguiStyles.h"
 
 #include "renderer/Renderer.h"
+#include "renderer/TextureRenderer.h"
 
 int main(void) {
 
@@ -62,14 +63,23 @@ int main(void) {
     
     renderer.addGroup(group);
 
+
+    TextureRenderer textureRenderer(window.getWidth(), window.getHeight());
+
     // Main loop
     while (!window.windowShouldClose()) {
 
         // Clear
         renderer.clear();
 
+        // Draw to texture instead of default
+        textureRenderer.renderToTexture();
+
         // Render
         renderer.render();
+
+        // Go back to default
+        textureRenderer.renderToDefault();	
         
         // Update polytope vbo vertices
         static float offset = 0.01f;
@@ -117,7 +127,9 @@ int main(void) {
             }
             // Render window
             {
-                ImGui::Begin("Render");                         
+                ImGui::Begin("Render");       
+                //ImGui::Image((void*)(intptr_t)textureColorbuffer, ImVec2(window.getWidth(), window.getHeight()));    
+                ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());      
                 ImGui::End();
             }
             // Rendering

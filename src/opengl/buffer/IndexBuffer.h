@@ -13,7 +13,7 @@ public:
     IndexBuffer(IndexBuffer&& indexBuffer) noexcept;
     IndexBuffer& operator=(const IndexBuffer& indexBuffer);
     ~IndexBuffer();
-protected:
+private:
     void initBuffer() override;
 public:
     void bind() override;
