@@ -66,6 +66,11 @@
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/opengl/buffer/FrameBuffer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/FrameBuffer.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/FrameBuffer.cpp"
+},
+{
+  "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
   "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.cpp",
   "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.cpp"
 },

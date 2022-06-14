@@ -1612,7 +1612,9 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp \
   ../src/opengl/buffer/IndexBuffer.h \
   ../src/opengl/shader/Shader.h \
   ../glew/glew.h \
-  ../src/renderer/Camera.h
+  ../src/renderer/Camera.h \
+  ../src/renderer/TextureRenderer.h \
+  ../glew/glew.h
 
 CMakeFiles/WaveLab.dir/src/group/Group.cpp.o: ../src/group/Group.cpp \
   /usr/include/stdc-predef.h \
@@ -2264,6 +2266,32 @@ CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o: ../src/group/Polytope.cpp \
   ../src/opengl/buffer/VertexBuffer.h \
   ../src/opengl/buffer/IndexBuffer.h \
   ../glew/glew.h
+
+CMakeFiles/WaveLab.dir/src/opengl/buffer/FrameBuffer.cpp.o: ../src/opengl/buffer/FrameBuffer.cpp \
+  /usr/include/stdc-predef.h \
+  ../src/opengl/buffer/FrameBuffer.h \
+  ../src/opengl/buffer/Buffer.h \
+  ../glew/glew.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/GL/glu.h \
+  /usr/include/GL/gl.h
 
 CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o: ../src/opengl/buffer/IndexBuffer.cpp \
   /usr/include/stdc-predef.h \
@@ -4059,9 +4087,15 @@ CMakeFiles/WaveLab.dir/src/window/Window.cpp.o: ../src/window/Window.cpp \
 
 ../src/opengl/buffer/IndexBuffer.cpp:
 
+../src/opengl/buffer/FrameBuffer.h:
+
+../src/opengl/buffer/FrameBuffer.cpp:
+
 ../src/group/Polytope.cpp:
 
 ../src/group/Group.cpp:
+
+../src/renderer/TextureRenderer.h:
 
 ../src/renderer/Camera.h:
 

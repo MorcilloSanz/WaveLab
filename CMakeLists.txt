@@ -16,15 +16,18 @@ set(HEADERS
         imgui/imstb_textedit.h
         imgui/imstb_truetype.h
         # Source
+        src/ImguiStyles.h
         src/window/Window.h
         src/opengl/buffer/Buffer.h
         src/opengl/buffer/VertexArray.h
         src/opengl/buffer/VertexBuffer.h
         src/opengl/buffer/IndexBuffer.h
+        src/opengl/buffer/FrameBuffer.h
         src/opengl/shader/Shader.h
         src/group/Polytope.h
         src/group/Group.h
         src/renderer/Renderer.h
+        src/renderer/TextureRenderer.h
         src/renderer/Camera.h
 )
 
@@ -44,6 +47,7 @@ set(SOURCES
         src/opengl/buffer/VertexArray.cpp
         src/opengl/buffer/VertexBuffer.cpp
         src/opengl/buffer/IndexBuffer.cpp
+        src/opengl/buffer/FrameBuffer.cpp
         src/opengl/shader/Shader.cpp
         src/group/Polytope.cpp
         src/group/Group.cpp

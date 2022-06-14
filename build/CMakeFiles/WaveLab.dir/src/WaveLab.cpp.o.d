@@ -407,4 +407,6 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../group/../opengl/buffer/IndexBuffer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../opengl/shader/Shader.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../opengl/shader/../../../glew/glew.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/TextureRenderer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/../../glew/glew.h

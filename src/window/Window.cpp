@@ -19,9 +19,7 @@ void Window::initWindow() {
         return;
     }
     window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
-    if (!window) {
-        terminate();
-    }
+    if (!window) terminate();
     glfwMakeContextCurrent(window);
     // Init glew
     initGlew();
