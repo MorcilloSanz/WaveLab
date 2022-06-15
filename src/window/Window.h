@@ -11,8 +11,12 @@
 
 class Window {
 private:
+    struct CallbackManager {
+        static int width, height;
+        static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+    };
+private:
     GLFWwindow* window;
-    unsigned int width, height;
     std::string title;
 public:
     Window(const std::string& _title, unsigned int _width, unsigned int _height);
@@ -37,10 +41,10 @@ public:
     }
 
     inline unsigned int getWidth() const {
-        return width;
+        return CallbackManager::width;
     }
 
     inline unsigned int getHeight() const {
-        return height;
+        return CallbackManager::height;
     }
 };
