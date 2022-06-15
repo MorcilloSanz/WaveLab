@@ -46,52 +46,52 @@
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/window/Window.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/window/Window.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/window/Window.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/window/Window.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/window/Window.cpp"
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexArray.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexArray.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexArray.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/VertexArray.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexArray.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexArray.cpp"
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/opengl/buffer/VertexBuffer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexBuffer.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/VertexBuffer.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/VertexBuffer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexBuffer.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexBuffer.cpp"
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/opengl/buffer/IndexBuffer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/IndexBuffer.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/IndexBuffer.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/IndexBuffer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/IndexBuffer.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/IndexBuffer.cpp"
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/opengl/buffer/FrameBuffer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/FrameBuffer.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/buffer/FrameBuffer.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/FrameBuffer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/FrameBuffer.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/FrameBuffer.cpp"
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/opengl/shader/Shader.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/opengl/shader/Shader.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/opengl/shader/Shader.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/shader/Shader.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/shader/Shader.cpp"
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/group/Polytope.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Polytope.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Polytope.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Polytope.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Polytope.cpp"
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/group/Group.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Group.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/group/Group.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Group.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Group.cpp"
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/renderer/Renderer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Renderer.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Renderer.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Renderer.cpp"
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/renderer/Camera.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/renderer/Camera.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/renderer/Camera.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.cpp"
 }
 ]

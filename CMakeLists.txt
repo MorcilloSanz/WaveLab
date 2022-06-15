@@ -17,18 +17,18 @@ set(HEADERS
         imgui/imstb_truetype.h
         # Source
         src/ImguiStyles.h
-        src/window/Window.h
-        src/opengl/buffer/Buffer.h
-        src/opengl/buffer/VertexArray.h
-        src/opengl/buffer/VertexBuffer.h
-        src/opengl/buffer/IndexBuffer.h
-        src/opengl/buffer/FrameBuffer.h
-        src/opengl/shader/Shader.h
-        src/group/Polytope.h
-        src/group/Group.h
-        src/renderer/Renderer.h
-        src/renderer/TextureRenderer.h
-        src/renderer/Camera.h
+        src/engine/window/Window.h
+        src/engine/opengl/buffer/Buffer.h
+        src/engine/opengl/buffer/VertexArray.h
+        src/engine/opengl/buffer/VertexBuffer.h
+        src/engine/opengl/buffer/IndexBuffer.h
+        src/engine/opengl/buffer/FrameBuffer.h
+        src/engine/opengl/shader/Shader.h
+        src/engine/group/Polytope.h
+        src/engine/group/Group.h
+        src/engine/renderer/Renderer.h
+        src/engine/renderer/TextureRenderer.h
+        src/engine/renderer/Camera.h
 )
 
 set(SOURCES
@@ -43,16 +43,16 @@ set(SOURCES
         imgui/imgui_widgets.cpp
         # Source
         src/WaveLab.cpp
-        src/window/Window.cpp
-        src/opengl/buffer/VertexArray.cpp
-        src/opengl/buffer/VertexBuffer.cpp
-        src/opengl/buffer/IndexBuffer.cpp
-        src/opengl/buffer/FrameBuffer.cpp
-        src/opengl/shader/Shader.cpp
-        src/group/Polytope.cpp
-        src/group/Group.cpp
-        src/renderer/Renderer.cpp
-        src/renderer/Camera.cpp
+        src/engine/window/Window.cpp
+        src/engine/opengl/buffer/VertexArray.cpp
+        src/engine/opengl/buffer/VertexBuffer.cpp
+        src/engine/opengl/buffer/IndexBuffer.cpp
+        src/engine/opengl/buffer/FrameBuffer.cpp
+        src/engine/opengl/shader/Shader.cpp
+        src/engine/group/Polytope.cpp
+        src/engine/group/Group.cpp
+        src/engine/renderer/Renderer.cpp
+        src/engine/renderer/Camera.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})

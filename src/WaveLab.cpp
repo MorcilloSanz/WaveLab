@@ -1,11 +1,11 @@
 #include <iostream>
 
-#include "window/Window.h"
+#include "engine/window/Window.h"
 
 #include "ImguiStyles.h"
 
-#include "renderer/Renderer.h"
-#include "renderer/TextureRenderer.h"
+#include "engine/renderer/Renderer.h"
+#include "engine/renderer/TextureRenderer.h"
 
 void dockSpace(bool* p_open);
 
