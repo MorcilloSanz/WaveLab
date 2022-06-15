@@ -8,10 +8,12 @@
 #include "engine/renderer/TextureRenderer.h"
 
 void dockSpace(bool* p_open);
+void mouseFun(double xpos, double ypos);
 
 int main(void) {
 
-    Window window("WaveLab", 800, 500);
+    Window window("WaveLab", 1080, 720);
+    window.setMouseFun(mouseFun);
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -226,4 +228,8 @@ void dockSpace(bool* p_open) {
     }
 
     ImGui::End();
+}
+
+void mouseFun(double xpos, double ypos) {
+   
 }
