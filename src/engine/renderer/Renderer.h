@@ -12,7 +12,7 @@
 class Renderer {
 private:
     std::shared_ptr<ShaderProgram> shaderProgram;
-    std::vector<Group> groups;
+    std::vector<Group*> groups;
     Camera camera;
     bool hasCamera;
 public:
@@ -25,19 +25,21 @@ public:
     void render();
     void clear();
 public:
-    inline void addGroup(const Group& group) {
-        groups.push_back(group);
+    inline void addGroup(Group& group) {
+        groups.push_back(&group);
     }
 
-    inline Camera& getCamera() {
-        return camera;
+    inline void removeGroup(int index) {
+        groups.erase(groups.begin() + index);
     }
 
-    inline std::vector<Group>& getGroups() {
-        return groups;
+    inline Group* getGroup(int index) {
+        return groups[index];
     }
 
-    inline std::shared_ptr<ShaderProgram>& getShaderProgram() {
-        return shaderProgram;
-    }
+    inline Camera& getCamera() { return camera; }
+
+    inline std::vector<Group*>& getGroups() { return groups; }
+
+    inline std::shared_ptr<ShaderProgram>& getShaderProgram() { return shaderProgram; }
 };

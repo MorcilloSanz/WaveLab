@@ -1383,15 +1383,6 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp \
   /usr/include/GL/glu.h \
   /usr/include/GL/gl.h \
   /usr/include/GLFW/glfw3.h \
-  ../src/ImguiStyles.h \
-  ../imgui/imgui.h \
-  ../imgui/imconfig.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
-  /usr/include/string.h \
-  /usr/include/strings.h \
-  /usr/include/assert.h \
-  ../imgui/backends/imgui_impl_opengl3.h \
-  ../imgui/backends/imgui_impl_glfw.h \
   ../src/engine/renderer/Renderer.h \
   ../src/engine/group/Group.h \
   ../glm/vec3.hpp \
@@ -1400,6 +1391,7 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp \
   ../glm/detail/qualifier.hpp \
   ../glm/detail/setup.hpp \
   /usr/include/c++/11/cassert \
+  /usr/include/assert.h \
   /usr/include/c++/11/cstddef \
   ../glm/simd/platform.h \
   ../glm/detail/type_vec3.inl \
@@ -1603,6 +1595,8 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp \
   ../glm/ext/vector_uint1.hpp \
   ../glm/ext/vector_uint1_sized.hpp \
   /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   ../glm/gtc/type_ptr.inl \
   ../src/engine/group/Polytope.h \
   ../src/engine/opengl/buffer/VertexArray.h \
@@ -1614,7 +1608,13 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp \
   ../glew/glew.h \
   ../src/engine/renderer/Camera.h \
   ../src/engine/renderer/TextureRenderer.h \
-  ../glew/glew.h
+  ../glew/glew.h \
+  ../src/ImguiStyles.h \
+  ../imgui/imgui.h \
+  ../imgui/imconfig.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+  ../imgui/backends/imgui_impl_opengl3.h \
+  ../imgui/backends/imgui_impl_glfw.h
 
 CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o: ../src/engine/group/Group.cpp \
   /usr/include/stdc-predef.h \
@@ -2266,32 +2266,6 @@ CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o: ../src/engine/group/Poly
   ../src/engine/opengl/buffer/VertexBuffer.h \
   ../src/engine/opengl/buffer/IndexBuffer.h \
   ../glew/glew.h
-
-CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/FrameBuffer.cpp.o: ../src/engine/opengl/buffer/FrameBuffer.cpp \
-  /usr/include/stdc-predef.h \
-  ../src/engine/opengl/buffer/FrameBuffer.h \
-  ../src/engine/opengl/buffer/Buffer.h \
-  ../glew/glew.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
-  /usr/include/features.h \
-  /usr/include/features-time64.h \
-  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
-  /usr/include/x86_64-linux-gnu/bits/timesize.h \
-  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
-  /usr/include/x86_64-linux-gnu/bits/long-double.h \
-  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
-  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
-  /usr/include/x86_64-linux-gnu/bits/types.h \
-  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
-  /usr/include/x86_64-linux-gnu/bits/time64.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/include/GL/glu.h \
-  /usr/include/GL/gl.h
 
 CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/IndexBuffer.cpp.o: ../src/engine/opengl/buffer/IndexBuffer.cpp \
   /usr/include/stdc-predef.h \
@@ -4132,8 +4106,6 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 
 ../glm/ext/quaternion_transform.hpp:
 
-../glm/ext/quaternion_trigonometric.hpp:
-
 /usr/include/c++/11/exception:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vpopcntdqvlintrin.h:
@@ -4180,11 +4152,7 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 
 ../glm/ext/matrix_double3x3.hpp:
 
-../src/engine/opengl/buffer/FrameBuffer.cpp:
-
 ../glm/ext/quaternion_double.hpp:
-
-../src/engine/opengl/buffer/FrameBuffer.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmi2intrin.h:
 
@@ -4636,6 +4604,10 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 
 ../src/engine/group/Group.h:
 
+../src/ImguiStyles.h:
+
+/usr/include/c++/11/tr1/poly_hermite.tcc:
+
 ../imgui/backends/imgui_impl_opengl3.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
@@ -5042,6 +5014,8 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 
 ../glm/ext/matrix_transform.inl:
 
+../glm/ext/quaternion_trigonometric.hpp:
+
 /usr/include/c++/11/bits/stl_algo.h:
 
 ../glm/ext/vector_float1_precision.hpp:
@@ -5079,10 +5053,6 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 ../glm/detail/type_mat3x4.inl:
 
 /usr/include/c++/11/pstl/glue_memory_defs.h:
-
-/usr/include/c++/11/tr1/poly_hermite.tcc:
-
-../src/ImguiStyles.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/wbnoinvdintrin.h:
 

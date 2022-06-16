@@ -22,7 +22,6 @@ set(HEADERS
         src/engine/opengl/buffer/VertexArray.h
         src/engine/opengl/buffer/VertexBuffer.h
         src/engine/opengl/buffer/IndexBuffer.h
-        src/engine/opengl/buffer/FrameBuffer.h
         src/engine/opengl/shader/Shader.h
         src/engine/group/Polytope.h
         src/engine/group/Group.h
@@ -47,7 +46,6 @@ set(SOURCES
         src/engine/opengl/buffer/VertexArray.cpp
         src/engine/opengl/buffer/VertexBuffer.cpp
         src/engine/opengl/buffer/IndexBuffer.cpp
-        src/engine/opengl/buffer/FrameBuffer.cpp
         src/engine/opengl/shader/Shader.cpp
         src/engine/group/Polytope.cpp
         src/engine/group/Group.cpp

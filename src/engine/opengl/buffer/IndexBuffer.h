@@ -18,7 +18,7 @@ private:
 public:
     void bind() override;
     void unbind() override;
-    void updateIndices(const std::vector<unsigned int>& indices, bool copy2memory = true);
+    void updateIndices(const std::vector<unsigned int>& indices, bool copy2memory = false);
 public:
     inline std::vector<unsigned int>& getIndices() {
         return indices;

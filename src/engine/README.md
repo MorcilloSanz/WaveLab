@@ -74,15 +74,43 @@ offset += 0.001;
 ### updateBuffer copy flag
 ```cpp
 void updateVertices(std::vector<Vec3f>& vertices, bool copy2memory = false);
-void updateIndices(const std::vector<unsigned int>& indices, bool copy2memory = true);
+void updateIndices(const std::vector<unsigned int>& indices, bool copy2memory = false);
 ```
-When copy2memory is true, we save the new *std::vector<T>* in memory so, getting the new vertices or indices back is a faster task, but updating them is much slower.
-This is usefull when the buffer is being updated once in a while and getting the new data back
+When copy2memory is true, it makes the update slower but it allows you to get it back with the functions *VertexBuffer::getVertices()* and *IndexBuffer::getIndices()*
+*warning* compy2memory should always be false
 
-In the case of indices, copy2memory is true by default for security when rendering. If you know for sure that the amount of indices won't change, you can set copy2memory to false
-
-In order to get the data directly from GPU:
+In order to get the data directly from GPU use:
 ```cpp
-inline float* getMapBuffer();           // VertexBuffer
-inline unsigned int* getMapBuffer();    // IndexBuffer
+inline float* getMapBuffer();           // VertexBuffer::getMapBuffer()
+inline unsigned int* getMapBuffer();    // IndexBuffer::getMapBuffer()
+```
+
+## Render to a texture
+```cpp
+TextureRenderer textureRenderer(window.getWidth(), window.getHeight());
+
+// Main loop
+while (!window.windowShouldClose()) {
+
+    // Clear
+    renderer.clear();
+
+    // Draw to texture instead of default
+    textureRenderer.updateViewPort(window.getWidth(), window.getHeight());
+    textureRenderer.renderToTexture();
+
+    // Render
+    renderer.render();
+
+    // Go back to default
+    textureRenderer.renderToDefault();	
+}
+```
+
+This is useful for rendering into an ImGui window like:
+
+```cpp
+ImGui::Begin("Renderer");       
+ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());      
+ImGui::End();
 ```

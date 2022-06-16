@@ -29,10 +29,17 @@ void Polytope::unbind() {
     }
 }
 
-void Polytope::updateVertices(std::vector<Vec3f>& vertices) {
+void Polytope::updateVertices(std::vector<Vec3f>& vertices, bool copy2memory) {
     if(vertexBuffer != nullptr) {
-        vertexBuffer->updateVertices(vertices);
+        vertexBuffer->updateVertices(vertices, copy2memory);
         vertexLength = vertices.size();
+    }
+}
+
+void Polytope::updateIndices(std::vector<unsigned int>& indices, bool copy2memory) {
+    if(vertexBuffer != nullptr && vertexBuffer->getIndexBuffer() != nullptr) {
+        vertexBuffer->getIndexBuffer()->updateIndices(indices, copy2memory);
+        indicesLength = indices.size();
     }
 }
 

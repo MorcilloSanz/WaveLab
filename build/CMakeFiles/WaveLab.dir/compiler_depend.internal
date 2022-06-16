@@ -1392,15 +1392,6 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o
  /usr/include/GL/glu.h
  /usr/include/GL/gl.h
  /usr/include/GLFW/glfw3.h
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/ImguiStyles.h
- /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui.h
- /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imconfig.h
- /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h
- /usr/include/string.h
- /usr/include/strings.h
- /usr/include/assert.h
- /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_opengl3.h
- /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_glfw.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Renderer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Group.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/glm/vec3.hpp
@@ -1409,6 +1400,7 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/glm/detail/qualifier.hpp
  /home/morcillosanz/Desktop/GitHub/WaveLab/glm/detail/setup.hpp
  /usr/include/c++/11/cassert
+ /usr/include/assert.h
  /usr/include/c++/11/cstddef
  /home/morcillosanz/Desktop/GitHub/WaveLab/glm/simd/platform.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/glm/detail/type_vec3.inl
@@ -1612,6 +1604,8 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/glm/ext/vector_uint1.hpp
  /home/morcillosanz/Desktop/GitHub/WaveLab/glm/ext/vector_uint1_sized.hpp
  /usr/include/c++/11/cstring
+ /usr/include/string.h
+ /usr/include/strings.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/glm/gtc/type_ptr.inl
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Polytope.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexArray.h
@@ -1624,6 +1618,12 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/TextureRenderer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/ImguiStyles.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imgui.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/imconfig.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_opengl3.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/imgui/backends/imgui_impl_glfw.h
 
 CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Group.cpp
@@ -2277,33 +2277,6 @@ CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/IndexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
-
-CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/FrameBuffer.cpp.o
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/FrameBuffer.cpp
- /usr/include/stdc-predef.h
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/FrameBuffer.h
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/Buffer.h
- /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
- /usr/include/stdint.h
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
- /usr/include/features.h
- /usr/include/features-time64.h
- /usr/include/x86_64-linux-gnu/bits/wordsize.h
- /usr/include/x86_64-linux-gnu/bits/timesize.h
- /usr/include/x86_64-linux-gnu/sys/cdefs.h
- /usr/include/x86_64-linux-gnu/bits/long-double.h
- /usr/include/x86_64-linux-gnu/gnu/stubs.h
- /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/include/x86_64-linux-gnu/bits/types.h
- /usr/include/x86_64-linux-gnu/bits/typesizes.h
- /usr/include/x86_64-linux-gnu/bits/time64.h
- /usr/include/x86_64-linux-gnu/bits/wchar.h
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h
- /usr/include/GL/glu.h
- /usr/include/GL/gl.h
 
 CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/IndexBuffer.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/IndexBuffer.cpp

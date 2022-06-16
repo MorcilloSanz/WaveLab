@@ -34,14 +34,14 @@ void Renderer::render() {
         view = camera.getViewMatrix();
     }
 
-    for(Group& group : groups) {
-        if(group.isVisible()) {
+    for(Group* group : groups) {
+        if(group->isVisible()) {
             // Update ModelViewProjection matrix
-            glm::mat4 model = group.getModelMatrix();
+            glm::mat4 model = group->getModelMatrix();
             glm::mat4 mvp = projection * view * model;
             shaderProgram->uniformMat4("mvp", mvp);
             // Draw call
-            group.draw();
+            group->draw();
         }
     }
 }

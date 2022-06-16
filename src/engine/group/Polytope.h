@@ -20,7 +20,8 @@ public:
 public:
     void bind();
     void unbind();
-    void updateVertices(std::vector<Vec3f>& vertices);
+    void updateVertices(std::vector<Vec3f>& vertices, bool copy2memory = false);
+    void updateIndices(std::vector<unsigned int>& indices, bool copy2memory = false);
     void draw(unsigned int primitive, bool showWire = false);
 public:
     inline std::shared_ptr<VertexArray>& getVertexArray() {

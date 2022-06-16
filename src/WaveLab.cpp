@@ -2,10 +2,10 @@
 
 #include "engine/window/Window.h"
 
-#include "ImguiStyles.h"
-
 #include "engine/renderer/Renderer.h"
 #include "engine/renderer/TextureRenderer.h"
+
+#include "ImguiStyles.h"
 
 void dockSpace(bool* p_open);
 void mouseFun(double xpos, double ypos);
@@ -111,16 +111,33 @@ int main(void) {
                 ImGui::Begin("Test window");                         
                 ImGui::Text("This is some useful text.");              
                 ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
-                if (ImGui::Button("Button")) counter++;
+                ImGui::Separator();
+                if (ImGui::Button("Increase")) counter ++;
                 ImGui::SameLine();
                 ImGui::Text("counter = %d", counter);
+                ImGui::Separator();
+                ImGui::TextColored(ImColor(200, 150, 255), "Don't waste time reading this :D");
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
                 ImGui::End();
             }
             // Another window
             {
                 ImGui::Begin("Just another window");       
-                  
+
+                ImGui::TextColored(ImColor(200, 150, 255), "This is just a text");
+                ImGui::Text("Equations, equations and more equations...");
+
+                ImGui::BulletText("While inputing text:\n");
+                ImGui::Indent();
+                ImGui::BulletText("CTRL+Left/Right to word jump.");
+                ImGui::Unindent();
+
+                ImGui::Separator();
+                if (ImGui::Button("Visible")) group.setVisible(!group.isVisible());
+                ImGui::SameLine();
+                if (ImGui::Button("Show wire")) group.setShowWire(!group.isShowWire());
+                ImGui::Separator();
+
                 ImGui::End();
             }
             // Render window
