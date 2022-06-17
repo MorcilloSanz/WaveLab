@@ -39,31 +39,57 @@ int main(void) {
     // Renderer
     Renderer renderer;
     
-    // Polytopes
+    Camera camera = Camera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
+    camera.lookAt(glm::vec3(0, 0, -2.5), glm::vec3(0, 0, 1), glm::vec3(0, 1, 0));
+    renderer.setCamera(camera);
+    
     std::vector<Vec3f> vertices = {
-        Vec3f(0.5f,  0.5f, 0.0f , 1.0f, 0.0f, 0.0f),  // top right
-        Vec3f( 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f),  // bottom right
-        Vec3f(-0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f),  // bottom left
-        Vec3f(-0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 1.0f)   // top left 
-    };
-    std::vector<unsigned int> indices = {
-        0, 1, 3,  // first Triangle
-        1, 2, 3   // second Triangle
-    };
-    Polytope polytope(vertices, indices);
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f),
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f),
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f),
 
-    std::vector<Vec3f> vertices2 = {
-        Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
-        Vec3f(0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
-    };
-    Polytope polytope2(vertices2);
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f),
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 0.0f),
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 0.0f),
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f),
 
-    // Group
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
+        Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
+
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
+        Vec3f( 0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
+
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f),
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f),
+
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f),
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f)
+    };
+    Polytope polytope(vertices);
+
     Group group(GL_TRIANGLES);
-    group.add(polytope2);
     group.add(polytope);
-    group.rotate(45, glm::vec3(0, 0, 1));
     
     renderer.addGroup(group);
 
@@ -84,16 +110,11 @@ int main(void) {
 
         // Go back to default
         textureRenderer.renderToDefault();	
-        
-        // Update polytope vbo vertices
-        static float offset = 0.01f;
-        vertices = {
-            Vec3f(0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f),
-            Vec3f(-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f),
-            Vec3f(0.0f + offset,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f)
-        };
-        polytope2.updateVertices(vertices);
-        offset += 0.005;
+
+        // Rotate cube
+        static float angle = 0.0f;
+        group.rotate(angle, glm::vec3(1, 1, 0));
+        angle += 0.01f;
 
         // ImGUI
         {
