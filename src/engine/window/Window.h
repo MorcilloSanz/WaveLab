@@ -15,11 +15,14 @@ private:
     struct CallbackManager {
         static int width, height;
         
-        static std::function<void(GLFWwindow* window, int width, int height)> resizeFun;
+        static std::function<void(GLFWwindow*, int, int)> resizeFun;
         static void frameBufferSizeCallback(GLFWwindow* window, int width, int height);
 
-        static std::function<void(double, double)> mouseFun;
+        static std::function<void(GLFWwindow*, double, double)> mouseFun;
         static void mouseCallback(GLFWwindow* window, double xpos, double ypos);
+
+        static std::function<void(GLFWwindow*, int, int, int)> mouseButtonFun;
+        static void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
     };
 private:
     GLFWwindow* window;
@@ -38,12 +41,16 @@ public:
         glfwTerminate();
     }
 
-    inline void setMouseFun(const std::function<void(double, double)>& mouseFun) {
+    inline void setResizeFun(const std::function<void(GLFWwindow*, int, int)>& resizeFun) {
+        CallbackManager::resizeFun = resizeFun;
+    }
+
+    inline void setMouseFun(const std::function<void(GLFWwindow*, double, double)>& mouseFun) {
         CallbackManager::mouseFun = mouseFun;
     }
 
-    inline void setResizeFun(const std::function<void(GLFWwindow* window, int width, int height)>& resizeFun) {
-        CallbackManager::resizeFun = resizeFun;
+    inline void setMouseButtonFun(const std::function<void(GLFWwindow*, int, int, int)>& mouseButtonFun) {
+        CallbackManager::mouseButtonFun = mouseButtonFun;
     }
 public:
     inline GLFWwindow* getGLFWwindow() {

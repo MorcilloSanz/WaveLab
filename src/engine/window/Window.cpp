@@ -2,8 +2,9 @@
 
 int Window::CallbackManager::width = 0;
 int Window::CallbackManager::height = 0;
-std::function<void(double, double)> Window::CallbackManager::mouseFun = nullptr;
-std::function<void(GLFWwindow* window, int width, int height)> Window::CallbackManager::resizeFun = nullptr;
+std::function<void(GLFWwindow*, double, double)> Window::CallbackManager::mouseFun = nullptr;
+std::function<void(GLFWwindow*, int, int)> Window::CallbackManager::resizeFun = nullptr;
+std::function<void(GLFWwindow*, int, int, int)> Window::CallbackManager::mouseButtonFun = nullptr;
 
 Window::Window(const std::string& _title, unsigned int _width, unsigned int _height) 
     : title(_title) {
@@ -30,6 +31,7 @@ void Window::initWindow() {
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, CallbackManager::frameBufferSizeCallback);
     glfwSetCursorPosCallback(window, CallbackManager::mouseCallback);
+    glfwSetMouseButtonCallback(window, CallbackManager::mouseButtonCallback);
     glfwSwapInterval(1);
     // Init glew
     initGlew();
@@ -48,6 +50,9 @@ void Window::CallbackManager::frameBufferSizeCallback(GLFWwindow* window, int wi
 }
 
 void Window::CallbackManager::mouseCallback(GLFWwindow* window, double xpos, double ypos) {
-    if(mouseFun != nullptr)
-        mouseFun(xpos, ypos);
+    if(mouseFun != nullptr) mouseFun(window, xpos, ypos);
+}
+
+void Window::CallbackManager::mouseButtonCallback(GLFWwindow* window, int button, int action, int mods) {
+    if(mouseButtonFun != nullptr) mouseButtonFun(window, button, action, mods);
 }

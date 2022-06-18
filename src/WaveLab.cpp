@@ -8,16 +8,18 @@
 #include "ImguiStyles.h"
 
 void dockSpace(bool* p_open);
-void mouseFun(double xpos, double ypos);
 void resizeFun(GLFWwindow* window, int width, int height);
+void mouseFun(GLFWwindow* window, double xpos, double ypos);
+void mouseButtonFun(GLFWwindow* window, int button, int action, int mods);
 
 TextureRenderer textureRenderer;
 
 int main(void) {
 
     Window window("WaveLab", 1080, 720);
-    window.setMouseFun(mouseFun);
     window.setResizeFun(resizeFun);
+    window.setMouseFun(mouseFun);
+    window.setMouseButtonFun(mouseButtonFun);
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -270,10 +272,19 @@ void dockSpace(bool* p_open) {
     ImGui::End();
 }
 
-void mouseFun(double xpos, double ypos) {
-   
-}
-
 void resizeFun(GLFWwindow* window, int width, int height) {
     textureRenderer.updateViewPort(width, height);
+}
+
+void mouseFun(GLFWwindow* window, double xpos, double ypos) {
+
+}
+
+void mouseButtonFun(GLFWwindow* window, int button, int action, int mods) {
+    if(button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
+       double xpos, ypos;
+       glfwGetCursorPos(window, &xpos, &ypos);
+    }else if(button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE) {
+
+    }
 }
