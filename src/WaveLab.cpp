@@ -9,11 +9,15 @@
 
 void dockSpace(bool* p_open);
 void mouseFun(double xpos, double ypos);
+void resizeFun(GLFWwindow* window, int width, int height);
+
+TextureRenderer textureRenderer;
 
 int main(void) {
 
     Window window("WaveLab", 1080, 720);
     window.setMouseFun(mouseFun);
+    window.setResizeFun(resizeFun);
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -93,7 +97,7 @@ int main(void) {
     
     renderer.addGroup(group);
 
-    TextureRenderer textureRenderer(window.getWidth(), window.getHeight());
+    textureRenderer = TextureRenderer(window.getWidth(), window.getHeight());
 
     // Main loop
     while (!window.windowShouldClose()) {
@@ -102,19 +106,17 @@ int main(void) {
         renderer.clear();
 
         // Draw to texture instead of default
-        textureRenderer.updateViewPort(window.getWidth(), window.getHeight());
         textureRenderer.renderToTexture();
 
         // Render
         renderer.render();
 
         // Go back to default
-        textureRenderer.renderToDefault();	
+        textureRenderer.renderToDefault();
 
         // Rotate cube
-        static float angle = 0.0f;
+        static float angle = 0.5f;
         group.rotate(angle, glm::vec3(1, 1, 0));
-        angle += 0.01f;
 
         // ImGUI
         {
@@ -270,4 +272,8 @@ void dockSpace(bool* p_open) {
 
 void mouseFun(double xpos, double ypos) {
    
+}
+
+void resizeFun(GLFWwindow* window, int width, int height) {
+    textureRenderer.updateViewPort(width, height);
 }
