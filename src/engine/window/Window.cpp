@@ -3,6 +3,7 @@
 int Window::CallbackManager::width = 0;
 int Window::CallbackManager::height = 0;
 std::function<void(double, double)> Window::CallbackManager::mouseFun = nullptr;
+std::function<void(GLFWwindow* window, int width, int height)> Window::CallbackManager::resizeFun = nullptr;
 
 Window::Window(const std::string& _title, unsigned int _width, unsigned int _height) 
     : title(_title) {
@@ -29,6 +30,7 @@ void Window::initWindow() {
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, CallbackManager::frameBufferSizeCallback);
     glfwSetCursorPosCallback(window, CallbackManager::mouseCallback);
+    glfwSwapInterval(1);
     // Init glew
     initGlew();
 }
@@ -42,6 +44,7 @@ void Window::CallbackManager::frameBufferSizeCallback(GLFWwindow* window, int wi
     glViewport(0, 0, width, height);
     CallbackManager::width = width;
     CallbackManager::height = height;
+    if(resizeFun != nullptr) resizeFun(window, width, height);
 }
 
 void Window::CallbackManager::mouseCallback(GLFWwindow* window, double xpos, double ypos) {

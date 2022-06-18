@@ -47,7 +47,9 @@ public:
     void renderToTexture() {
         glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
         glEnable(GL_DEPTH_TEST); // enable depth testing (is disabled for rendering screen-space quad)
-        glEnable(GL_MULTISAMPLE);
+    
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // set clear color to white (not really necessary actually, since we won't be able to see behind the quad anyways)
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
     void renderToDefault() {
@@ -55,8 +57,8 @@ public:
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due to depth test.
         // clear all relevant buffers
-        glClearColor(0.3f, 0.3f, 0.3f, 1.0f); // set clear color to white (not really necessary actually, since we won't be able to see behind the quad anyways)
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // set clear color to white (not really necessary actually, since we won't be able to see behind the quad anyways)
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glBindTexture(GL_TEXTURE_2D, textureColorbuffer);	
     }
 public:

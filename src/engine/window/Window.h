@@ -15,6 +15,7 @@ private:
     struct CallbackManager {
         static int width, height;
         
+        static std::function<void(GLFWwindow* window, int width, int height)> resizeFun;
         static void frameBufferSizeCallback(GLFWwindow* window, int width, int height);
 
         static std::function<void(double, double)> mouseFun;
@@ -39,6 +40,10 @@ public:
 
     inline void setMouseFun(const std::function<void(double, double)>& mouseFun) {
         CallbackManager::mouseFun = mouseFun;
+    }
+
+    inline void setResizeFun(const std::function<void(GLFWwindow* window, int width, int height)>& resizeFun) {
+        CallbackManager::resizeFun = resizeFun;
     }
 public:
     inline GLFWwindow* getGLFWwindow() {
