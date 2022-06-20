@@ -7,10 +7,10 @@
 
 #include "ImguiStyles.h"
 
+// ImGui funcs
 void dockSpace(bool* p_open);
+// Window callbacks
 void resizeFun(GLFWwindow* window, int width, int height);
-void mouseFun(GLFWwindow* window, double xpos, double ypos);
-void mouseButtonFun(GLFWwindow* window, int button, int action, int mods);
 
 TextureRenderer textureRenderer;
 
@@ -18,8 +18,6 @@ int main(void) {
 
     Window window("WaveLab", 1080, 720);
     window.setResizeFun(resizeFun);
-    window.setMouseFun(mouseFun);
-    window.setMouseButtonFun(mouseButtonFun);
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -46,7 +44,7 @@ int main(void) {
     Renderer renderer;
     
     Camera camera = Camera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
-    camera.lookAt(glm::vec3(0, 0, -2.5), glm::vec3(0, 0, 1), glm::vec3(0, 1, 0));
+    camera.lookAt(glm::vec3(0, 0, 2.5), glm::vec3(0, 0, 1), glm::vec3(0, 1, 0));
     renderer.setCamera(camera);
     
     std::vector<Vec3f> vertices = {
@@ -116,10 +114,6 @@ int main(void) {
         // Go back to default
         textureRenderer.renderToDefault();
 
-        // Rotate cube
-        static float angle = 0.5f;
-        group.rotate(angle, glm::vec3(1, 1, 0));
-
         // ImGUI
         {
             ImGui_ImplOpenGL3_NewFrame();
@@ -166,10 +160,39 @@ int main(void) {
                 ImGui::End();
             }
             // Render window
+            static bool windowFocus = false;
             { 
                 ImGui::Begin("Renderer");       
-                ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());      
+                ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());   // Render texture
+                windowFocus = ImGui::IsWindowFocused();
                 ImGui::End();
+            }
+
+            // Mouse events
+            ImVec2 mousePositionAbsolute = ImGui::GetMousePos();
+            ImVec2 screenPositionAbsolute = ImGui::GetItemRectMin();
+            ImVec2 mousePositionRelative = ImVec2(mousePositionAbsolute.x - screenPositionAbsolute.x, mousePositionAbsolute.y - screenPositionAbsolute.y);
+
+            static bool first = true;
+            static int xpos0 = 0, ypos0 = 0;
+            static ImVec2 previous(0, 0);
+
+            if(ImGui::IsMouseDown(ImGuiMouseButton_Left)) {
+                if(first) {
+                    previous = mousePositionRelative;
+                    first = false;
+                }
+            }else first = true;
+
+            if(ImGui::IsMouseDragging(ImGuiMouseButton_Left) && windowFocus) {
+
+                ImVec2 size = ImGui::GetWindowSize();
+                float yaw = M_PI * (mousePositionRelative.x - previous.x) / (size.x / 2);   // differential yaw angle
+                float pitch = M_PI * (mousePositionRelative.y - previous.y) / (size.y / 2); // differential pitch angle
+                previous = mousePositionRelative;
+
+                group.rotate(glm::degrees(yaw), glm::vec3(0, 1, 0));
+                //group.rotate(glm::degrees(-pitch), glm::vec3(1, 0, 0));
             }
             
             // Rendering
@@ -274,17 +297,4 @@ void dockSpace(bool* p_open) {
 
 void resizeFun(GLFWwindow* window, int width, int height) {
     textureRenderer.updateViewPort(width, height);
-}
-
-void mouseFun(GLFWwindow* window, double xpos, double ypos) {
-
-}
-
-void mouseButtonFun(GLFWwindow* window, int button, int action, int mods) {
-    if(button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
-       double xpos, ypos;
-       glfwGetCursorPos(window, &xpos, &ypos);
-    }else if(button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE) {
-
-    }
 }

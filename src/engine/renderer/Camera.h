@@ -9,7 +9,7 @@ class Camera {
 private:
     glm::mat4 projectionMatrix;
     glm::mat4 viewMatrix;
-    glm::vec3 position, center, up;
+    glm::vec3 eye, center, up;
     Camera(const glm::mat4& _projectionMatrix, const glm::mat4& _viewMatrix);
 public:
     Camera() = default;
@@ -21,8 +21,9 @@ public:
 
     inline glm::mat4& getProjectionMatrix() { return projectionMatrix; }
     inline glm::mat4& getViewMatrix() { return viewMatrix; }
+    inline void setViewMatrix(const glm::mat4& viewMatrix) { this->viewMatrix = viewMatrix; } 
 
-    inline glm::vec3& getPosition() { return position; }
+    inline glm::vec3& getEye() { return eye; }
     inline glm::vec3& getCenter() { return center; }
     inline glm::vec3& getUp() { return up; }
 };

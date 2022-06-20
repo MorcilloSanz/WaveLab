@@ -1,7 +1,7 @@
 #include "Camera.h"
 
 Camera::Camera(const glm::mat4& _projectionMatrix, const glm::mat4& _viewMatrix) 
-    : projectionMatrix(_projectionMatrix), viewMatrix(_viewMatrix), position(glm::vec3(0, 0, 0)) {
+    : projectionMatrix(_projectionMatrix), viewMatrix(_viewMatrix), eye(glm::vec3(0, 0, 0)) {
 }
 
 Camera Camera::orthoCamera(float left, float right, float bottom, float top, float zNear, float zFar) {
@@ -21,7 +21,7 @@ Camera Camera::perspectiveCamera(float fovy, float aspect, float zNear, float zF
 }
 
 void Camera::lookAt(const glm::vec3& eye, const glm::vec3& center, const glm::vec3& up) {
-    this->position = eye;
+    this->eye = eye;
     this->center = center;
     this->up = up;
     viewMatrix = glm::lookAt(eye, center, up);

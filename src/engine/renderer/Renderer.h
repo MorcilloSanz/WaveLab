@@ -13,13 +13,13 @@ class Renderer {
 private:
     std::shared_ptr<ShaderProgram> shaderProgram;
     std::vector<Group*> groups;
-    Camera camera;
+    Camera* camera;
     bool hasCamera;
 public:
     Renderer();
     ~Renderer() = default;
 public:
-    void setCamera(const Camera& camera);
+    void setCamera(Camera& camera);
     void enableBlending();
     void enableAntialiasing();
     void render();
@@ -37,7 +37,7 @@ public:
         return groups[index];
     }
 
-    inline Camera& getCamera() { return camera; }
+    inline Camera* getCamera() { return camera; }
 
     inline std::vector<Group*>& getGroups() { return groups; }
 

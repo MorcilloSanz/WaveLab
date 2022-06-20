@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 18 19:00:06 2022
+# Make data base, printed on Mon Jun 20 17:50:57 2022
 
 # Variables
 
@@ -21,7 +21,7 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0e160f64-8796-441d-b122-39221400c62d.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-48b2cace-86a0-44a4-8889-ec0ba76f3695.sock
 # environment
 LC_NAME = es_ES.UTF-8
 # environment
@@ -95,13 +95,13 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 10741
+VSCODE_PID = 35344
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/morcillosanz:@/tmp/.ICE-unix/2185,unix/morcillosanz:/tmp/.ICE-unix/2185
+SESSION_MANAGER = local/morcillosanz:@/tmp/.ICE-unix/2192,unix/morcillosanz:/tmp/.ICE-unix/2192
 # automatic
 *F = $(notdir $*)
 # environment
@@ -141,7 +141,7 @@ LC_MONETARY = es_ES.UTF-8
 # environment
 LC_TIME = es_ES.UTF-8
 # environment
-INVOCATION_ID = 1476292a83ed4917a5d06ec7e4d5f869
+INVOCATION_ID = 5f71032403c04836995bcac3ca7ee0e4
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -171,7 +171,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 2204
+SYSTEMD_EXEC_PID = 2234
 # environment
 DISPLAY = :1
 # environment
@@ -181,11 +181,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1906
+MANAGERPID = 1933
 # environment
 LC_MEASUREMENT = es_ES.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 10741
+GIO_LAUNCHED_DESKTOP_FILE_PID = 35344
 # environment
 _ = /usr/share/code/code
 # environment
@@ -195,7 +195,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:30503
+JOURNAL_STREAM = 8:36077
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -292,6 +292,6 @@ GNUmakefile:
 make: *** No rule to make target 'all'.  Stop.
 
 # Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Sat Jun 18 19:00:06 2022
+# Finished Make data base on Mon Jun 20 17:50:57 2022
 
  
