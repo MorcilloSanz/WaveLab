@@ -163,7 +163,7 @@ int main(void) {
             // Render window
             static bool windowFocus = false;
             { 
-                ImGui::Begin("Renderer");       
+                ImGui::Begin("Renderer", &p_open, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);       
                 ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());   // Render texture
                 windowFocus = ImGui::IsWindowFocused();
                 ImGui::End();
@@ -186,23 +186,11 @@ int main(void) {
             }else first = true;
 
             if(ImGui::IsMouseDragging(ImGuiMouseButton_Left) && windowFocus) {
-
                 ImVec2 size = ImGui::GetWindowSize();
-                /*
-                float yaw = M_PI * (mousePositionRelative.x - previous.x) / (size.x / 2);   // differential yaw angle
-                float pitch = M_PI * (mousePositionRelative.y - previous.y) / (size.y / 2); // differential pitch angle
-                previous = mousePositionRelative;
-
-                group.rotate(glm::degrees(yaw), glm::vec3(0, 1, 0));
-                //group.rotate(glm::degrees(-pitch), glm::vec3(1, 0, 0));
-                */
-                
                 float dTheta = (mousePositionRelative.x - previous.x) / (size.x / 2);
                 float dPhi = (mousePositionRelative.y - previous.y) / (size.y / 2);
-                
                 previous = mousePositionRelative;
                 camera.rotate(-dTheta, -dPhi);
-
             }
             
             // Rendering

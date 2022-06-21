@@ -61,7 +61,10 @@ void TrackballCamera::rotate(float dTheta, float dPhi) {
 }
 
 void TrackballCamera::pan(float dx, float dy) {
-
+    glm::vec3 look = glm::normalize(center - getCameraPosition());
+    glm::vec3 right = glm::cross(look, up);
+    glm::vec3 newUp = glm::cross(look, right);
+    center += dx * right + dy * up;
 }
 
 void TrackballCamera::zoom(float dRadius) {
