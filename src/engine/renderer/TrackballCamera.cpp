@@ -44,13 +44,20 @@ glm::mat4& TrackballCamera::getViewMatrix() {
 }
 
 void TrackballCamera::rotate(float dTheta, float dPhi) {
+
     if (up.y > 0.0f)    theta += dTheta;
 	else                theta -= dTheta;
 
     phi += dPhi;
 
-    if(phi > 2 * M_PI) phi -= 2 * M_PI;
-    else if(phi < -2 * M_PI) phi += 2 * M_PI;
+    // If phi is between 0 to PI or -PI to -2PI, make 'up' be positive Y, other wise make it negative Y
+    const float PI2 = 2 * M_PI;
+    if(phi > PI2) phi -= PI2;
+    else if(phi < -PI2) phi += PI2;
+
+    // If phi is between 0 to PI or -PI to -2PI, make 'up' be positive Y, other wise make it negative Y
+	if ((phi > 0 && phi < M_PI) || (phi < -M_PI && phi > -PI2)) up.y = 1.0f;
+	else  up.y = -1.0f;
 }
 
 void TrackballCamera::pan(float dx, float dy) {

@@ -45,8 +45,7 @@ int main(void) {
     Renderer renderer;
     
     TrackballCamera camera = TrackballCamera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
-    //camera.lookAt(glm::vec3(0, 0, 2.5), glm::vec3(0, 0, 1), glm::vec3(0, 1, 0));
-    camera.zoom(-2);
+    camera.zoom(2.5);
     renderer.setCamera(camera);
     
     std::vector<Vec3f> vertices = {
@@ -198,10 +197,11 @@ int main(void) {
                 //group.rotate(glm::degrees(-pitch), glm::vec3(1, 0, 0));
                 */
                 
-                float dTheta = (mousePositionRelative.y - previous.y) / (size.y / 2);
-                float dPhi = (mousePositionRelative.x - previous.x) / (size.x / 2);
+                float dTheta = (mousePositionRelative.x - previous.x) / (size.x / 2);
+                float dPhi = (mousePositionRelative.y - previous.y) / (size.y / 2);
+                
                 previous = mousePositionRelative;
-                camera.rotate(-dPhi, dTheta);
+                camera.rotate(-dTheta, -dPhi);
 
             }
             
