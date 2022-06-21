@@ -3,6 +3,7 @@
 #include "engine/window/Window.h"
 
 #include "engine/renderer/Renderer.h"
+#include "engine/renderer/TrackballCamera.h"
 #include "engine/renderer/TextureRenderer.h"
 
 #include "ImguiStyles.h"
@@ -43,8 +44,9 @@ int main(void) {
     // Renderer
     Renderer renderer;
     
-    Camera camera = Camera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
-    camera.lookAt(glm::vec3(0, 0, 2.5), glm::vec3(0, 0, 1), glm::vec3(0, 1, 0));
+    TrackballCamera camera = TrackballCamera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
+    //camera.lookAt(glm::vec3(0, 0, 2.5), glm::vec3(0, 0, 1), glm::vec3(0, 1, 0));
+    camera.zoom(-2);
     renderer.setCamera(camera);
     
     std::vector<Vec3f> vertices = {
@@ -187,12 +189,20 @@ int main(void) {
             if(ImGui::IsMouseDragging(ImGuiMouseButton_Left) && windowFocus) {
 
                 ImVec2 size = ImGui::GetWindowSize();
+                /*
                 float yaw = M_PI * (mousePositionRelative.x - previous.x) / (size.x / 2);   // differential yaw angle
                 float pitch = M_PI * (mousePositionRelative.y - previous.y) / (size.y / 2); // differential pitch angle
                 previous = mousePositionRelative;
 
                 group.rotate(glm::degrees(yaw), glm::vec3(0, 1, 0));
                 //group.rotate(glm::degrees(-pitch), glm::vec3(1, 0, 0));
+                */
+                
+                float dTheta = (mousePositionRelative.y - previous.y) / (size.y / 2);
+                float dPhi = (mousePositionRelative.x - previous.x) / (size.x / 2);
+                previous = mousePositionRelative;
+                camera.rotate(-dPhi, dTheta);
+
             }
             
             // Rendering
