@@ -537,6 +537,30 @@ src/engine/renderer/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.s
 .PHONY : src/engine/renderer/Renderer.cpp.s
 
+src/engine/renderer/TrackballCamera.o: src/engine/renderer/TrackballCamera.cpp.o
+.PHONY : src/engine/renderer/TrackballCamera.o
+
+# target to build an object file
+src/engine/renderer/TrackballCamera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/renderer/TrackballCamera.cpp.o
+.PHONY : src/engine/renderer/TrackballCamera.cpp.o
+
+src/engine/renderer/TrackballCamera.i: src/engine/renderer/TrackballCamera.cpp.i
+.PHONY : src/engine/renderer/TrackballCamera.i
+
+# target to preprocess a source file
+src/engine/renderer/TrackballCamera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/renderer/TrackballCamera.cpp.i
+.PHONY : src/engine/renderer/TrackballCamera.cpp.i
+
+src/engine/renderer/TrackballCamera.s: src/engine/renderer/TrackballCamera.cpp.s
+.PHONY : src/engine/renderer/TrackballCamera.s
+
+# target to generate assembly for a file
+src/engine/renderer/TrackballCamera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/renderer/TrackballCamera.cpp.s
+.PHONY : src/engine/renderer/TrackballCamera.cpp.s
+
 src/engine/window/Window.o: src/engine/window/Window.cpp.o
 .PHONY : src/engine/window/Window.o
 
@@ -621,6 +645,9 @@ help:
 	@echo "... src/engine/renderer/Renderer.o"
 	@echo "... src/engine/renderer/Renderer.i"
 	@echo "... src/engine/renderer/Renderer.s"
+	@echo "... src/engine/renderer/TrackballCamera.o"
+	@echo "... src/engine/renderer/TrackballCamera.i"
+	@echo "... src/engine/renderer/TrackballCamera.s"
 	@echo "... src/engine/window/Window.o"
 	@echo "... src/engine/window/Window.i"
 	@echo "... src/engine/window/Window.s"

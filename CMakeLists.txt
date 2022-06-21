@@ -28,6 +28,7 @@ set(HEADERS
         src/engine/renderer/Renderer.h
         src/engine/renderer/TextureRenderer.h
         src/engine/renderer/Camera.h
+        src/engine/renderer/TrackballCamera.h
 )
 
 set(SOURCES
@@ -51,6 +52,7 @@ set(SOURCES
         src/engine/group/Group.cpp
         src/engine/renderer/Renderer.cpp
         src/engine/renderer/Camera.cpp
+        src/engine/renderer/TrackballCamera.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})

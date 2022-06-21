@@ -19,9 +19,9 @@ void Renderer::enableAntialiasing() {
     glEnable(GL_MULTISAMPLE);
 }
 
-void Renderer::setCamera(const Camera& camera) {
+void Renderer::setCamera(Camera& camera) {
     hasCamera = true;
-    this->camera = camera;
+    this->camera = &camera;
 }
 
 void Renderer::render() {
@@ -30,8 +30,8 @@ void Renderer::render() {
     glm::mat4 projection(1.f);
     glm::mat4 view(1.f);
     if(hasCamera) {
-        projection = camera.getProjectionMatrix();
-        view = camera.getViewMatrix();
+        projection = camera->getProjectionMatrix();
+        view = camera->getViewMatrix();
     }
 
     for(Group* group : groups) {

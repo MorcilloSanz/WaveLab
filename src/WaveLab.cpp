@@ -3,12 +3,14 @@
 #include "engine/window/Window.h"
 
 #include "engine/renderer/Renderer.h"
+#include "engine/renderer/TrackballCamera.h"
 #include "engine/renderer/TextureRenderer.h"
 
 #include "ImguiStyles.h"
 
+// ImGui funcs
 void dockSpace(bool* p_open);
-void mouseFun(double xpos, double ypos);
+// Window callbacks
 void resizeFun(GLFWwindow* window, int width, int height);
 
 TextureRenderer textureRenderer;
@@ -16,7 +18,6 @@ TextureRenderer textureRenderer;
 int main(void) {
 
     Window window("WaveLab", 1080, 720);
-    window.setMouseFun(mouseFun);
     window.setResizeFun(resizeFun);
 
     // Setup Dear ImGui context
@@ -43,8 +44,8 @@ int main(void) {
     // Renderer
     Renderer renderer;
     
-    Camera camera = Camera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
-    camera.lookAt(glm::vec3(0, 0, -2.5), glm::vec3(0, 0, 1), glm::vec3(0, 1, 0));
+    TrackballCamera camera = TrackballCamera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
+    camera.zoom(2.5);
     renderer.setCamera(camera);
     
     std::vector<Vec3f> vertices = {
@@ -114,10 +115,6 @@ int main(void) {
         // Go back to default
         textureRenderer.renderToDefault();
 
-        // Rotate cube
-        static float angle = 0.5f;
-        group.rotate(angle, glm::vec3(1, 1, 0));
-
         // ImGUI
         {
             ImGui_ImplOpenGL3_NewFrame();
@@ -164,10 +161,47 @@ int main(void) {
                 ImGui::End();
             }
             // Render window
+            static bool windowFocus = false;
             { 
-                ImGui::Begin("Renderer");       
-                ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());      
+                ImGui::Begin("Renderer", &p_open, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);       
+                ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());   // Render texture
+                windowFocus = ImGui::IsWindowFocused();
                 ImGui::End();
+            }
+
+            // Mouse events
+            ImVec2 size = ImGui::GetWindowSize();
+            ImVec2 mousePositionAbsolute = ImGui::GetMousePos();
+            ImVec2 screenPositionAbsolute = ImGui::GetItemRectMin();
+            ImVec2 mousePositionRelative = ImVec2(mousePositionAbsolute.x - screenPositionAbsolute.x, mousePositionAbsolute.y - screenPositionAbsolute.y);
+
+            static bool first = true;
+            static ImVec2 previous(0, 0);
+
+            if(ImGui::IsMouseDown(ImGuiMouseButton_Left) || ImGui::IsMouseDown(ImGuiMouseButton_Right)) {
+                if(first) {
+                    previous = mousePositionRelative;
+                    first = false;
+                }
+            }else first = true;
+
+            // Camera rotation
+            if(ImGui::IsMouseDragging(ImGuiMouseButton_Left) && windowFocus) {
+                float dTheta = (mousePositionRelative.x - previous.x) / (size.x / 2);
+                float dPhi = (mousePositionRelative.y - previous.y) / (size.y / 2);
+                previous = mousePositionRelative;
+                camera.rotate(-dTheta, -dPhi);
+            }
+
+            // Camera zoom
+            camera.zoom(-ImGui::GetIO().MouseWheel);
+
+            // Camera pan
+            if(ImGui::IsMouseDragging(ImGuiMouseButton_Right) && windowFocus) {
+                float dx = (mousePositionRelative.x - previous.x) / (size.x / 2);
+                float dy = (mousePositionRelative.y - previous.y) / (size.y / 2);
+                previous = mousePositionRelative;
+                camera.pan(-dx, -dy);
             }
             
             // Rendering
@@ -268,10 +302,6 @@ void dockSpace(bool* p_open) {
     }
 
     ImGui::End();
-}
-
-void mouseFun(double xpos, double ypos) {
-   
 }
 
 void resizeFun(GLFWwindow* window, int width, int height) {
