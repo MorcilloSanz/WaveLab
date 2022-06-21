@@ -47,7 +47,6 @@ void TrackballCamera::rotate(float dTheta, float dPhi) {
 
     if (up.y > 0.0f)    theta += dTheta;
 	else                theta -= dTheta;
-
     phi += dPhi;
 
     // If phi is between 0 to PI or -PI to -2PI, make 'up' be positive Y, other wise make it negative Y

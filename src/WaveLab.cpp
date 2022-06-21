@@ -170,27 +170,38 @@ int main(void) {
             }
 
             // Mouse events
+            ImVec2 size = ImGui::GetWindowSize();
             ImVec2 mousePositionAbsolute = ImGui::GetMousePos();
             ImVec2 screenPositionAbsolute = ImGui::GetItemRectMin();
             ImVec2 mousePositionRelative = ImVec2(mousePositionAbsolute.x - screenPositionAbsolute.x, mousePositionAbsolute.y - screenPositionAbsolute.y);
 
             static bool first = true;
-            static int xpos0 = 0, ypos0 = 0;
             static ImVec2 previous(0, 0);
 
-            if(ImGui::IsMouseDown(ImGuiMouseButton_Left)) {
+            if(ImGui::IsMouseDown(ImGuiMouseButton_Left) || ImGui::IsMouseDown(ImGuiMouseButton_Right)) {
                 if(first) {
                     previous = mousePositionRelative;
                     first = false;
                 }
             }else first = true;
 
+            // Camera rotation
             if(ImGui::IsMouseDragging(ImGuiMouseButton_Left) && windowFocus) {
-                ImVec2 size = ImGui::GetWindowSize();
                 float dTheta = (mousePositionRelative.x - previous.x) / (size.x / 2);
                 float dPhi = (mousePositionRelative.y - previous.y) / (size.y / 2);
                 previous = mousePositionRelative;
                 camera.rotate(-dTheta, -dPhi);
+            }
+
+            // Camera zoom
+            camera.zoom(-ImGui::GetIO().MouseWheel);
+
+            // Camera pan
+            if(ImGui::IsMouseDragging(ImGuiMouseButton_Right) && windowFocus) {
+                float dx = (mousePositionRelative.x - previous.x) / (size.x / 2);
+                float dy = (mousePositionRelative.y - previous.y) / (size.y / 2);
+                previous = mousePositionRelative;
+                camera.pan(-dx, -dy);
             }
             
             // Rendering
