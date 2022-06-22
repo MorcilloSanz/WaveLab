@@ -24,4 +24,8 @@ public:
     inline glm::vec3& getEye() { return eye; }
     inline glm::vec3& getCenter() { return center; }
     inline glm::vec3& getUp() { return up; }
+
+    inline void setEye(const glm::vec3& eye) { this->eye = eye; }
+    inline void setCenter(const glm::vec3& center) { this->center = center; }
+    inline void setUp(const glm::vec3& up) { this->up = up; }
 };

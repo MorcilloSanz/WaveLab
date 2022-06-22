@@ -14,6 +14,7 @@ class Group {
 private:
     std::vector<Polytope> polytopes;
     unsigned int primitive;
+    float pointSize, lineWidth;
     bool showWire, visible;
     glm::mat4 modelMatrix;
 public:
@@ -22,51 +23,27 @@ public:
 public:
     void draw();
 public:
-    inline void translate(const glm::vec3& v) {
-        modelMatrix = glm::translate(modelMatrix, v);
-    }
+    inline void translate(const glm::vec3& v) { modelMatrix = glm::translate(modelMatrix, v); }
+    inline void rotate(float degrees, const glm::vec3& axis) { modelMatrix = glm::rotate(modelMatrix, glm::radians(degrees), axis); }
+    inline void scale(const glm::vec3& s) { modelMatrix = glm::scale(modelMatrix, s); }
 
-    inline void rotate(float degrees, const glm::vec3& axis) {
-        modelMatrix = glm::rotate(modelMatrix, glm::radians(degrees), axis);
-    }
+    inline void add(const Polytope& polytope) { polytopes.push_back(polytope); }
+    inline std::vector<Polytope>& getPolytopes() { return polytopes; }
 
-    inline void scale(const glm::vec3& s) {
-        modelMatrix = glm::scale(modelMatrix, s);
-    }
-public:
-    inline void add(const Polytope& polytope) {
-        polytopes.push_back(polytope);
-    }
+    inline void setVisible(bool visible) { this->visible = visible; }
+    inline bool isVisible() const { return visible; }
 
-    inline std::vector<Polytope>& getPolytopes() {
-        return polytopes;
-    }
+    inline void setShowWire(bool showWire) { this->showWire = showWire; }
+    inline bool isShowWire() const { return showWire; }
 
-    inline void setVisible(bool visible) {
-        this->visible = visible;
-    }
+    inline void setPrimitive(unsigned int primitive) { this->primitive = primitive; }
+    inline unsigned int getPrimitive() const { return primitive; }
 
-    inline bool isVisible() const {
-        return visible;
-    }
+    inline glm::mat4& getModelMatrix() { return modelMatrix; }
 
-    inline void setShowWire(bool showWire) {
-        this->showWire = showWire;
-    }
+    inline void setPointSize(float pointSize) { this->pointSize = pointSize; }
+    inline void setLineWidth(float lineWidth) { this->lineWidth = lineWidth; }
 
-    inline bool isShowWire() const {
-        return showWire;
-    }
-
-    inline void setPrimitive(unsigned int primitive) {
-        this->primitive = primitive;
-    }
-
-    inline unsigned int getPrimitive() const {
-        return primitive;
-    }
-
-    inline glm::mat4& getModelMatrix() {
-        return modelMatrix;
-    }
+    inline float getPointSize() const { return pointSize; }
+    inline float getLineWidth() const { return lineWidth; }
 };

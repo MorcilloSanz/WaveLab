@@ -22,4 +22,10 @@ public:
     void rotate(float dTheta, float dPhi);
     void pan(float dx, float dy);
     void zoom(float dRadius);
+
+    inline void setTheta(float theta) { this->theta = theta; }
+    inline void setPhi(float phi) { this->phi = phi; }
+
+    inline float getTheta() const { return theta; }
+    inline float getPhi() const { return phi; }
 };

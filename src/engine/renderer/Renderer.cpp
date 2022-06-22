@@ -40,6 +40,9 @@ void Renderer::render() {
             glm::mat4 model = group->getModelMatrix();
             glm::mat4 mvp = projection * view * model;
             shaderProgram->uniformMat4("mvp", mvp);
+            // Primitive settings
+            glPointSize(group->getPointSize());
+            glLineWidth(group->getLineWidth());
             // Draw call
             group->draw();
         }
