@@ -13,6 +13,7 @@ void dockSpace(bool* p_open);
 // Window callbacks
 void resizeFun(GLFWwindow* window, int width, int height);
 
+// Texture renderer
 TextureRenderer textureRenderer;
 
 int main(void) {
@@ -43,9 +44,10 @@ int main(void) {
 
     // Renderer
     Renderer renderer;
-    
+
     TrackballCamera camera = TrackballCamera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
-    camera.zoom(2.5);
+    camera.zoom(-2.5);
+    float sensitivity = 1.5f;
     renderer.setCamera(camera);
     
     std::vector<Vec3f> vertices = {
@@ -93,10 +95,30 @@ int main(void) {
     };
     Polytope polytope(vertices);
 
+    std::vector<Vec3f> grid = {};
+    float a = -5; float b = 5;
+    float c = -5; float d = 5;
+    float dx = 0.1f; float dz = 0.1f;
+    while(a < b) {
+        while(c < d) {
+            Vec3f point(a, 0, c);
+            grid.push_back(point);
+            c += dz;
+        }
+        c = -5;
+        a += dx;
+    }
+    Polytope polytope2(grid);
+
     Group group(GL_TRIANGLES);
     group.add(polytope);
+
+    Group group2(GL_POINTS);
+    group2.setPointSize(2.5f);
+    group2.add(polytope2);
     
     renderer.addGroup(group);
+    renderer.addGroup(group2);
 
     textureRenderer = TextureRenderer(window.getWidth(), window.getHeight());
 
@@ -158,6 +180,8 @@ int main(void) {
                 if (ImGui::Button("Show wire")) group.setShowWire(!group.isShowWire());
                 ImGui::Separator();
 
+                ImGui::SliderFloat("sensitivity", &sensitivity, 0.01f, 5.f);
+
                 ImGui::End();
             }
             // Render window
@@ -187,21 +211,21 @@ int main(void) {
 
             // Camera rotation
             if(ImGui::IsMouseDragging(ImGuiMouseButton_Left) && windowFocus) {
-                float dTheta = (mousePositionRelative.x - previous.x) / (size.x / 2);
-                float dPhi = (mousePositionRelative.y - previous.y) / (size.y / 2);
+                float dTheta = (mousePositionRelative.x - previous.x) / size.x;
+                float dPhi = (mousePositionRelative.y - previous.y) / size.y;
                 previous = mousePositionRelative;
-                camera.rotate(-dTheta, -dPhi);
+                camera.rotate(-dTheta * sensitivity, dPhi * sensitivity);
             }
 
             // Camera zoom
-            camera.zoom(-ImGui::GetIO().MouseWheel);
+            camera.zoom(ImGui::GetIO().MouseWheel);
 
             // Camera pan
             if(ImGui::IsMouseDragging(ImGuiMouseButton_Right) && windowFocus) {
                 float dx = (mousePositionRelative.x - previous.x) / (size.x / 2);
                 float dy = (mousePositionRelative.y - previous.y) / (size.y / 2);
                 previous = mousePositionRelative;
-                camera.pan(-dx, -dy);
+                camera.pan(dx, -dy);
             }
             
             // Rendering
