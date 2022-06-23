@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 23 16:06:42 2022
+# Make data base, printed on Thu Jun 23 21:30:08 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2f351c6d-8a65-4f9a-ada5-43abac337e39.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-48ffe229-8a4c-4d81-bd53-94566e9ff33d.sock
 # environment
 LC_NAME = es_ES.UTF-8
 # environment
@@ -97,7 +97,7 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 17592
+VSCODE_PID = 45548
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -187,7 +187,7 @@ MANAGERPID = 1966
 # environment
 LC_MEASUREMENT = es_ES.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 17592
+GIO_LAUNCHED_DESKTOP_FILE_PID = 45548
 # environment
 _ = /usr/share/code/code
 # environment
@@ -286,12 +286,12 @@ GNUmakefile:
 # No general ('VPATH' variable) search path.
 
 # strcache buffers: 1 (0) / strings = 21 / storage = 172 B / avg = 8 B
+ 
 # current buf: size = 8162 B / used = 172 B / count = 21 / avg = 8 B
 
 # strcache performance: lookups = 24 / hit rate = 12%
 # hash-table stats:
- 
 # Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Thu Jun 23 16:06:42 2022
+# Finished Make data base on Thu Jun 23 21:30:08 2022
 
  

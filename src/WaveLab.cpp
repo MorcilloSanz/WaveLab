@@ -98,6 +98,7 @@ int main(void) {
     Polytope polytope(vertices);
 
     Group group(GL_TRIANGLES);
+    group.setLineWidth(2.f);
     group.translate(glm::vec3(0, -0.5f, 0));
     group.add(polytope);
     renderer.addGroup(group);
@@ -121,7 +122,6 @@ int main(void) {
     Polytope gridPolytope(gridVertices);
 
     Group groupGrid(GL_LINES);
-    groupGrid.setPointSize(2.5f);
     groupGrid.add(gridPolytope);
     renderer.addGroup(groupGrid);
 
@@ -133,13 +133,10 @@ int main(void) {
 
         // Clear
         renderer.clear();
-
         // Draw to texture instead of default
         textureRenderer.renderToTexture();
-
         // Render
         renderer.render();
-
         // Go back to default
         textureRenderer.renderToDefault();
 
