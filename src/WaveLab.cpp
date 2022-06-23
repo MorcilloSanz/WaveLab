@@ -46,8 +46,9 @@ int main(void) {
     Renderer renderer;
 
     TrackballCamera camera = TrackballCamera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
-    camera.zoom(-2.5);
-    float sensitivity = 1.5f;
+    camera.zoom(-5.5);
+    camera.setTheta(M_PI / 4); camera.setPhi(M_PI / 1.5);
+    float sensitivity = 1.5f, panSensitivity = 1.0f;
     renderer.setCamera(camera);
     
     std::vector<Vec3f> vertices = {
@@ -95,30 +96,33 @@ int main(void) {
     };
     Polytope polytope(vertices);
 
-    std::vector<Vec3f> grid = {};
-    float a = -5; float b = 5;
-    float c = -5; float d = 5;
-    float dx = 0.1f; float dz = 0.1f;
-    while(a < b) {
-        while(c < d) {
-            Vec3f point(a, 0, c);
-            grid.push_back(point);
-            c += dz;
-        }
-        c = -5;
+    std::vector<Vec3f> gridVertices = {};
+    float a = -10; float b = 10;
+    float c = -10; float d = 10;
+    float dx = 0.5f; float dz = 0.5f;
+    while(a <= b) {
+        gridVertices.push_back(Vec3f(a, 0, c, 0.3, 0.3, 0.3));
+        gridVertices.push_back(Vec3f(a, 0, d, 0.3, 0.3, 0.3));
         a += dx;
     }
-    Polytope polytope2(grid);
+    a = -b;
+    while(c <= d) {
+        gridVertices.push_back(Vec3f(a, 0, c, 0.3, 0.3, 0.3));
+        gridVertices.push_back(Vec3f(b, 0, c, 0.3, 0.3, 0.3));
+        c += dz;
+    }
+    Polytope gridPolytope(gridVertices);
 
     Group group(GL_TRIANGLES);
+    group.translate(glm::vec3(0, -0.5f, 0));
     group.add(polytope);
 
-    Group group2(GL_POINTS);
-    group2.setPointSize(2.5f);
-    group2.add(polytope2);
+    Group polytopeGroup(GL_LINES);
+    polytopeGroup.setPointSize(2.5f);
+    polytopeGroup.add(gridPolytope);
     
     renderer.addGroup(group);
-    renderer.addGroup(group2);
+    renderer.addGroup(polytopeGroup);
 
     textureRenderer = TextureRenderer(window.getWidth(), window.getHeight());
 
@@ -150,37 +154,51 @@ int main(void) {
             {
                 static float f = 0.0f;
                 static int counter = 0;
-                ImGui::Begin("Test window");                         
-                ImGui::Text("This is some useful text.");              
-                ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
+                ImGui::Begin("Main Window");                         
+                ImGui::TextColored(ImColor(200, 150, 255), "Main window controls");
+
                 ImGui::Separator();
-                if (ImGui::Button("Increase")) counter ++;
-                ImGui::SameLine();
-                ImGui::Text("counter = %d", counter);
-                ImGui::Separator();
-                ImGui::TextColored(ImColor(200, 150, 255), "Don't waste time reading this :D");
+
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
                 ImGui::End();
             }
-            // Another window
+            // App window
             {
-                ImGui::Begin("Just another window");       
-
-                ImGui::TextColored(ImColor(200, 150, 255), "This is just a text");
-                ImGui::Text("Equations, equations and more equations...");
-
-                ImGui::BulletText("While inputing text:\n");
-                ImGui::Indent();
-                ImGui::BulletText("CTRL+Left/Right to word jump.");
-                ImGui::Unindent();
-
-                ImGui::Separator();
-                if (ImGui::Button("Visible")) group.setVisible(!group.isVisible());
+                ImGui::Begin("App window"); 
+                ImGui::TextColored(ImColor(200, 150, 255), "App controls");
+                 if (ImGui::Button("Visible")) group.setVisible(!group.isVisible());
                 ImGui::SameLine();
                 if (ImGui::Button("Show wire")) group.setShowWire(!group.isShowWire());
+                ImGui::End();
+            }
+            // Camera Window
+            {
+                ImGui::Begin("Camera");       
+
+                ImGui::TextColored(ImColor(200, 150, 255), "Camera options");
+                ImGui::Text("Camera sensitivity");
+
                 ImGui::Separator();
 
-                ImGui::SliderFloat("sensitivity", &sensitivity, 0.01f, 5.f);
+                ImGui::SliderFloat("Sensitivity", &sensitivity, 0.01f, 5.f);
+                ImGui::SliderFloat("Pan sensitivity", &panSensitivity, 0.01f, 5.f);
+
+                ImGui::Separator();
+
+                ImGui::Text("Camera sensitivity");
+                float theta = camera.getTheta(), phi = camera.getPhi();
+                ImGui::SliderFloat("Theta", &theta, 0, M_PI);
+                ImGui::SliderFloat("Phi", &phi, 0, 2 * M_PI);
+                camera.setTheta(theta);
+                camera.setPhi(phi);
+
+                if (ImGui::Button("Reset camera")) {
+                    camera.setTheta(M_PI / 4); 
+                    camera.setPhi(M_PI / 1.5);
+                    camera.setRadius(5.5f);
+                    sensitivity = 1.5f;
+                    panSensitivity = 1.0f;
+                }
 
                 ImGui::End();
             }
@@ -189,7 +207,7 @@ int main(void) {
             { 
                 ImGui::Begin("Renderer", &p_open, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);       
                 ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());   // Render texture
-                windowFocus = ImGui::IsWindowFocused();
+                windowFocus = ImGui::IsWindowFocused() || ImGui::IsWindowHovered();
                 ImGui::End();
             }
 
@@ -217,16 +235,16 @@ int main(void) {
                 camera.rotate(-dTheta * sensitivity, dPhi * sensitivity);
             }
 
-            // Camera zoom
-            camera.zoom(ImGui::GetIO().MouseWheel);
-
             // Camera pan
             if(ImGui::IsMouseDragging(ImGuiMouseButton_Right) && windowFocus) {
                 float dx = (mousePositionRelative.x - previous.x) / (size.x / 2);
                 float dy = (mousePositionRelative.y - previous.y) / (size.y / 2);
                 previous = mousePositionRelative;
-                camera.pan(dx, -dy);
+                camera.pan(dx * panSensitivity, -dy * panSensitivity);
             }
+
+            // Camera zoom
+            camera.zoom(ImGui::GetIO().MouseWheel);
             
             // Rendering
             ImGui::Render();
