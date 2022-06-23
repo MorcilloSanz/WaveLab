@@ -25,7 +25,9 @@ public:
 
     inline void setTheta(float theta) { this->theta = theta; }
     inline void setPhi(float phi) { this->phi = phi; }
+    inline void setRadius(float radius) { this->radius = radius; }
 
     inline float getTheta() const { return theta; }
     inline float getPhi() const { return phi; }
+    inline float getRadius() const { return radius; };
 };

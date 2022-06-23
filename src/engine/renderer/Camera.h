@@ -16,9 +16,15 @@ public:
     ~Camera() = default;
 public:
     virtual void lookAt(const glm::vec3& eye, const glm::vec3& center, const glm::vec3& up);
-    virtual glm::mat4& getViewMatrix() { return viewMatrix; }
-
+    
     inline glm::mat4& getProjectionMatrix() { return projectionMatrix; }
+    inline glm::mat4 getInverseProjectionMatrix() { return glm::inverse(projectionMatrix); }
+    virtual glm::mat4& getViewMatrix() { return viewMatrix; }
+    inline glm::mat4 getInverseViewMatrix() { return glm::inverse(viewMatrix); }
+    inline glm::mat4 getViewProjectionMatrix() { return projectionMatrix * viewMatrix; }
+    inline glm::mat4 getInverseViewProjectionMatrix() { return glm::inverse(getViewProjectionMatrix()); }
+
+    inline void setProjectionMatrix(const glm::mat4& projectionMatrix) { this->projectionMatrix = projectionMatrix; }
     inline void setViewMatrix(const glm::mat4& viewMatrix) { this->viewMatrix = viewMatrix; } 
 
     inline glm::vec3& getEye() { return eye; }
