@@ -53,47 +53,48 @@ int main(void) {
     
     // Cube polytope
     std::vector<Vec3f> vertices = {
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f),
-        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f),
-
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f),
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f),
-
-        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
-        Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
-
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
-
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f),
-        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f),
-
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f),
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f)
+        // Back face
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f), // Bottom-left
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 1.0f), // bottom-right         
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        // Front face
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f), // top-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f), // top-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
+        // Left face
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-right
+        Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-right
+        // Right face
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-left
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right         
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left     
+        // Bottom face
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-right
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-right
+        // Top face
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right     
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f) // bottom-left
     };
     Polytope cubePolytope(vertices);
 
@@ -133,6 +134,9 @@ int main(void) {
 
     // Init TextureRenderer
     textureRenderer = TextureRenderer(window.getWidth(), window.getHeight());
+
+    // Enable back face culling
+    renderer.enableBackFaceCulling();
 
     // Main loop
     while (!window.windowShouldClose()) {

@@ -22,6 +22,8 @@ public:
     void setCamera(Camera& camera);
     void enableBlending();
     void enableAntialiasing();
+    void enableBackFaceCulling();   // Counter-clockwise order
+    void enableFrontFaceCulling();  // Counter-clockwise order
     void render();
     void clear();
 public:

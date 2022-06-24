@@ -19,6 +19,18 @@ void Renderer::enableAntialiasing() {
     glEnable(GL_MULTISAMPLE);
 }
 
+void Renderer::enableBackFaceCulling() {
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
+    glFrontFace(GL_CCW); 
+}
+
+void Renderer::enableFrontFaceCulling() {
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_FRONT);
+    glFrontFace(GL_CCW); 
+}
+
 void Renderer::setCamera(Camera& camera) {
     hasCamera = true;
     this->camera = &camera;
