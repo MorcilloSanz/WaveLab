@@ -103,7 +103,7 @@ int main(void) {
     cubePolytope2.rotate(45, glm::vec3(0, 0, 1));
     cubePolytope2.scale(glm::vec3(0.25, 0.25, 0.25));
 
-    Group group(GL_TRIANGLES);
+    Group group;
     group.setLineWidth(2.f);
     group.translate(glm::vec3(0, -0.5f, 0));
     group.add(cubePolytope);
