@@ -44,7 +44,6 @@ glm::mat4& TrackballCamera::getViewMatrix() {
 }
 
 void TrackballCamera::rotate(float dTheta, float dPhi) {
-
     if (up.y > 0.0f)    theta += dTheta;
 	else                theta -= dTheta;
     phi += dPhi;
@@ -68,5 +67,5 @@ void TrackballCamera::pan(float dx, float dy) {
 
 void TrackballCamera::zoom(float dRadius) {
     radius -= dRadius;
-    if(radius <= 0) radius = 1;
+    if(radius <= 0.1) radius = 0.1;
 }
