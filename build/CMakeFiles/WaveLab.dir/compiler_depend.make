@@ -1385,6 +1385,7 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp \
   /usr/include/GLFW/glfw3.h \
   ../src/engine/renderer/Renderer.h \
   ../src/engine/group/Group.h \
+  ../src/engine/group/Polytope.h \
   ../glm/vec3.hpp \
   ../glm/ext/vector_bool3.hpp \
   ../glm/detail/type_vec3.hpp \
@@ -1598,7 +1599,6 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp \
   /usr/include/string.h \
   /usr/include/strings.h \
   ../glm/gtc/type_ptr.inl \
-  ../src/engine/group/Polytope.h \
   ../src/engine/opengl/buffer/VertexArray.h \
   ../src/engine/opengl/buffer/Buffer.h \
   ../glew/glew.h \
@@ -1803,6 +1803,31 @@ CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o: ../src/engine/group/Group.c
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
+  ../src/engine/group/Polytope.h \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_tempbuf.h \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
   ../glm/vec3.hpp \
   ../glm/ext/vector_bool3.hpp \
   ../glm/detail/type_vec3.hpp \
@@ -2016,31 +2041,6 @@ CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o: ../src/engine/group/Group.c
   /usr/include/string.h \
   /usr/include/strings.h \
   ../glm/gtc/type_ptr.inl \
-  ../src/engine/group/Polytope.h \
-  /usr/include/c++/11/memory \
-  /usr/include/c++/11/bits/stl_tempbuf.h \
-  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/11/bits/align.h \
-  /usr/include/c++/11/bit \
-  /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/c++/11/utility \
-  /usr/include/c++/11/bits/stl_relops.h \
-  /usr/include/c++/11/tuple \
-  /usr/include/c++/11/array \
-  /usr/include/c++/11/bits/invoke.h \
-  /usr/include/c++/11/bits/shared_ptr.h \
-  /usr/include/c++/11/bits/shared_ptr_base.h \
-  /usr/include/c++/11/bits/allocated_ptr.h \
-  /usr/include/c++/11/bits/refwrap.h \
-  /usr/include/c++/11/ext/aligned_buffer.h \
-  /usr/include/c++/11/ext/concurrence.h \
-  /usr/include/c++/11/bits/shared_ptr_atomic.h \
-  /usr/include/c++/11/bits/atomic_base.h \
-  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/11/backward/auto_ptr.h \
-  /usr/include/c++/11/pstl/glue_memory_defs.h \
-  /usr/include/c++/11/pstl/execution_defs.h \
   ../src/engine/opengl/buffer/VertexArray.h \
   ../src/engine/opengl/buffer/Buffer.h \
   ../glew/glew.h \
@@ -2259,6 +2259,219 @@ CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o: ../src/engine/group/Poly
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
+  ../glm/vec3.hpp \
+  ../glm/ext/vector_bool3.hpp \
+  ../glm/detail/type_vec3.hpp \
+  ../glm/detail/qualifier.hpp \
+  ../glm/detail/setup.hpp \
+  /usr/include/c++/11/cassert \
+  /usr/include/assert.h \
+  /usr/include/c++/11/cstddef \
+  ../glm/simd/platform.h \
+  ../glm/detail/type_vec3.inl \
+  ../glm/detail/compute_vector_relational.hpp \
+  /usr/include/c++/11/limits \
+  ../glm/ext/vector_bool3_precision.hpp \
+  ../glm/ext/vector_float3.hpp \
+  ../glm/ext/vector_float3_precision.hpp \
+  ../glm/ext/vector_double3.hpp \
+  ../glm/ext/vector_double3_precision.hpp \
+  ../glm/ext/vector_int3.hpp \
+  ../glm/ext/vector_int3_sized.hpp \
+  ../glm/ext/scalar_int_sized.hpp \
+  ../glm/detail/setup.hpp \
+  ../glm/ext/vector_uint3.hpp \
+  ../glm/ext/vector_uint3_sized.hpp \
+  ../glm/ext/scalar_uint_sized.hpp \
+  ../glm/vec4.hpp \
+  ../glm/ext/vector_bool4.hpp \
+  ../glm/detail/type_vec4.hpp \
+  ../glm/detail/type_vec4.inl \
+  ../glm/ext/vector_bool4_precision.hpp \
+  ../glm/ext/vector_float4.hpp \
+  ../glm/ext/vector_float4_precision.hpp \
+  ../glm/ext/vector_double4.hpp \
+  ../glm/ext/vector_double4_precision.hpp \
+  ../glm/detail/setup.hpp \
+  ../glm/ext/vector_int4.hpp \
+  ../glm/ext/vector_int4_sized.hpp \
+  ../glm/ext/vector_uint4.hpp \
+  ../glm/ext/vector_uint4_sized.hpp \
+  ../glm/mat4x4.hpp \
+  ../glm/ext/matrix_double4x4.hpp \
+  ../glm/detail/type_mat4x4.hpp \
+  ../glm/detail/type_mat4x4.inl \
+  ../glm/matrix.hpp \
+  ../glm/detail/setup.hpp \
+  ../glm/vec2.hpp \
+  ../glm/ext/vector_bool2.hpp \
+  ../glm/detail/type_vec2.hpp \
+  ../glm/detail/type_vec2.inl \
+  ../glm/ext/vector_bool2_precision.hpp \
+  ../glm/ext/vector_float2.hpp \
+  ../glm/ext/vector_float2_precision.hpp \
+  ../glm/ext/vector_double2.hpp \
+  ../glm/ext/vector_double2_precision.hpp \
+  ../glm/ext/vector_int2.hpp \
+  ../glm/ext/vector_int2_sized.hpp \
+  ../glm/ext/vector_uint2.hpp \
+  ../glm/ext/vector_uint2_sized.hpp \
+  ../glm/mat2x2.hpp \
+  ../glm/ext/matrix_double2x2.hpp \
+  ../glm/detail/type_mat2x2.hpp \
+  ../glm/detail/type_mat2x2.inl \
+  ../glm/ext/matrix_double2x2_precision.hpp \
+  ../glm/ext/matrix_float2x2.hpp \
+  ../glm/ext/matrix_float2x2_precision.hpp \
+  ../glm/mat2x3.hpp \
+  ../glm/ext/matrix_double2x3.hpp \
+  ../glm/detail/type_mat2x3.hpp \
+  ../glm/detail/type_mat2x3.inl \
+  ../glm/ext/matrix_double2x3_precision.hpp \
+  ../glm/ext/matrix_float2x3.hpp \
+  ../glm/ext/matrix_float2x3_precision.hpp \
+  ../glm/mat2x4.hpp \
+  ../glm/ext/matrix_double2x4.hpp \
+  ../glm/detail/type_mat2x4.hpp \
+  ../glm/detail/type_mat2x4.inl \
+  ../glm/ext/matrix_double2x4_precision.hpp \
+  ../glm/ext/matrix_float2x4.hpp \
+  ../glm/ext/matrix_float2x4_precision.hpp \
+  ../glm/mat3x2.hpp \
+  ../glm/ext/matrix_double3x2.hpp \
+  ../glm/detail/type_mat3x2.hpp \
+  ../glm/detail/type_mat3x2.inl \
+  ../glm/ext/matrix_double3x2_precision.hpp \
+  ../glm/ext/matrix_float3x2.hpp \
+  ../glm/ext/matrix_float3x2_precision.hpp \
+  ../glm/mat3x3.hpp \
+  ../glm/ext/matrix_double3x3.hpp \
+  ../glm/detail/type_mat3x3.hpp \
+  ../glm/detail/type_mat3x3.inl \
+  ../glm/ext/matrix_double3x3_precision.hpp \
+  ../glm/ext/matrix_float3x3.hpp \
+  ../glm/ext/matrix_float3x3_precision.hpp \
+  ../glm/mat3x4.hpp \
+  ../glm/ext/matrix_double3x4.hpp \
+  ../glm/detail/type_mat3x4.hpp \
+  ../glm/detail/type_mat3x4.inl \
+  ../glm/ext/matrix_double3x4_precision.hpp \
+  ../glm/ext/matrix_float3x4.hpp \
+  ../glm/ext/matrix_float3x4_precision.hpp \
+  ../glm/mat4x2.hpp \
+  ../glm/ext/matrix_double4x2.hpp \
+  ../glm/detail/type_mat4x2.hpp \
+  ../glm/detail/type_mat4x2.inl \
+  ../glm/ext/matrix_double4x2_precision.hpp \
+  ../glm/ext/matrix_float4x2.hpp \
+  ../glm/ext/matrix_float4x2_precision.hpp \
+  ../glm/mat4x3.hpp \
+  ../glm/ext/matrix_double4x3.hpp \
+  ../glm/detail/type_mat4x3.hpp \
+  ../glm/detail/type_mat4x3.inl \
+  ../glm/ext/matrix_double4x3_precision.hpp \
+  ../glm/ext/matrix_float4x3.hpp \
+  ../glm/ext/matrix_float4x3_precision.hpp \
+  ../glm/detail/func_matrix.inl \
+  ../glm/geometric.hpp \
+  ../glm/detail/func_geometric.inl \
+  ../glm/exponential.hpp \
+  ../glm/detail/type_vec1.hpp \
+  ../glm/detail/type_vec1.inl \
+  /usr/include/c++/11/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/11/bits/specfun.h \
+  /usr/include/c++/11/tr1/gamma.tcc \
+  /usr/include/c++/11/tr1/special_function_util.h \
+  /usr/include/c++/11/tr1/bessel_function.tcc \
+  /usr/include/c++/11/tr1/beta_function.tcc \
+  /usr/include/c++/11/tr1/ell_integral.tcc \
+  /usr/include/c++/11/tr1/exp_integral.tcc \
+  /usr/include/c++/11/tr1/hypergeometric.tcc \
+  /usr/include/c++/11/tr1/legendre_function.tcc \
+  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/11/tr1/poly_hermite.tcc \
+  /usr/include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/include/c++/11/tr1/riemann_zeta.tcc \
+  ../glm/detail/func_exponential.inl \
+  ../glm/vector_relational.hpp \
+  ../glm/detail/setup.hpp \
+  ../glm/detail/func_vector_relational.inl \
+  ../glm/detail/_vectorize.hpp \
+  ../glm/common.hpp \
+  ../glm/detail/_fixes.hpp \
+  ../glm/detail/func_common.inl \
+  ../glm/detail/compute_common.hpp \
+  ../glm/detail/setup.hpp \
+  ../glm/ext/matrix_double4x4_precision.hpp \
+  ../glm/ext/matrix_float4x4.hpp \
+  ../glm/ext/matrix_float4x4_precision.hpp \
+  ../glm/gtc/type_ptr.hpp \
+  ../glm/gtc/quaternion.hpp \
+  ../glm/gtc/constants.hpp \
+  ../glm/ext/scalar_constants.hpp \
+  ../glm/detail/setup.hpp \
+  ../glm/ext/scalar_constants.inl \
+  ../glm/gtc/constants.inl \
+  ../glm/gtc/matrix_transform.hpp \
+  ../glm/ext/matrix_projection.hpp \
+  ../glm/trigonometric.hpp \
+  ../glm/detail/setup.hpp \
+  ../glm/detail/func_trigonometric.inl \
+  ../glm/ext/matrix_projection.inl \
+  ../glm/ext/matrix_clip_space.hpp \
+  ../glm/ext/matrix_clip_space.inl \
+  ../glm/ext/matrix_transform.hpp \
+  ../glm/ext/matrix_transform.inl \
+  ../glm/gtc/matrix_transform.inl \
+  ../glm/ext/vector_relational.hpp \
+  ../glm/ext/vector_relational.inl \
+  ../glm/detail/type_float.hpp \
+  ../glm/detail/setup.hpp \
+  ../glm/ext/quaternion_common.hpp \
+  ../glm/ext/quaternion_geometric.hpp \
+  ../glm/ext/quaternion_geometric.inl \
+  ../glm/ext/quaternion_common.inl \
+  ../glm/ext/quaternion_float.hpp \
+  ../glm/detail/type_quat.hpp \
+  ../glm/ext/quaternion_relational.hpp \
+  ../glm/ext/quaternion_relational.inl \
+  ../glm/detail/type_quat.inl \
+  ../glm/ext/quaternion_float_precision.hpp \
+  ../glm/ext/quaternion_double.hpp \
+  ../glm/ext/quaternion_double_precision.hpp \
+  ../glm/ext/quaternion_trigonometric.hpp \
+  ../glm/ext/quaternion_trigonometric.inl \
+  ../glm/ext/quaternion_transform.hpp \
+  ../glm/ext/quaternion_transform.inl \
+  ../glm/gtc/quaternion.inl \
+  ../glm/gtc/epsilon.hpp \
+  ../glm/detail/setup.hpp \
+  ../glm/gtc/epsilon.inl \
+  ../glm/gtc/vec1.hpp \
+  ../glm/ext/vector_bool1.hpp \
+  ../glm/ext/vector_bool1_precision.hpp \
+  ../glm/ext/vector_float1.hpp \
+  ../glm/ext/vector_float1_precision.hpp \
+  ../glm/ext/vector_double1.hpp \
+  ../glm/ext/vector_double1_precision.hpp \
+  ../glm/ext/vector_int1.hpp \
+  ../glm/ext/vector_int1_sized.hpp \
+  ../glm/ext/vector_uint1.hpp \
+  ../glm/ext/vector_uint1_sized.hpp \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  ../glm/gtc/type_ptr.inl \
   ../src/engine/opengl/buffer/VertexArray.h \
   ../src/engine/opengl/buffer/Buffer.h \
   ../glew/glew.h \
@@ -3608,6 +3821,7 @@ CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o: ../src/engine/rendere
   /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
   ../src/engine/group/Group.h \
+  ../src/engine/group/Polytope.h \
   ../glm/vec3.hpp \
   ../glm/ext/vector_bool3.hpp \
   ../glm/detail/type_vec3.hpp \
@@ -3821,7 +4035,6 @@ CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o: ../src/engine/rendere
   /usr/include/string.h \
   /usr/include/strings.h \
   ../glm/gtc/type_ptr.inl \
-  ../src/engine/group/Polytope.h \
   ../src/engine/opengl/buffer/VertexArray.h \
   ../src/engine/opengl/buffer/Buffer.h \
   ../glew/glew.h \
@@ -4479,8 +4692,6 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 
 ../src/engine/opengl/buffer/Buffer.h:
 
-../src/engine/group/Polytope.h:
-
 ../glm/gtc/type_ptr.inl:
 
 /usr/include/c++/11/cstring:
@@ -4502,6 +4713,8 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 ../glm/gtc/epsilon.hpp:
 
 ../glm/ext/quaternion_transform.hpp:
+
+../glm/ext/quaternion_trigonometric.hpp:
 
 /usr/include/c++/11/exception:
 
@@ -5415,8 +5628,6 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 
 ../glm/ext/matrix_transform.inl:
 
-../glm/ext/quaternion_trigonometric.hpp:
-
 /usr/include/c++/11/bits/stl_algo.h:
 
 ../glm/ext/vector_float1_precision.hpp:
@@ -5458,6 +5669,8 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 /usr/lib/gcc/x86_64-linux-gnu/11/include/wbnoinvdintrin.h:
 
 ../src/engine/renderer/Renderer.h:
+
+../src/engine/group/Polytope.h:
 
 ../glm/ext/matrix_float3x2_precision.hpp:
 

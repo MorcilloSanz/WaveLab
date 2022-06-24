@@ -36,15 +36,19 @@ void Renderer::render() {
 
     for(Group* group : groups) {
         if(group->isVisible()) {
-            // Update ModelViewProjection matrix
-            glm::mat4 model = group->getModelMatrix();
-            glm::mat4 mvp = projection * view * model;
-            shaderProgram->uniformMat4("mvp", mvp);
             // Primitive settings
             glPointSize(group->getPointSize());
             glLineWidth(group->getLineWidth());
             // Draw call
-            group->draw();
+            for(Polytope* polytope : group->getPolytopes()) {
+                // Calculate model view matrix
+                glm::mat4 model = group->getModelMatrix() * polytope->getModelMatrix();
+                glm::mat4 mvp = projection * view * model;
+                // Send to vertex shader
+                shaderProgram->uniformMat4("mvp", mvp);
+                // Draw
+                polytope->draw(group->getPrimitive(), group->isShowWire());
+            }
         }
     }
 }

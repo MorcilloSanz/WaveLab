@@ -3,14 +3,14 @@
 #include "../../../glew/glew.h"
 
 Polytope::Polytope(const std::vector<Vec3f>& vertices)
-    : vertexLength(vertices.size()), indicesLength(0) {
+    : vertexLength(vertices.size()), modelMatrix(1.f), indicesLength(0) {
     vertexArray = std::make_shared<VertexArray>();
     vertexBuffer = std::make_shared<VertexBuffer>(vertices);
     unbind();
 }
 
-Polytope::Polytope(const std::vector<Vec3f>& vertices, const std::vector<unsigned int> indices) 
-    : vertexLength(vertices.size()), indicesLength(indices.size()) {
+Polytope::Polytope(const std::vector<Vec3f>& vertices, const std::vector<unsigned int>& indices) 
+    : vertexLength(vertices.size()), modelMatrix(1.f), indicesLength(indices.size()) {
     vertexArray = std::make_shared<VertexArray>();
     vertexBuffer = std::make_shared<VertexBuffer>(vertices, indices);
     unbind();
