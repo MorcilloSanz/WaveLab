@@ -22,24 +22,17 @@ public:
     void setCamera(Camera& camera);
     void enableBlending();
     void enableAntialiasing();
+    void enableBackFaceCulling();   // Counter-clockwise order
+    void enableFrontFaceCulling();  // Counter-clockwise order
     void render();
     void clear();
 public:
-    inline void addGroup(Group& group) {
-        groups.push_back(&group);
-    }
-
-    inline void removeGroup(int index) {
-        groups.erase(groups.begin() + index);
-    }
-
-    inline Group* getGroup(int index) {
-        return groups[index];
-    }
+    inline void addGroup(Group& group) { groups.push_back(&group); }
+    inline void removeGroup(int index) { groups.erase(groups.begin() + index); }
+    inline Group* getGroup(int index) { return groups[index]; }
+    inline std::vector<Group*>& getGroups() { return groups; }
 
     inline Camera* getCamera() { return camera; }
-
-    inline std::vector<Group*>& getGroups() { return groups; }
 
     inline std::shared_ptr<ShaderProgram>& getShaderProgram() { return shaderProgram; }
 };

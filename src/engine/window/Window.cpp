@@ -26,6 +26,7 @@ void Window::initWindow() {
         std::cout << "Couldn't initialize window" << std::endl;
         return;
     }
+    glfwWindowHint(GLFW_SAMPLES, 4);
     window = glfwCreateWindow(CallbackManager::width, CallbackManager::height, title.c_str(), NULL, NULL);
     if (!window) terminate();
     glfwMakeContextCurrent(window);

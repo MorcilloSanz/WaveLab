@@ -53,53 +53,61 @@ int main(void) {
     
     // Cube polytope
     std::vector<Vec3f> vertices = {
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f),
-        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f),
-
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f),
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f),
-
-        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
-        Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
-
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f),
-
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f),
-        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f),
-
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f),
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 0.0f),
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f)
+        // Back face
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f), // Bottom-left
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 1.0f), // bottom-right         
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        // Front face
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f), // top-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f), // top-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
+        // Left face
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-right
+        Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-right
+        // Right face
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-left
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right         
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left     
+        // Bottom face
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-right
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-right
+        // Top face
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right     
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f) // bottom-left
     };
-    Polytope polytope(vertices);
+    Polytope cubePolytope(vertices);
 
-    Group group(GL_TRIANGLES);
+    Polytope cubePolytope2(vertices);
+    cubePolytope2.translate(glm::vec3(1.5f, -1.5f, 0.f));
+    cubePolytope2.rotate(45, glm::vec3(0, 0, 1));
+    cubePolytope2.scale(glm::vec3(0.25, 0.25, 0.25));
+
+    Group group;
+    group.setLineWidth(2.f);
     group.translate(glm::vec3(0, -0.5f, 0));
-    group.add(polytope);
+    group.add(cubePolytope);
+    group.add(cubePolytope2);
     renderer.addGroup(group);
 
     // Grid polytope
@@ -121,27 +129,29 @@ int main(void) {
     Polytope gridPolytope(gridVertices);
 
     Group groupGrid(GL_LINES);
-    groupGrid.setPointSize(2.5f);
     groupGrid.add(gridPolytope);
     renderer.addGroup(groupGrid);
 
     // Init TextureRenderer
     textureRenderer = TextureRenderer(window.getWidth(), window.getHeight());
 
+    // Enable back face culling
+    renderer.enableBackFaceCulling();
+
     // Main loop
     while (!window.windowShouldClose()) {
 
         // Clear
         renderer.clear();
-
         // Draw to texture instead of default
         textureRenderer.renderToTexture();
-
         // Render
         renderer.render();
-
         // Go back to default
         textureRenderer.renderToDefault();
+
+        // Rotate cubePolytope2
+        cubePolytope2.rotate(1, glm::vec3(1, 0, 1));
 
         // ImGUI
         {
