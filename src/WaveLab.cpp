@@ -51,50 +51,50 @@ int main(void) {
     float sensitivity = 1.5f, panSensitivity = 1.0f, zoomSensitivity = 1.0f;
     renderer.setCamera(camera);
     
-    // Cube polytope
+    // Cube polytope -> Vertex: x y z r g b nx ny nz
     std::vector<Vec3f> vertices = {
         // Back face
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f), // Bottom-left
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right
-        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 1.0f), // bottom-right         
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  0.0f, -1.0f), // Bottom-left
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  0.0f, -1.0f), // top-right
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 1.0f,  0.0f,  0.0f, -1.0f), // bottom-right         
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  0.0f, -1.0f), // top-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  0.0f, -1.0f), // bottom-left
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f,  0.0f, -1.0f), // top-left
         // Front face
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f), // top-right
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f), // top-right
-        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 1.0f), // top-left
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  0.0f,  1.0f), // bottom-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f,  0.0f,  1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  0.0f,  1.0f), // top-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  0.0f,  1.0f), // top-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 1.0f,  0.0f,  0.0f,  1.0f), // top-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  0.0f,  1.0f), // bottom-left
         // Left face
-        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-right
-        Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-left
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-left
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-left
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // top-right
+        Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // top-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // bottom-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // top-right
         // Right face
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-left
-        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-right
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right         
-        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-right
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-left
-        Vec3f( 0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left     
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  1.0f,  0.0f,  0.0f), // top-left
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  1.0f,  0.0f,  0.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  1.0f,  0.0f,  0.0f), // top-right         
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  1.0f,  0.0f,  0.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  1.0f,  0.0f,  0.0f), // top-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  1.0f,  0.0f,  0.0f), // bottom-left     
         // Bottom face
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-right
-        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-left
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-left
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-left
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f, -1.0f,  0.0f), // top-right
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  0.0f, -1.0f,  0.0f), // top-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f, -1.0f,  0.0f), // bottom-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f, -1.0f,  0.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  0.0f, -1.0f,  0.0f), // bottom-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f, -1.0f,  0.0f), // top-right
         // Top face
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right     
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
-        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f) // bottom-left
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f), // top-left
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f,  1.0f,  0.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f), // top-right     
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f,  1.0f,  0.0f), // bottom-right
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f), // top-left
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  1.0f,  0.0f) // bottom-left
     };
     Polytope cubePolytope(vertices);
 

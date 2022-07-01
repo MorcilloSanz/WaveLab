@@ -64,6 +64,9 @@ void VertexBuffer::initBuffer() {
     // color attribute
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    // normal attribute
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(6 * sizeof(float)));
 }
 
 void VertexBuffer::updateVertices(std::vector<Vec3f>& vertices, bool copy2memory) {
