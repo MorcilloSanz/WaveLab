@@ -513,6 +513,30 @@ src/engine/renderer/Camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/renderer/Camera.cpp.s
 .PHONY : src/engine/renderer/Camera.cpp.s
 
+src/engine/renderer/Light.o: src/engine/renderer/Light.cpp.o
+.PHONY : src/engine/renderer/Light.o
+
+# target to build an object file
+src/engine/renderer/Light.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/renderer/Light.cpp.o
+.PHONY : src/engine/renderer/Light.cpp.o
+
+src/engine/renderer/Light.i: src/engine/renderer/Light.cpp.i
+.PHONY : src/engine/renderer/Light.i
+
+# target to preprocess a source file
+src/engine/renderer/Light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/renderer/Light.cpp.i
+.PHONY : src/engine/renderer/Light.cpp.i
+
+src/engine/renderer/Light.s: src/engine/renderer/Light.cpp.s
+.PHONY : src/engine/renderer/Light.s
+
+# target to generate assembly for a file
+src/engine/renderer/Light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/renderer/Light.cpp.s
+.PHONY : src/engine/renderer/Light.cpp.s
+
 src/engine/renderer/Renderer.o: src/engine/renderer/Renderer.cpp.o
 .PHONY : src/engine/renderer/Renderer.o
 
@@ -642,6 +666,9 @@ help:
 	@echo "... src/engine/renderer/Camera.o"
 	@echo "... src/engine/renderer/Camera.i"
 	@echo "... src/engine/renderer/Camera.s"
+	@echo "... src/engine/renderer/Light.o"
+	@echo "... src/engine/renderer/Light.i"
+	@echo "... src/engine/renderer/Light.s"
 	@echo "... src/engine/renderer/Renderer.o"
 	@echo "... src/engine/renderer/Renderer.i"
 	@echo "... src/engine/renderer/Renderer.s"

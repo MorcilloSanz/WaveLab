@@ -45,11 +45,17 @@ int main(void) {
     // Renderer
     Renderer renderer;
 
+    // Camera
     TrackballCamera camera = TrackballCamera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
     camera.zoom(-5.5);
     camera.setTheta(M_PI / 4); camera.setPhi(M_PI / 1.5);
     float sensitivity = 1.5f, panSensitivity = 1.0f, zoomSensitivity = 1.0f;
     renderer.setCamera(camera);
+
+    // Light
+    Light light(glm::vec3(0, -15, 0));
+    renderer.setLight(light);
+    renderer.disableLight();
     
     // Cube polytope -> Vertex: x y z r g b nx ny nz
     std::vector<Vec3f> vertices = {
@@ -171,20 +177,25 @@ int main(void) {
 
                 ImGui::Separator();
 
+                if (ImGui::Button("Visible")) group.setVisible(!group.isVisible());
+                ImGui::SameLine();
+                if (ImGui::Button("Show wire")) group.setShowWire(!group.isShowWire());
+
+                ImGui::Separator();
+
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
                 ImGui::End();
             }
             // App window
             {
                 ImGui::Begin("App window"); 
-                ImGui::TextColored(ImColor(200, 150, 255), "App controls");
+                ImGui::TextColored(ImColor(200, 150, 255), "Light configuration");
                 ImGui::Text("Controls for your custom application");
 
-                ImGui::Separator();
+                static bool enable = false;
+                ImGui::Checkbox("Enable light", &enable);
+                renderer.setLightEnabled(enable);
 
-                if (ImGui::Button("Visible")) group.setVisible(!group.isVisible());
-                ImGui::SameLine();
-                if (ImGui::Button("Show wire")) group.setShowWire(!group.isShowWire());
                 ImGui::End();
             }
             // Camera Window

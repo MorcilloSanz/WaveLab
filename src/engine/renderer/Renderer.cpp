@@ -2,7 +2,7 @@
 
 #include "../../../glew/glew.h"
 
-Renderer::Renderer() : hasCamera(false) {
+Renderer::Renderer() : camera(nullptr), hasCamera(false), light(nullptr), hasLight(false) {
     Shader vertexShader = Shader::fromFile("../src/engine/opengl/glsl/vertex_shader.glsl", Shader::ShaderType::Vertex);
     Shader fragmentShader = Shader::fromFile("../src/engine/opengl/glsl/fragment_shader.glsl", Shader::ShaderType::Fragment);
     shaderProgram = std::make_shared<ShaderProgram>(vertexShader, fragmentShader);
@@ -36,8 +36,14 @@ void Renderer::setCamera(Camera& camera) {
     this->camera = &camera;
 }
 
+void Renderer::setLight(Light& light) {
+    hasLight = true;
+    this->light = &light;
+}
+
 void Renderer::render() {
-    shaderProgram->useProgram();
+    if(!hasLight) shaderProgram->useProgram();
+    else    light->getShaderProgram()->useProgram();
 
     glm::mat4 projection(1.f);
     glm::mat4 view(1.f);
@@ -57,7 +63,16 @@ void Renderer::render() {
                 glm::mat4 model = group->getModelMatrix() * polytope->getModelMatrix();
                 glm::mat4 mvp = projection * view * model;
                 // Send to vertex shader
-                shaderProgram->uniformMat4("mvp", mvp);
+                if(!hasLight) shaderProgram->uniformMat4("mvp", mvp);
+                else {
+                    light->getShaderProgram()->uniformMat4("model", model);
+                    light->getShaderProgram()->uniformMat4("view", view);
+                    light->getShaderProgram()->uniformMat4("projection", projection);
+                    light->getShaderProgram()->uniformVec3("lightPos", light->getLightPosition());
+                    light->getShaderProgram()->uniformVec3("viewPos", camera->getEye());
+                    light->getShaderProgram()->uniformVec3("lightColor", light->getLightColor());
+                    light->getShaderProgram()->uniformInt("shininess", light->getShininess());
+                }
                 // Draw
                 polytope->draw(group->getPrimitive(), group->isShowWire());
             }

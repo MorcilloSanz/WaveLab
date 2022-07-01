@@ -113,6 +113,11 @@ void ShaderProgram::link() {
     fragmentShader.deleteShader();
 }
 
+void ShaderProgram::uniformInt(const std::string& uniform, int value) {
+    int location = glGetUniformLocation(shaderProgramID, uniform.c_str());
+    glUniform1i(location, value); 
+}
+
 void ShaderProgram::uniformFloat(const std::string& uniform, float value) {
     int location = glGetUniformLocation(shaderProgramID, uniform.c_str());
     glUniform1f(location, value); 

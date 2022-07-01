@@ -401,6 +401,7 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../opengl/shader/Shader.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../opengl/shader/../../../../glew/glew.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Light.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/TrackballCamera.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/TextureRenderer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../../../glew/glew.h \

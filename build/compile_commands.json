@@ -93,5 +93,10 @@
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
   "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/renderer/TrackballCamera.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/TrackballCamera.cpp",
   "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/TrackballCamera.cpp"
+},
+{
+  "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/renderer/Light.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Light.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Light.cpp"
 }
 ]

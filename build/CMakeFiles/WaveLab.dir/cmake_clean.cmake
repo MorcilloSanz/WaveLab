@@ -31,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/WaveLab.dir/src/engine/opengl/shader/Shader.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/engine/renderer/Camera.cpp.o"
   "CMakeFiles/WaveLab.dir/src/engine/renderer/Camera.cpp.o.d"
+  "CMakeFiles/WaveLab.dir/src/engine/renderer/Light.cpp.o"
+  "CMakeFiles/WaveLab.dir/src/engine/renderer/Light.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o"
   "CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/engine/renderer/TrackballCamera.cpp.o"
