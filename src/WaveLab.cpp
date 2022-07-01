@@ -196,6 +196,10 @@ int main(void) {
                 ImGui::Checkbox("Enable light", &enable);
                 renderer.setLightEnabled(enable);
 
+                static float ambientStrength = light.getAmbientStrength();
+                ImGui::SliderFloat("Ambient strength", &ambientStrength, 0.f, 1.f);
+                light.setAmbientStrength(ambientStrength);
+
                 ImGui::End();
             }
             // Camera Window

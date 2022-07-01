@@ -17,6 +17,7 @@ private:
     glm::vec3 lightColor;
     std::shared_ptr<ShaderProgram> shaderProgram;
     int shininess;
+    float ambientStrength;
 public:
     Light(const glm::vec3& _lightPosition);
     ~Light() = default;
@@ -24,7 +25,6 @@ public:
     inline glm::vec3& getLightPosition() { return lightPosition; }
     inline glm::vec3& getCameraPosition() { return cameraPosition; }
     inline glm::vec3& getLightColor() { return lightColor; }
-    inline int getShininess() const {  return shininess; }
 
     inline void setLightPosition(const glm::vec3& lightPosition) { this->lightPosition = lightPosition; }
     inline void setCameraPosition(const glm::vec3& cameraPosition) { this->cameraPosition = cameraPosition; }
@@ -35,6 +35,10 @@ public:
      * @param shininess 
      */
     inline void setShininess(int shininess) { this->shininess = shininess; }
+    inline int getShininess() const {  return shininess; }
+
+    inline void setAmbientStrength(float ambientStrength) { this->ambientStrength = ambientStrength; }
+    inline float getAmbientStrength() const { return ambientStrength; }
 
     inline std::shared_ptr<ShaderProgram>& getShaderProgram() { return shaderProgram; }
 };

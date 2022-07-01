@@ -72,6 +72,7 @@ void Renderer::render() {
                     light->getShaderProgram()->uniformVec3("viewPos", camera->getEye());
                     light->getShaderProgram()->uniformVec3("lightColor", light->getLightColor());
                     light->getShaderProgram()->uniformInt("shininess", light->getShininess());
+                    light->getShaderProgram()->uniformFloat("ambientStrength", light->getAmbientStrength());
                 }
                 // Draw
                 polytope->draw(group->getPrimitive(), group->isShowWire());
