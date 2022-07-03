@@ -53,7 +53,7 @@ int main(void) {
     renderer.setCamera(camera);
 
     // Light
-    Light light(glm::vec3(0, -15, 0));
+    Light light(glm::vec3(0, -8, 0));
     renderer.setLight(light);
     renderer.disableLight();
     
@@ -188,7 +188,7 @@ int main(void) {
             }
             // App window
             {
-                ImGui::Begin("App window"); 
+                ImGui::Begin("Lighting"); 
                 ImGui::TextColored(ImColor(200, 150, 255), "Light configuration");
                 ImGui::Text("Controls for your custom application");
 
@@ -199,6 +199,14 @@ int main(void) {
                 static float ambientStrength = light.getAmbientStrength();
                 ImGui::SliderFloat("Ambient strength", &ambientStrength, 0.f, 1.f);
                 light.setAmbientStrength(ambientStrength);
+
+                static float specularStrength = light.getSpecularStrength();
+                ImGui::SliderFloat("Specular strength", &specularStrength, 0.f, 1.f);
+                light.setSpecularStrength(specularStrength);
+
+                static float color[3] = {1, 1, 1};
+                ImGui::ColorEdit3("Light color", color, 0);
+                light.setLightColor(glm::vec3(color[0], color[1], color[2]));
 
                 ImGui::End();
             }
@@ -229,6 +237,7 @@ int main(void) {
                     camera.setPhi(M_PI / 1.5);
                     camera.setRadius(5.5f);
                     camera.setCenter(glm::vec3(0, 0, 0));
+                    camera.setUp(glm::vec3(0, 1, 0));
                     sensitivity = 1.5f;
                     panSensitivity = 1.0f;
                     zoomSensitivity = 1.0f;

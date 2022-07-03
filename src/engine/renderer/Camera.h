@@ -27,9 +27,9 @@ public:
     inline void setProjectionMatrix(const glm::mat4& projectionMatrix) { this->projectionMatrix = projectionMatrix; }
     inline void setViewMatrix(const glm::mat4& viewMatrix) { this->viewMatrix = viewMatrix; } 
 
-    inline glm::vec3& getEye() { return eye; }
-    inline glm::vec3& getCenter() { return center; }
-    inline glm::vec3& getUp() { return up; }
+    virtual glm::vec3& getEye() { return eye; }
+    virtual glm::vec3& getCenter() { return center; }
+    virtual glm::vec3& getUp() { return up; }
 
     inline void setEye(const glm::vec3& eye) { this->eye = eye; }
     inline void setCenter(const glm::vec3& center) { this->center = center; }
