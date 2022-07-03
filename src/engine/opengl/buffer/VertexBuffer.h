@@ -11,9 +11,13 @@ template<typename T>
 struct Vec3 {
     T x, y, z;
     float r, g, b;
+    float nx, ny, nz;
 
     Vec3(T _x, T _y, T _z, float _r = 255, float _g = 255, float _b = 255)
-        : x(_x), y(_y), z(_z), r(_r), g(_g), b(_b) {
+        : x(_x), y(_y), z(_z), r(_r), g(_g), b(_b), nx(0), ny(0), nz(0) {
+    }
+    Vec3(T _x, T _y, T _z, float _r, float _g, float _b, float _nx, float _ny, float _nz)
+        : x(_x), y(_y), z(_z), r(_r), g(_g), b(_b), nx(_nx), ny(_ny), nz(_nz) {
     }
     Vec3() : x(0), y(0), z(0), r(0), g(0), b(0) {}
     ~Vec3() = default;

@@ -389,4 +389,5 @@ CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o: \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../opengl/shader/Shader.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../opengl/shader/../../../../glew/glew.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Light.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../../../glew/glew.h

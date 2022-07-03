@@ -45,56 +45,62 @@ int main(void) {
     // Renderer
     Renderer renderer;
 
+    // Camera
     TrackballCamera camera = TrackballCamera::perspectiveCamera(glm::radians(45.0f), window.getWidth() / window.getHeight(), 0.1, 1000);
     camera.zoom(-5.5);
     camera.setTheta(M_PI / 4); camera.setPhi(M_PI / 1.5);
     float sensitivity = 1.5f, panSensitivity = 1.0f, zoomSensitivity = 1.0f;
     renderer.setCamera(camera);
+
+    // Light
+    Light light(glm::vec3(2, -8, 5));
+    renderer.setLight(light);
+    renderer.disableLight();
     
-    // Cube polytope
+    // Cube polytope -> Vertex: x y z r g b nx ny nz
     std::vector<Vec3f> vertices = {
         // Back face
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f), // Bottom-left
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right
-        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 1.0f), // bottom-right         
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  0.0f, -1.0f), // Bottom-left
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  0.0f, -1.0f), // top-right
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 1.0f,  0.0f,  0.0f, -1.0f), // bottom-right         
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  0.0f, -1.0f), // top-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  0.0f, -1.0f), // bottom-left
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f,  0.0f, -1.0f), // top-left
         // Front face
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f), // top-right
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f), // top-right
-        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 1.0f), // top-left
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  0.0f,  1.0f), // bottom-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f,  0.0f,  1.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  0.0f,  1.0f), // top-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  0.0f,  1.0f), // top-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 1.0f,  0.0f,  0.0f,  1.0f), // top-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  0.0f,  1.0f), // bottom-left
         // Left face
-        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-right
-        Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-left
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-left
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-left
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // top-right
+        Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // top-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // bottom-right
+        Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  -1.0f,  0.0f,  0.0f), // top-right
         // Right face
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-left
-        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-right
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right         
-        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // bottom-right
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // top-left
-        Vec3f( 0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-left     
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  1.0f,  0.0f,  0.0f), // top-left
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  1.0f,  0.0f,  0.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  1.0f,  0.0f,  0.0f), // top-right         
+        Vec3f( 0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  1.0f,  0.0f,  0.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  1.0f,  0.0f,  0.0f), // top-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  1.0f,  0.0f,  0.0f), // bottom-left     
         // Bottom face
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-right
-        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-left
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-left
-        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-left
-        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f, -1.0f,  0.0f), // top-right
+        Vec3f( 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  0.0f, -1.0f,  0.0f), // top-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f, -1.0f,  0.0f), // bottom-left
+        Vec3f( 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f, -1.0f,  0.0f), // bottom-left
+        Vec3f(-0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  0.0f, -1.0f,  0.0f), // bottom-right
+        Vec3f(-0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f, -1.0f,  0.0f), // top-right
         // Top face
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f), // top-right     
-        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f), // bottom-right
-        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f), // top-left
-        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f) // bottom-left
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f), // top-left
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f,  1.0f,  0.0f), // bottom-right
+        Vec3f( 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f), // top-right     
+        Vec3f( 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,  0.0f,  1.0f,  0.0f), // bottom-right
+        Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f), // top-left
+        Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  1.0f,  0.0f) // bottom-left
     };
     Polytope cubePolytope(vertices);
 
@@ -171,20 +177,55 @@ int main(void) {
 
                 ImGui::Separator();
 
-                ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-                ImGui::End();
-            }
-            // App window
-            {
-                ImGui::Begin("App window"); 
-                ImGui::TextColored(ImColor(200, 150, 255), "App controls");
-                ImGui::Text("Controls for your custom application");
-
-                ImGui::Separator();
-
                 if (ImGui::Button("Visible")) group.setVisible(!group.isVisible());
                 ImGui::SameLine();
                 if (ImGui::Button("Show wire")) group.setShowWire(!group.isShowWire());
+
+                ImGui::Separator();
+
+                ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+                ImGui::End();
+            }
+            // Lighting window
+            {
+                ImGui::Begin("Lighting"); 
+                ImGui::TextColored(ImColor(200, 150, 255), "Light configuration");
+                ImGui::Text("Controls for your custom application");
+
+                static bool enable = false;
+                ImGui::Checkbox("Enable lighting", &enable);
+                renderer.setLightEnabled(enable);
+
+                static float ambientStrength = light.getAmbientStrength();
+                ImGui::SliderFloat("Ambient strength", &ambientStrength, 0.f, 1.f);
+                light.setAmbientStrength(ambientStrength);
+
+                static float specularStrength = light.getSpecularStrength();
+                ImGui::SliderFloat("Specular strength", &specularStrength, 0.f, 1.f);
+                light.setSpecularStrength(specularStrength);
+
+                static float color[3] = {1, 1, 1};
+                ImGui::ColorEdit3("Light color", color, 0);
+                light.setLightColor(glm::vec3(color[0], color[1], color[2]));
+
+                static float lx = light.getLightPosition().x;
+                static float ly = light.getLightPosition().y;
+                static float lz = light.getLightPosition().z;
+
+                ImGui::Text("Light position");
+                ImGui::SliderFloat("x:", &lx, -50.f, 50.f);
+                ImGui::SliderFloat("y:", &ly, -50.f, 50.f);
+                ImGui::SliderFloat("z:", &lz, -50.f, 50.f);
+                light.setLightPosition(glm::vec3(lx, ly, lz));
+
+                ImGui::Separator();
+
+                if (ImGui::Button("Reset lighting")) {
+                    lx = 2; ly = -8; lz = 5;
+                    ambientStrength = 0.1f;
+                    specularStrength = 0.5f;
+                }
+
                 ImGui::End();
             }
             // Camera Window
@@ -209,11 +250,14 @@ int main(void) {
                 camera.setTheta(theta);
                 camera.setPhi(phi);
 
+                ImGui::Separator();
+
                 if (ImGui::Button("Reset camera")) {
                     camera.setTheta(M_PI / 4); 
                     camera.setPhi(M_PI / 1.5);
                     camera.setRadius(5.5f);
                     camera.setCenter(glm::vec3(0, 0, 0));
+                    camera.setUp(glm::vec3(0, 1, 0));
                     sensitivity = 1.5f;
                     panSensitivity = 1.0f;
                     zoomSensitivity = 1.0f;
@@ -263,7 +307,7 @@ int main(void) {
             }
 
             // Camera zoom
-            camera.zoom(ImGui::GetIO().MouseWheel * zoomSensitivity);
+            if(windowFocus) camera.zoom(ImGui::GetIO().MouseWheel * zoomSensitivity);
             
             // Rendering
             ImGui::Render();

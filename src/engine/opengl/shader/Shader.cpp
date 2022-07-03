@@ -113,6 +113,21 @@ void ShaderProgram::link() {
     fragmentShader.deleteShader();
 }
 
+void ShaderProgram::uniformInt(const std::string& uniform, int value) {
+    int location = glGetUniformLocation(shaderProgramID, uniform.c_str());
+    glUniform1i(location, value); 
+}
+
+void ShaderProgram::uniformFloat(const std::string& uniform, float value) {
+    int location = glGetUniformLocation(shaderProgramID, uniform.c_str());
+    glUniform1f(location, value); 
+}
+
+void ShaderProgram::uniformVec3(const std::string& uniform, const glm::vec3& vec) {
+    int location = glGetUniformLocation(shaderProgramID, uniform.c_str());
+    glUniform3fv(location, 1, &vec[0]); 
+}
+
 void ShaderProgram::uniformMat4(const std::string& uniform, const glm::mat4& mat) {
     int location = glGetUniformLocation(shaderProgramID, uniform.c_str());
     glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(mat));

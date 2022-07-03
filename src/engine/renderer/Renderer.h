@@ -8,6 +8,7 @@
 #include "../opengl/shader/Shader.h"
 
 #include "Camera.h"
+#include "Light.h"
 
 class Renderer {
 private:
@@ -15,11 +16,14 @@ private:
     std::vector<Group*> groups;
     Camera* camera;
     bool hasCamera;
+    Light* light;
+    bool hasLight;
 public:
     Renderer();
     ~Renderer() = default;
 public:
     void setCamera(Camera& camera);
+    void setLight(Light& light);
     void enableBlending();
     void enableAntialiasing();
     void enableBackFaceCulling();   // Counter-clockwise order
@@ -33,6 +37,11 @@ public:
     inline std::vector<Group*>& getGroups() { return groups; }
 
     inline Camera* getCamera() { return camera; }
+    inline Light* getLight() { return light; }
+
+    inline void enableLight() { hasLight = true; }
+    inline void disableLight() { hasLight = false; } 
+    inline void setLightEnabled(bool enable) { hasLight = enable; }
 
     inline std::shared_ptr<ShaderProgram>& getShaderProgram() { return shaderProgram; }
 };

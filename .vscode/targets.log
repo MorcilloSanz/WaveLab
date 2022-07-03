@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun 24 15:19:31 2022
+# Make data base, printed on Sun Jul  3 19:25:54 2022
 
 # Variables
 
@@ -23,7 +23,9 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-533d3f7e-2a3d-4463-b14f-a536ebef7c35.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-4cf3ee3e-8c65-4fbe-992e-31ed30a83de4.sock
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 LC_NAME = es_ES.UTF-8
 # environment
@@ -73,7 +75,7 @@ CURDIR := /home/morcillosanz/Desktop/GitHub/WaveLab
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # automatic
@@ -97,13 +99,13 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 10746
+VSCODE_PID = 3310
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/morcillosanz:@/tmp/.ICE-unix/2185,unix/morcillosanz:/tmp/.ICE-unix/2185
+SESSION_MANAGER = local/morcillosanz:@/tmp/.ICE-unix/2203,unix/morcillosanz:/tmp/.ICE-unix/2203
 # automatic
 *F = $(notdir $*)
 # environment
@@ -143,7 +145,7 @@ LC_MONETARY = es_ES.UTF-8
 # environment
 LC_TIME = es_ES.UTF-8
 # environment
-INVOCATION_ID = e6480d61415940a58d60965da001b9d1
+INVOCATION_ID = 6d78b89f1eff44b7a5fb57b3f3e38c25
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -173,21 +175,23 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 2225
+SYSTEMD_EXEC_PID = 2224
 # environment
 DISPLAY = :1
 # environment
 USER = morcillosanz
 # environment
 GTK_MODULES = gail:atk-bridge
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1927
+MANAGERPID = 1922
 # environment
 LC_MEASUREMENT = es_ES.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 10746
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3310
 # environment
 _ = /usr/share/code/code
 # environment
@@ -197,7 +201,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:30428
+JOURNAL_STREAM = 8:30432
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -225,7 +229,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = es_ES.UTF-8
 # variable set hash-table stats:
-# Load=106/1024=10%, Rehash=0, Collisions=4/133=3%
+# Load=108/1024=11%, Rehash=0, Collisions=5/135=4%
 
 # Pattern-specific Variable Values
 
@@ -288,10 +292,10 @@ GNUmakefile:
 # strcache buffers: 1 (0) / strings = 21 / storage = 172 B / avg = 8 B
 # current buf: size = 8162 B / used = 172 B / count = 21 / avg = 8 B
 
+ 
 # strcache performance: lookups = 24 / hit rate = 12%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
- 
-# Finished Make data base on Fri Jun 24 15:19:31 2022
+# Finished Make data base on Sun Jul  3 19:25:54 2022
 
  

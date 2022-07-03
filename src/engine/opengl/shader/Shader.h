@@ -69,6 +69,9 @@ public:
 private:
     void link();
 public:
+    void uniformInt(const std::string& uniform, int value);
+    void uniformFloat(const std::string& uniform, float value);
+    void uniformVec3(const std::string& uniform, const glm::vec3& vec);
     void uniformMat4(const std::string& uniform, const glm::mat4& mat);
 public:
     inline void useProgram() {
