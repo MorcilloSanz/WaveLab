@@ -53,7 +53,7 @@ int main(void) {
     renderer.setCamera(camera);
 
     // Light
-    Light light(glm::vec3(0, -8, 0));
+    Light light(glm::vec3(2, -8, 5));
     renderer.setLight(light);
     renderer.disableLight();
     
@@ -186,14 +186,14 @@ int main(void) {
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
                 ImGui::End();
             }
-            // App window
+            // Lighting window
             {
                 ImGui::Begin("Lighting"); 
                 ImGui::TextColored(ImColor(200, 150, 255), "Light configuration");
                 ImGui::Text("Controls for your custom application");
 
                 static bool enable = false;
-                ImGui::Checkbox("Enable light", &enable);
+                ImGui::Checkbox("Enable lighting", &enable);
                 renderer.setLightEnabled(enable);
 
                 static float ambientStrength = light.getAmbientStrength();
@@ -207,6 +207,24 @@ int main(void) {
                 static float color[3] = {1, 1, 1};
                 ImGui::ColorEdit3("Light color", color, 0);
                 light.setLightColor(glm::vec3(color[0], color[1], color[2]));
+
+                static float lx = light.getLightPosition().x;
+                static float ly = light.getLightPosition().y;
+                static float lz = light.getLightPosition().z;
+
+                ImGui::Text("Light position");
+                ImGui::SliderFloat("x:", &lx, -50.f, 50.f);
+                ImGui::SliderFloat("y:", &ly, -50.f, 50.f);
+                ImGui::SliderFloat("z:", &lz, -50.f, 50.f);
+                light.setLightPosition(glm::vec3(lx, ly, lz));
+
+                ImGui::Separator();
+
+                if (ImGui::Button("Reset lighting")) {
+                    lx = 2; ly = -8; lz = 5;
+                    ambientStrength = 0.1f;
+                    specularStrength = 0.5f;
+                }
 
                 ImGui::End();
             }
@@ -231,6 +249,8 @@ int main(void) {
                 ImGui::SliderFloat("Phi", &phi, 0, 2 * M_PI);
                 camera.setTheta(theta);
                 camera.setPhi(phi);
+
+                ImGui::Separator();
 
                 if (ImGui::Button("Reset camera")) {
                     camera.setTheta(M_PI / 4); 
@@ -287,7 +307,7 @@ int main(void) {
             }
 
             // Camera zoom
-            camera.zoom(ImGui::GetIO().MouseWheel * zoomSensitivity);
+            if(windowFocus) camera.zoom(ImGui::GetIO().MouseWheel * zoomSensitivity);
             
             // Rendering
             ImGui::Render();
