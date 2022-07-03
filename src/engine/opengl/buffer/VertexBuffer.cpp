@@ -45,28 +45,29 @@ VertexBuffer::~VertexBuffer() {
 void VertexBuffer::initBuffer() {
     // Load vertices
     unsigned int index = 0;
-    float* glVertices = new float[vertices.size() * 6];
+    float* glVertices = new float[vertices.size() * 9];
     for(Vec3f& vertex : vertices) {
         glVertices[index] = vertex.x;   glVertices[index + 1] = vertex.y;   glVertices[index + 2] = vertex.z;
         glVertices[index + 3] = vertex.r;   glVertices[index + 4] = vertex.g;   glVertices[index + 5] = vertex.b;
-        index += 6;
+        glVertices[index + 6] = vertex.nx;   glVertices[index + 7] = vertex.ny;   glVertices[index + 8] = vertex.nz;
+        index += 9;
     }
     // Vertex buffer
     glGenBuffers(1, &id);
     glBindBuffer(GL_ARRAY_BUFFER, id);
-    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float) * 6, glVertices, GL_DYNAMIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float) * 9, glVertices, GL_DYNAMIC_DRAW);
     delete[] glVertices;
     // Index Buffer
     if(hasIndexBuffer) indexBuffer = std::make_shared<IndexBuffer>(indices);
     // position attribute
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)0);
     // color attribute
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(3 * sizeof(float)));
     // normal attribute
     glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(6 * sizeof(float)));
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(6 * sizeof(float)));
 }
 
 void VertexBuffer::updateVertices(std::vector<Vec3f>& vertices, bool copy2memory) {
