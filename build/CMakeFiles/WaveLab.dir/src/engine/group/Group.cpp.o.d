@@ -384,4 +384,5 @@ CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o: \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/../opengl/buffer/../../../../glew/glew.h \
  /usr/include/GL/glu.h /usr/include/GL/gl.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/../opengl/buffer/VertexBuffer.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/../opengl/buffer/IndexBuffer.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/../opengl/buffer/IndexBuffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/../lighting/Material.h

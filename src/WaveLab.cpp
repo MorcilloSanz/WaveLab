@@ -200,29 +200,34 @@ int main(void) {
                 ImGui::SliderFloat("Ambient strength", &ambientStrength, 0.f, 1.f);
                 light.setAmbientStrength(ambientStrength);
 
+                static float diffuseStrength = light.getDiffuseStrength();
+                ImGui::SliderFloat("Diffuse strength", &diffuseStrength, 0.f, 1.f);
+                light.setDiffuseStrength(diffuseStrength);
+
                 static float specularStrength = light.getSpecularStrength();
                 ImGui::SliderFloat("Specular strength", &specularStrength, 0.f, 1.f);
                 light.setSpecularStrength(specularStrength);
 
                 static float color[3] = {1, 1, 1};
                 ImGui::ColorEdit3("Light color", color, 0);
-                light.setLightColor(glm::vec3(color[0], color[1], color[2]));
+                light.setColor(glm::vec3(color[0], color[1], color[2]));
 
-                static float lx = light.getLightPosition().x;
-                static float ly = light.getLightPosition().y;
-                static float lz = light.getLightPosition().z;
+                static float lx = light.getPosition().x;
+                static float ly = light.getPosition().y;
+                static float lz = light.getPosition().z;
 
                 ImGui::Text("Light position");
                 ImGui::SliderFloat("x:", &lx, -50.f, 50.f);
                 ImGui::SliderFloat("y:", &ly, -50.f, 50.f);
                 ImGui::SliderFloat("z:", &lz, -50.f, 50.f);
-                light.setLightPosition(glm::vec3(lx, ly, lz));
+                light.setPosition(glm::vec3(lx, ly, lz));
 
                 ImGui::Separator();
 
                 if (ImGui::Button("Reset lighting")) {
                     lx = 2; ly = -8; lz = 5;
-                    ambientStrength = 0.1f;
+                    ambientStrength = 0.5f;
+                    diffuseStrength = 0.5f;
                     specularStrength = 0.5f;
                 }
 

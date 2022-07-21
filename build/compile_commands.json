@@ -96,7 +96,7 @@
 },
 {
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/renderer/Light.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Light.cpp",
-  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Light.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/Light.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/Light.cpp"
 }
 ]

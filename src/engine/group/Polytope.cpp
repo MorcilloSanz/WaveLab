@@ -2,10 +2,15 @@
 
 #include "../../../glew/glew.h"
 
+#define MATERIAL_DIFFUSE glm::vec3(1.0f, 1.0f, 1.0f)
+#define MATERIAL_SPECULAR glm::vec3(1.0f, 1.0f, 1.0f)
+#define MATERIAL_SHININESS 32.f
+
 Polytope::Polytope(const std::vector<Vec3f>& vertices)
     : vertexLength(vertices.size()), modelMatrix(1.f), indicesLength(0) {
     vertexArray = std::make_shared<VertexArray>();
     vertexBuffer = std::make_shared<VertexBuffer>(vertices);
+    material = Material(MATERIAL_DIFFUSE, MATERIAL_SPECULAR, MATERIAL_SHININESS);
     unbind();
 }
 
@@ -13,6 +18,7 @@ Polytope::Polytope(const std::vector<Vec3f>& vertices, const std::vector<unsigne
     : vertexLength(vertices.size()), modelMatrix(1.f), indicesLength(indices.size()) {
     vertexArray = std::make_shared<VertexArray>();
     vertexBuffer = std::make_shared<VertexBuffer>(vertices, indices);
+    material = Material(MATERIAL_DIFFUSE, MATERIAL_SPECULAR, MATERIAL_SHININESS);
     unbind();
 }
 

@@ -398,10 +398,11 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/../../../../glew/glew.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/VertexBuffer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/IndexBuffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../lighting/Material.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../opengl/shader/Shader.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../opengl/shader/../../../../glew/glew.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.h \
- /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Light.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../lighting/Light.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/TrackballCamera.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/TextureRenderer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../../../glew/glew.h \
