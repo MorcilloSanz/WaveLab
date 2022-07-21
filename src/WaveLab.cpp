@@ -200,6 +200,10 @@ int main(void) {
                 ImGui::SliderFloat("Ambient strength", &ambientStrength, 0.f, 1.f);
                 light.setAmbientStrength(ambientStrength);
 
+                static float diffuseStrength = light.getDiffuseStrength();
+                ImGui::SliderFloat("Diffuse strength", &diffuseStrength, 0.f, 1.f);
+                light.setDiffuseStrength(diffuseStrength);
+
                 static float specularStrength = light.getSpecularStrength();
                 ImGui::SliderFloat("Specular strength", &specularStrength, 0.f, 1.f);
                 light.setSpecularStrength(specularStrength);
@@ -222,7 +226,8 @@ int main(void) {
 
                 if (ImGui::Button("Reset lighting")) {
                     lx = 2; ly = -8; lz = 5;
-                    ambientStrength = 0.1f;
+                    ambientStrength = 0.5f;
+                    diffuseStrength = 0.5f;
                     specularStrength = 0.5f;
                 }
 
