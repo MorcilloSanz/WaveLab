@@ -8,7 +8,7 @@
 #include "../opengl/shader/Shader.h"
 
 #include "Camera.h"
-#include "Light.h"
+#include "../lighting/Light.h"
 
 class Renderer {
 private:

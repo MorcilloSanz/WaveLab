@@ -66,12 +66,16 @@ void Renderer::render() {
                 if(!hasLight) shaderProgram->uniformMat4("mvp", mvp);
                 else if(hasCamera) {
                     // Light
-                    light->getShaderProgram()->uniformVec3("lightPos", light->getLightPosition());
-                    light->getShaderProgram()->uniformVec3("lightColor", light->getLightColor());
+                    light->getShaderProgram()->uniformVec3("light.position", light->getPosition());
+                    light->getShaderProgram()->uniformVec3("light.color", light->getColor());
+                    light->getShaderProgram()->uniformVec3("light.ambient", light->getAmbientColor());
+                    light->getShaderProgram()->uniformVec3("light.diffuse", light->getDiffuseColor());
+                    light->getShaderProgram()->uniformVec3("light.specular", light->getSpecularColor());
                     light->getShaderProgram()->uniformVec3("viewPos", camera->getEye());
-                    light->getShaderProgram()->uniformInt("shininess", light->getShininess());
-                    light->getShaderProgram()->uniformFloat("ambientStrength", light->getAmbientStrength());
-                    light->getShaderProgram()->uniformFloat("specularStrength", light->getSpecularStrength());
+                    // Material
+                    light->getShaderProgram()->uniformVec3("material.diffuse", polytope->getMaterial().getDiffuse());
+                    light->getShaderProgram()->uniformVec3("material.specular", polytope->getMaterial().getSpecular());
+                    light->getShaderProgram()->uniformFloat("material.shininess", polytope->getMaterial().getShininess());
                     // Model view projection
                     light->getShaderProgram()->uniformMat4("model", model);
                     light->getShaderProgram()->uniformMat4("view", view);

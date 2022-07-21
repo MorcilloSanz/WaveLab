@@ -12,11 +12,14 @@
 #include "../opengl/buffer/VertexArray.h"
 #include "../opengl/buffer/VertexBuffer.h"
 
+#include "../lighting/Material.h"
+
 class Polytope {
 protected:
     std::shared_ptr<VertexArray> vertexArray;
     std::shared_ptr<VertexBuffer> vertexBuffer;
     unsigned int vertexLength, indicesLength;
+    Material material;
     glm::mat4 modelMatrix;
 public:
     Polytope(const std::vector<Vec3f>& vertices);
@@ -44,4 +47,7 @@ public:
     inline void setVetexArray(const std::shared_ptr<VertexArray>& vertexArray) { this->vertexArray = vertexArray; }
     inline void setVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer) { this->vertexBuffer = vertexBuffer; }
     inline void setVertexLength(unsigned int vertexLength) { this->vertexLength = vertexLength; }
+
+    inline void setMaterial(const Material& material) { this->material = material; }
+    inline Material& getMaterial() { return material; }
 };

@@ -384,4 +384,5 @@ CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o: \
  /usr/include/GL/glu.h /usr/include/GL/gl.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/../opengl/buffer/VertexBuffer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/../opengl/buffer/IndexBuffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/../lighting/Material.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/../../../glew/glew.h

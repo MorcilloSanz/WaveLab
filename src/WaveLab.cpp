@@ -206,17 +206,17 @@ int main(void) {
 
                 static float color[3] = {1, 1, 1};
                 ImGui::ColorEdit3("Light color", color, 0);
-                light.setLightColor(glm::vec3(color[0], color[1], color[2]));
+                light.setColor(glm::vec3(color[0], color[1], color[2]));
 
-                static float lx = light.getLightPosition().x;
-                static float ly = light.getLightPosition().y;
-                static float lz = light.getLightPosition().z;
+                static float lx = light.getPosition().x;
+                static float ly = light.getPosition().y;
+                static float lz = light.getPosition().z;
 
                 ImGui::Text("Light position");
                 ImGui::SliderFloat("x:", &lx, -50.f, 50.f);
                 ImGui::SliderFloat("y:", &ly, -50.f, 50.f);
                 ImGui::SliderFloat("z:", &lz, -50.f, 50.f);
-                light.setLightPosition(glm::vec3(lx, ly, lz));
+                light.setPosition(glm::vec3(lx, ly, lz));
 
                 ImGui::Separator();
 
