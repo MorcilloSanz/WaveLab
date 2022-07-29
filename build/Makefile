@@ -585,6 +585,30 @@ src/engine/renderer/TrackballCamera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/renderer/TrackballCamera.cpp.s
 .PHONY : src/engine/renderer/TrackballCamera.cpp.s
 
+src/engine/texture/Texture.o: src/engine/texture/Texture.cpp.o
+.PHONY : src/engine/texture/Texture.o
+
+# target to build an object file
+src/engine/texture/Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/texture/Texture.cpp.o
+.PHONY : src/engine/texture/Texture.cpp.o
+
+src/engine/texture/Texture.i: src/engine/texture/Texture.cpp.i
+.PHONY : src/engine/texture/Texture.i
+
+# target to preprocess a source file
+src/engine/texture/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/texture/Texture.cpp.i
+.PHONY : src/engine/texture/Texture.cpp.i
+
+src/engine/texture/Texture.s: src/engine/texture/Texture.cpp.s
+.PHONY : src/engine/texture/Texture.s
+
+# target to generate assembly for a file
+src/engine/texture/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/texture/Texture.cpp.s
+.PHONY : src/engine/texture/Texture.cpp.s
+
 src/engine/window/Window.o: src/engine/window/Window.cpp.o
 .PHONY : src/engine/window/Window.o
 
@@ -675,6 +699,9 @@ help:
 	@echo "... src/engine/renderer/TrackballCamera.o"
 	@echo "... src/engine/renderer/TrackballCamera.i"
 	@echo "... src/engine/renderer/TrackballCamera.s"
+	@echo "... src/engine/texture/Texture.o"
+	@echo "... src/engine/texture/Texture.i"
+	@echo "... src/engine/texture/Texture.s"
 	@echo "... src/engine/window/Window.o"
 	@echo "... src/engine/window/Window.i"
 	@echo "... src/engine/window/Window.s"

@@ -11,7 +11,5 @@ public:
     virtual void bind() = 0;
     virtual void unbind() = 0;
 public:
-    inline unsigned int getID() const {
-        return id;
-    }
+    inline unsigned int getID() const { return id; }
 };
