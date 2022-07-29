@@ -387,6 +387,8 @@ CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o: \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/VertexBuffer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/IndexBuffer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../lighting/Material.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../texture/Texture.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../texture/../../../glew/glew.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../opengl/shader/Shader.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../opengl/shader/../../../../glew/glew.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.h \

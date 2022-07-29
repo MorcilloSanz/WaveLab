@@ -1614,6 +1614,8 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/IndexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/Material.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/texture/Texture.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/shader/Shader.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.h
@@ -2061,6 +2063,8 @@ CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/IndexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/Material.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/texture/Texture.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
 
 CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Polytope.cpp
@@ -2494,6 +2498,8 @@ CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/IndexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/Material.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/texture/Texture.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
 
 CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.o
@@ -4490,6 +4496,8 @@ CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/IndexBuffer.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/Material.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/texture/Texture.h
+ /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/shader/Shader.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/glew/glew.h
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.h

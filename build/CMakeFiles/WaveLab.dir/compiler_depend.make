@@ -1605,6 +1605,8 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: ../src/WaveLab.cpp \
   ../src/engine/opengl/buffer/VertexBuffer.h \
   ../src/engine/opengl/buffer/IndexBuffer.h \
   ../src/engine/lighting/Material.h \
+  ../src/engine/texture/Texture.h \
+  ../glew/glew.h \
   ../src/engine/opengl/shader/Shader.h \
   ../glew/glew.h \
   ../src/engine/renderer/Camera.h \
@@ -2050,7 +2052,9 @@ CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o: ../src/engine/group/Group.c
   /usr/include/GL/gl.h \
   ../src/engine/opengl/buffer/VertexBuffer.h \
   ../src/engine/opengl/buffer/IndexBuffer.h \
-  ../src/engine/lighting/Material.h
+  ../src/engine/lighting/Material.h \
+  ../src/engine/texture/Texture.h \
+  ../glew/glew.h
 
 CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o: ../src/engine/group/Polytope.cpp \
   /usr/include/stdc-predef.h \
@@ -2483,6 +2487,8 @@ CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o: ../src/engine/group/Poly
   ../src/engine/opengl/buffer/VertexBuffer.h \
   ../src/engine/opengl/buffer/IndexBuffer.h \
   ../src/engine/lighting/Material.h \
+  ../src/engine/texture/Texture.h \
+  ../glew/glew.h \
   ../glew/glew.h
 
 CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.o: ../src/engine/lighting/Light.cpp \
@@ -4472,6 +4478,8 @@ CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o: ../src/engine/rendere
   ../src/engine/opengl/buffer/VertexBuffer.h \
   ../src/engine/opengl/buffer/IndexBuffer.h \
   ../src/engine/lighting/Material.h \
+  ../src/engine/texture/Texture.h \
+  ../glew/glew.h \
   ../src/engine/opengl/shader/Shader.h \
   ../glew/glew.h \
   ../src/engine/renderer/Camera.h \
@@ -5334,8 +5342,6 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 
 ../src/engine/texture/vendor/stb_image.h:
 
-../src/engine/texture/Texture.h:
-
 ../src/engine/renderer/Renderer.cpp:
 
 /usr/include/c++/11/bits/fstream.tcc:
@@ -5353,6 +5359,8 @@ CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o: ../src/engine/window/Wind
 ../src/engine/renderer/Camera.h:
 
 ../src/engine/opengl/shader/Shader.h:
+
+../src/engine/texture/Texture.h:
 
 ../src/engine/lighting/Material.h:
 
