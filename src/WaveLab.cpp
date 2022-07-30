@@ -6,6 +6,7 @@
 #include "engine/renderer/Renderer.h"
 #include "engine/renderer/TrackballCamera.h"
 #include "engine/renderer/TextureRenderer.h"
+#include "engine/model/Model.h"
 
 #include "ImguiStyles.h"
 
@@ -195,6 +196,9 @@ int main(void) {
     Group groupGrid(GL_LINES);
     groupGrid.add(gridPolytope);
     renderer.addGroup(groupGrid);
+
+    Model model("/home/morcillosanz/Desktop/model2/Stubbs.obj");
+    renderer.addGroup(model);
 
     // Init TextureRenderer
     textureRenderer = TextureRenderer(window.getWidth(), window.getHeight());
