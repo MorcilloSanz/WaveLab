@@ -54,12 +54,24 @@ void Renderer::render() {
     }
 
     auto textureUniform = [&](std::shared_ptr<ShaderProgram>& shaderProgram, Polytope* polytope) {
-        if(polytope->getTexture() != nullptr) {
-            polytope->bindTexture();
-            shaderProgram->uniformInt("hasTexture", true);
-            shaderProgram->uniformInt("ourTexture", polytope->getTexture()->getID() - 1);
-        }
-        else shaderProgram->uniformInt("hasTexture", false);
+        if(polytope->getTextures().size() > 0) {
+            for(auto& texture : polytope->getTextures()) {
+                texture->bind();
+                shaderProgram->uniformInt("hasTexture", true);
+                // Send texture to GPU
+                switch (texture->getType()) {
+                case Texture::Type::TextureDiffuse:
+                    
+                    break;
+                case Texture::Type::TextureSpecular:
+                    
+                    break;
+                default:
+                    shaderProgram->uniformInt("ourTexture", texture->getID() - 1);
+                    break;
+                }
+            }
+        }else shaderProgram->uniformInt("hasTexture", false);
     };
 
     for(Group* group : groups) {
@@ -98,7 +110,8 @@ void Renderer::render() {
                 }
                 // Draw
                 polytope->draw(group->getPrimitive(), group->isShowWire());
-                polytope->unbindTexture();
+                // unbind textures
+                for(auto& texture : polytope->getTextures()) texture->unbind();
             }
         }
     }

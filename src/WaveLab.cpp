@@ -153,16 +153,16 @@ int main(void) {
     cubePolytope2.rotate(45, glm::vec3(0, 0, 1));
     cubePolytope2.scale(glm::vec3(0.5, 0.5, 0.5));
     std::shared_ptr<Texture> texture = std::make_shared<Texture>("/home/morcillosanz/Desktop/texture2.png");
-    cubePolytope2.setTexture(texture); // vertices2's colors are all white, thats why the texture looks like texture2.png
+    cubePolytope2.addTexture(texture); // vertices2's colors are all white, thats why the texture looks like texture2.png
 
     Polytope cubePolytope3(vertices);
     cubePolytope3.translate(glm::vec3(1.5f, 0.f, 0.f));
     std::shared_ptr<Texture> texture2 = std::make_shared<Texture>("/home/morcillosanz/Desktop/texture.png");
-    cubePolytope3.setTexture(texture2); // vertices's colors arent white, thats why we see an interpolation between the colors and the texture
+    cubePolytope3.addTexture(texture2); // vertices's colors arent white, thats why we see an interpolation between the colors and the texture
 
     Polytope cubePolytope4(vertices2);
     cubePolytope4.translate(glm::vec3(-1.5f, 0.f, 0.f));
-    cubePolytope4.setTexture(texture); // vertices's colors arent white, thats why we see an interpolation between the colors and the texture
+    cubePolytope4.addTexture(texture); // vertices's colors arent white, thats why we see an interpolation between the colors and the texture
 
     Group group;
     group.setLineWidth(2.f);

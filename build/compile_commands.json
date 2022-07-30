@@ -103,5 +103,10 @@
   "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
   "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/texture/Texture.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/texture/Texture.cpp",
   "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/texture/Texture.cpp"
+},
+{
+  "directory": "/home/morcillosanz/Desktop/GitHub/WaveLab/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/WaveLab.dir/src/engine/model/Model.cpp.o -c /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/model/Model.cpp",
+  "file": "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/model/Model.cpp"
 }
 ]

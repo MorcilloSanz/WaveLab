@@ -5,13 +5,13 @@
 
 unsigned int Texture::count = 0;
 
-Texture::Texture() 
-	: id(0), width(0), height(0), bpp(0), path(""), slot(0) {
+Texture::Texture(const std::string& _path, const Type& _type) 
+	: path(_path), id(0), width(0), height(0), bpp(0), slot(0), type(_type) {
+	generateTexture();
 }
 
-Texture::Texture(const std::string& _path) 
-	: path(_path), id(0), width(0), height(0), bpp(0), slot(0) {
-	generateTexture();
+Texture::Texture() 
+	: id(0), width(0), height(0), bpp(0), path(""), slot(0), type(Type::None) {
 }
 
 Texture::Texture(const Texture& texture)

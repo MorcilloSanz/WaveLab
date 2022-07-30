@@ -114,3 +114,10 @@ ImGui::Begin("Renderer");
 ImGui::Image((void*)(intptr_t)textureRenderer.getTexture(), ImGui::GetWindowSize());      
 ImGui::End();
 ```
+
+# Dependencies
+GLFW
+GLEW
+GLM
+IMGUI
+ASSIMP

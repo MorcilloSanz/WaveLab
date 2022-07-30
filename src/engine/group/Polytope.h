@@ -20,7 +20,7 @@ class Polytope {
 protected:
     std::shared_ptr<VertexArray> vertexArray;
     std::shared_ptr<VertexBuffer> vertexBuffer;
-    std::shared_ptr<Texture> texture;
+    std::vector<std::shared_ptr<Texture>> textures;
     unsigned int vertexLength, indicesLength;
     Material material;
     glm::mat4 modelMatrix;
@@ -45,8 +45,8 @@ public:
     inline std::shared_ptr<VertexArray>& getVertexArray() { return vertexArray; }
     inline std::shared_ptr<VertexBuffer>& getVertexBuffer() { return vertexBuffer; }
 
-    void setTexture(const std::shared_ptr<Texture>& texture) { this->texture = texture; }
-    inline std::shared_ptr<Texture>& getTexture() { return texture; }
+    inline void addTexture(const std::shared_ptr<Texture>& texture) { textures.push_back(texture); }
+    inline std::vector<std::shared_ptr<Texture>>& getTextures() { return textures; }
 
     inline unsigned int getVertexLength() const { return vertexLength; }
 
@@ -59,6 +59,4 @@ public:
 
     inline void setMaterial(const Material& material) { this->material = material; }
     inline Material& getMaterial() { return material; }
-
-    inline void removeTexture() { texture = nullptr; }
 };

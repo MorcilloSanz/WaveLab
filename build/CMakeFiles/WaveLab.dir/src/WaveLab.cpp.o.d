@@ -398,6 +398,7 @@ CMakeFiles/WaveLab.dir/src/WaveLab.cpp.o: \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/../../../../glew/glew.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/VertexBuffer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/IndexBuffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/../../Vec3.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../lighting/Material.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../texture/Texture.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../texture/../../../glew/glew.h \
