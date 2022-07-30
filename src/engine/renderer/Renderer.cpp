@@ -42,6 +42,7 @@ void Renderer::setLight(Light& light) {
 }
 
 void Renderer::render() {
+    
     if(!hasLight) shaderProgram->useProgram();
     else    light->getShaderProgram()->useProgram();
 
@@ -51,6 +52,15 @@ void Renderer::render() {
         projection = camera->getProjectionMatrix();
         view = camera->getViewMatrix();
     }
+
+    auto textureUniform = [&](std::shared_ptr<ShaderProgram>& shaderProgram, Polytope* polytope) {
+        if(polytope->getTexture() != nullptr) {
+            polytope->bindTexture();
+            shaderProgram->uniformInt("hasTexture", true);
+            shaderProgram->uniformInt("ourTexture", polytope->getTexture()->getID() - 1);
+        }
+        else shaderProgram->uniformInt("hasTexture", false);
+    };
 
     for(Group* group : groups) {
         if(group->isVisible()) {
@@ -63,7 +73,10 @@ void Renderer::render() {
                 glm::mat4 model = group->getModelMatrix() * polytope->getModelMatrix();
                 glm::mat4 mvp = projection * view * model;
                 // Send to vertex shader
-                if(!hasLight) shaderProgram->uniformMat4("mvp", mvp);
+                if(!hasLight) {
+                    shaderProgram->uniformMat4("mvp", mvp);
+                    textureUniform(shaderProgram, polytope);
+                } 
                 else if(hasCamera) {
                     // Light
                     light->getShaderProgram()->uniformVec3("light.position", light->getPosition());
@@ -76,6 +89,8 @@ void Renderer::render() {
                     light->getShaderProgram()->uniformVec3("material.diffuse", polytope->getMaterial().getDiffuse());
                     light->getShaderProgram()->uniformVec3("material.specular", polytope->getMaterial().getSpecular());
                     light->getShaderProgram()->uniformFloat("material.shininess", polytope->getMaterial().getShininess());
+                    // Texture
+                    textureUniform(light->getShaderProgram(), polytope);
                     // Model view projection
                     light->getShaderProgram()->uniformMat4("model", model);
                     light->getShaderProgram()->uniformMat4("view", view);
@@ -83,6 +98,7 @@ void Renderer::render() {
                 }
                 // Draw
                 polytope->draw(group->getPrimitive(), group->isShowWire());
+                polytope->unbindTexture();
             }
         }
     }

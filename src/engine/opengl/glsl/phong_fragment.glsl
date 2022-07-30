@@ -18,12 +18,16 @@ struct Light {
 in vec3 ourColor;
 in vec3 Normal;  
 in vec3 FragPos;  
+in vec2 TexCoord;
 
 out vec4 FragColor;
   
 uniform vec3 viewPos;
 uniform Material material;
 uniform Light light;
+
+uniform sampler2D ourTexture;
+uniform bool hasTexture; 
 
 void main() {
 
@@ -45,4 +49,8 @@ void main() {
     // Output
     vec3 result = (ambient + diffuse + specular) * ourColor;
     FragColor = vec4(result, 1.0);
+
+    if(hasTexture) {
+        FragColor = vec4(result, 1.0) * texture(ourTexture, TexCoord);
+    }
 } 

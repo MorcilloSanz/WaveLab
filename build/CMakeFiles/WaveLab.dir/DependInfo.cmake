@@ -27,6 +27,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Camera.cpp" "CMakeFiles/WaveLab.dir/src/engine/renderer/Camera.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/renderer/Camera.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/Renderer.cpp" "CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/TrackballCamera.cpp" "CMakeFiles/WaveLab.dir/src/engine/renderer/TrackballCamera.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/renderer/TrackballCamera.cpp.o.d"
+  "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/texture/Texture.cpp" "CMakeFiles/WaveLab.dir/src/engine/texture/Texture.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/texture/Texture.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/window/Window.cpp" "CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/window/Window.cpp.o.d"
   )
 

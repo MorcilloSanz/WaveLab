@@ -14,10 +14,13 @@
 
 #include "../lighting/Material.h"
 
+#include "../texture/Texture.h"
+
 class Polytope {
 protected:
     std::shared_ptr<VertexArray> vertexArray;
     std::shared_ptr<VertexBuffer> vertexBuffer;
+    std::shared_ptr<Texture> texture;
     unsigned int vertexLength, indicesLength;
     Material material;
     glm::mat4 modelMatrix;
@@ -31,6 +34,8 @@ public:
     void unbind();
     void updateVertices(std::vector<Vec3f>& vertices, bool copy2memory = false);
     void updateIndices(std::vector<unsigned int>& indices, bool copy2memory = false);
+    void bindTexture();
+    void unbindTexture();
     void draw(unsigned int primitive, bool showWire = false);
 public:
     inline void translate(const glm::vec3& v) { modelMatrix = glm::translate(modelMatrix, v); }
@@ -39,6 +44,10 @@ public:
 
     inline std::shared_ptr<VertexArray>& getVertexArray() { return vertexArray; }
     inline std::shared_ptr<VertexBuffer>& getVertexBuffer() { return vertexBuffer; }
+
+    void setTexture(const std::shared_ptr<Texture>& texture) { this->texture = texture; }
+    inline std::shared_ptr<Texture>& getTexture() { return texture; }
+
     inline unsigned int getVertexLength() const { return vertexLength; }
 
     inline void setModelMatrix(const glm::mat4& modelMatrix) { this->modelMatrix = modelMatrix; }
@@ -50,4 +59,6 @@ public:
 
     inline void setMaterial(const Material& material) { this->material = material; }
     inline Material& getMaterial() { return material; }
+
+    inline void removeTexture() { texture = nullptr; }
 };
