@@ -53,7 +53,7 @@ void Renderer::render() {
         view = camera->getViewMatrix();
     }
 
-    auto textureUniform = [&](std::shared_ptr<ShaderProgram>& shaderProgram, Polytope* polytope) {
+    auto textureUniform = [&](std::shared_ptr<ShaderProgram>& shaderProgram, std::shared_ptr<Polytope>& polytope) {
         if(polytope->getTextures().size() > 0) {
             for(auto& texture : polytope->getTextures()) {
                 texture->bind();
@@ -80,7 +80,7 @@ void Renderer::render() {
             glPointSize(group->getPointSize());
             glLineWidth(group->getLineWidth());
             // Draw call
-            for(Polytope* polytope : group->getPolytopes()) {
+            for(auto& polytope : group->getPolytopes()) {
                 // Calculate model view matrix
                 glm::mat4 model = group->getModelMatrix() * polytope->getModelMatrix();
                 glm::mat4 mvp = projection * view * model;

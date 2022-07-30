@@ -88,6 +88,11 @@
 			},
 			{
 				"backtrace" : 2,
+				"fragment" : "-lassimp",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
 				"fragment" : "-lGL",
 				"role" : "libraries"
 			},

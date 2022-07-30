@@ -2,12 +2,13 @@
 
 #include <iostream>
 #include <vector>
+#include <memory>
 
 #include "Polytope.h"
 
 class Group {
 private:
-    std::vector<Polytope*> polytopes;
+    std::vector<std::shared_ptr<Polytope>> polytopes;
     unsigned int primitive;
     float pointSize, lineWidth;
     bool showWire, visible;
@@ -21,8 +22,8 @@ public:
     inline void rotate(float degrees, const glm::vec3& axis) { modelMatrix = glm::rotate(modelMatrix, glm::radians(degrees), axis); }
     inline void scale(const glm::vec3& s) { modelMatrix = glm::scale(modelMatrix, s); }
 
-    inline void add(Polytope& polytope) { polytopes.push_back(&polytope); }
-    inline std::vector<Polytope*>& getPolytopes() { return polytopes; }
+    inline void add(const std::shared_ptr<Polytope>& polytope) { polytopes.push_back(polytope); }
+    inline std::vector<std::shared_ptr<Polytope>>& getPolytopes() { return polytopes; }
 
     inline void setVisible(bool visible) { this->visible = visible; }
     inline bool isVisible() const { return visible; }

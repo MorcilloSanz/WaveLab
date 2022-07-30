@@ -64,4 +64,4 @@ set(SOURCES
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
-target_link_libraries(${PROJECT_NAME} GL dl X11 glfw)
+target_link_libraries(${PROJECT_NAME} assimp GL dl X11 glfw)
