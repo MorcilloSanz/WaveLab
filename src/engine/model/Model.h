@@ -14,7 +14,7 @@
 
 class Model : public Group {
 private:
-    std::string path;
+    std::string directory, path;
     std::vector<std::shared_ptr<Texture>> texturesLoaded;
     bool gammaCorrection;
 public:

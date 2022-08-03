@@ -23,6 +23,11 @@ int main(void) {
     Window window("WaveLab", 1080, 720);
     window.setResizeFun(resizeFun);
 
+    // Init max texture units
+    int textureUnits;
+    glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, &textureUnits);
+    Texture::textureUnits = textureUnits;
+
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -165,6 +170,7 @@ int main(void) {
     std::shared_ptr<Polytope> cubePolytope4 = std::make_shared<Polytope>(vertices2);
     cubePolytope4->translate(glm::vec3(-1.5f, 0.f, 0.f));
     cubePolytope4->addTexture(texture); // vertices's colors arent white, thats why we see an interpolation between the colors and the texture
+    cubePolytope4->addTexture(texture2);
 
     Group group;
     group.setLineWidth(2.f);
@@ -199,7 +205,7 @@ int main(void) {
 
     Model model("/home/morcillosanz/Desktop/model2/Stubbs.obj");
     renderer.addGroup(model);
-
+    
     // Init TextureRenderer
     textureRenderer = TextureRenderer(window.getWidth(), window.getHeight());
 

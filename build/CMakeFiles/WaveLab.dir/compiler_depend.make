@@ -2956,6 +2956,10 @@ CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.o: ../src/engine/lighting/L
   /usr/include/strings.h \
   ../glm/gtc/type_ptr.inl \
   ../src/engine/opengl/shader/Shader.h \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc \
   ../glew/glew.h \
   /usr/include/GL/glu.h \
   /usr/include/GL/gl.h \
@@ -4071,6 +4075,11 @@ CMakeFiles/WaveLab.dir/src/engine/opengl/shader/Shader.cpp.o: ../src/engine/open
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc \
   ../glew/glew.h \
   /usr/include/GL/glu.h \
   /usr/include/GL/gl.h \

@@ -15,7 +15,7 @@ void Model::loadModel() {
         return;
     }
     // retrieve the directory path of the filepath
-    path = path.substr(0, path.find_last_of('/'));
+    directory = path.substr(0, path.find_last_of('/'));
     // process ASSIMP's root node recursively
     processNode(scene->mRootNode, scene);
 }
@@ -50,6 +50,8 @@ std::shared_ptr<Polytope> Model::processMesh(aiMesh *mesh, const aiScene *scene)
         vertex.y = vector.y = mesh->mVertices[i].y;
         vertex.z = vector.z = mesh->mVertices[i].z;
 
+        vertex.r = vertex.g = vertex.b = 1.0f;
+
         // normals
         if (mesh->HasNormals()) {
             vertex.nx = vector.x = mesh->mNormals[i].x;
@@ -57,8 +59,7 @@ std::shared_ptr<Polytope> Model::processMesh(aiMesh *mesh, const aiScene *scene)
             vertex.nz = vector.z = mesh->mNormals[i].z;
         }
         // texture coordinates
-        if(mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?
-        {
+        if(mesh->mTextureCoords[0])  {
             glm::vec2 vec;
             // a vertex can contain up to 8 different texture coordinates. We thus make the assumption that we won't 
             // use models where a vertex can have multiple texture coordinates so we always take the first set (0).
@@ -81,12 +82,10 @@ std::shared_ptr<Polytope> Model::processMesh(aiMesh *mesh, const aiScene *scene)
         vertices.push_back(vertex);
     }
     // now wak through each of the mesh's faces (a face is a mesh its triangle) and retrieve the corresponding vertex indices.
-    for(unsigned int i = 0; i < mesh->mNumFaces; i++)
-    {
+    for(unsigned int i = 0; i < mesh->mNumFaces; i++) {
         aiFace face = mesh->mFaces[i];
         // retrieve all indices of the face and store them in the indices vector
-        for(unsigned int j = 0; j < face.mNumIndices; j++)
-            indices.push_back(face.mIndices[j]);        
+        for(unsigned int j = 0; j < face.mNumIndices; j++) indices.push_back(face.mIndices[j]);        
     }
     // process materials
     aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];    
@@ -109,7 +108,7 @@ std::shared_ptr<Polytope> Model::processMesh(aiMesh *mesh, const aiScene *scene)
     // 4. height maps
     std::vector<std::shared_ptr<Texture>>  heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
     textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
-    
+
     // return a mesh object created from the extracted mesh data
     std::shared_ptr<Polytope> polytope = std::make_shared<Polytope>(vertices, indices);
     for(auto& texture : textures) polytope->addTexture(texture);
@@ -121,22 +120,21 @@ std::vector<std::shared_ptr<Texture>> Model::loadMaterialTextures(aiMaterial *ma
     for(unsigned int i = 0; i < mat->GetTextureCount(type); i++) {
         aiString str;
         mat->GetTexture(type, i, &str);
-        // check if texture was loaded before and if so, continue to next iteration: skip loading a new texture
-        bool skip = false;
-        for(unsigned int j = 0; j < texturesLoaded.size(); j++) {
-            if(std::strcmp(texturesLoaded[j]->getPath().data(), str.C_Str()) == 0) {
-                textures.push_back(texturesLoaded[j]);
-                skip = true; // a texture with the same filepath has already been loaded, continue to next one. (optimization)
+
+        std::string texturePath = directory + "/" + str.C_Str();
+        std::shared_ptr<Texture> texture = std::make_shared<Texture>(texturePath);
+        if(typeName == "texture_diffuse") texture->setType(Texture::Type::TextureDiffuse);
+        else if(typeName == "texture_specular") texture->setType(Texture::Type::TextureSpecular);
+        else if(typeName == "texture_height") texture->setType(Texture::Type::TextureHeight);
+
+        bool contained = false;
+        for(auto& tex : textures) {
+            if(tex->getPath() == texture->getPath()) {
+                contained = true;
                 break;
             }
         }
-        if(!skip) {   // if texture hasn't been loaded already, load it
-            std::shared_ptr<Texture> texture = std::make_shared<Texture>(this->path);
-            if(typeName == "texture_diffuse") texture->setType(Texture::Type::TextureDiffuse);
-            else if(typeName == "texture_specular") texture->setType(Texture::Type::TextureSpecular);
-            textures.push_back(texture);
-            texturesLoaded.push_back(texture);  // store it as texture loaded for entire model, to ensure we won't unnecesery load duplicate textures.
-        }
+        if(!contained) textures.push_back(texture);
     }
     return textures;
 }

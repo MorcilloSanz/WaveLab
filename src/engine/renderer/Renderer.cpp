@@ -54,24 +54,15 @@ void Renderer::render() {
     }
 
     auto textureUniform = [&](std::shared_ptr<ShaderProgram>& shaderProgram, std::shared_ptr<Polytope>& polytope) {
-        if(polytope->getTextures().size() > 0) {
-            for(auto& texture : polytope->getTextures()) {
-                texture->bind();
-                shaderProgram->uniformInt("hasTexture", true);
-                // Send texture to GPU
-                switch (texture->getType()) {
-                case Texture::Type::TextureDiffuse:
-                    
-                    break;
-                case Texture::Type::TextureSpecular:
-                    
-                    break;
-                default:
-                    shaderProgram->uniformInt("ourTexture", texture->getID() - 1);
-                    break;
-                }
-            }
-        }else shaderProgram->uniformInt("hasTexture", false);
+        unsigned int index = 0;
+        shaderProgram->uniformInt("nTextures", polytope->getTextures().size());
+        for(auto& texture : polytope->getTextures()) {
+            texture->bind();
+            std::vector<int> textures;
+            for(int i = 0; i < index + 1; i ++) textures.push_back(polytope->getTextures()[i]->getID() - 1);
+            shaderProgram->uniformTextureArray("textures", textures);
+            index ++;
+        }
     };
 
     for(Group* group : groups) {

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul 30 16:18:50 2022
+# Make data base, printed on Wed Aug  3 16:16:21 2022
 
 # Variables
 
@@ -22,8 +22,6 @@ GNOME_SHELL_SESSION_MODE = ubuntu
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-efa34905-f3f4-436a-b680-bfa5bb61b63c.sock
 # environment
 MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
@@ -54,12 +52,10 @@ PWD = /home/morcillosanz/Desktop/GitHub/WaveLab
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# environment
-VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/morcillosanz/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+VSCODE_CODE_CACHE_PATH = /home/morcillosanz/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
 # environment
 LANG = C
 # environment
@@ -72,8 +68,6 @@ XAUTHORITY = /run/user/1000/gdm/Xauthority
 MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/morcillosanz/Desktop/GitHub/WaveLab
-# environment
-VSCODE_PIPE_LOGGING = true
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -97,15 +91,13 @@ MAKEFILE_LIST :=
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-VSCODE_PID = 9797
+VSCODE_PID = 8442
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/morcillosanz:@/tmp/.ICE-unix/2263,unix/morcillosanz:/tmp/.ICE-unix/2263
+SESSION_MANAGER = local/morcillosanz:@/tmp/.ICE-unix/2251,unix/morcillosanz:/tmp/.ICE-unix/2251
 # automatic
 *F = $(notdir $*)
 # environment
@@ -145,9 +137,7 @@ LC_MONETARY = es_ES.UTF-8
 # environment
 LC_TIME = es_ES.UTF-8
 # environment
-INVOCATION_ID = 85e40db44728437bbba0bf066aa87eef
-# environment
-VSCODE_LOG_NATIVE = false
+INVOCATION_ID = 7abd494153e44fa2a86a0d1d26cba853
 # environment
 USERNAME = morcillosanz
 # environment
@@ -175,7 +165,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 2283
+SYSTEMD_EXEC_PID = 2272
 # environment
 DISPLAY = :1
 # environment
@@ -187,11 +177,11 @@ DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1981
+MANAGERPID = 1993
 # environment
 LC_MEASUREMENT = es_ES.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 9797
+GIO_LAUNCHED_DESKTOP_FILE_PID = 8442
 # environment
 _ = /usr/share/code/code
 # environment
@@ -201,7 +191,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:36249
+JOURNAL_STREAM = 8:38239
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -213,7 +203,7 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-3fce6564-1.68.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-3fce6564-1.69.2-main.sock
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -229,7 +219,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = es_ES.UTF-8
 # variable set hash-table stats:
-# Load=108/1024=11%, Rehash=0, Collisions=5/135=4%
+# Load=103/1024=10%, Rehash=0, Collisions=4/130=3%
 
 # Pattern-specific Variable Values
 
@@ -291,11 +281,11 @@ GNUmakefile:
 
 # strcache buffers: 1 (0) / strings = 21 / storage = 172 B / avg = 8 B
 # current buf: size = 8162 B / used = 172 B / count = 21 / avg = 8 B
- 
 
 # strcache performance: lookups = 24 / hit rate = 12%
 # hash-table stats:
+ 
 # Load=21/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Sat Jul 30 16:18:50 2022
+# Finished Make data base on Wed Aug  3 16:16:21 2022
 
  
