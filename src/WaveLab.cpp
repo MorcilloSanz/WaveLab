@@ -203,7 +203,9 @@ int main(void) {
     groupGrid.add(gridPolytope);
     renderer.addGroup(groupGrid);
 
-    Model model("/home/morcillosanz/Desktop/model2/Stubbs.obj");
+    //Model model("/home/morcillosanz/Desktop/model2/Stubbs.obj");
+    Model model("/home/morcillosanz/Desktop/model1/MainMenuKratos.obj");
+    model.translate(glm::vec3(0.0, 1.0, 0.0));
     renderer.addGroup(model);
     
     // Init TextureRenderer

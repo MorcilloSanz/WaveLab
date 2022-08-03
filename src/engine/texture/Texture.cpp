@@ -42,7 +42,7 @@ Texture& Texture::operator=(const Texture& texture) {
 }
 
 void Texture::generateTexture() {
-    stbi_set_flip_vertically_on_load(true);
+    //stbi_set_flip_vertically_on_load(true);
 	unsigned char* data = stbi_load(path.c_str(), &width, &height, &bpp, STBI_rgb_alpha);
 
 	glGenTextures(1, &id);
