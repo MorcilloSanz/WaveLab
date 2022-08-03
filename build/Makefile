@@ -417,6 +417,30 @@ src/engine/lighting/Light.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.s
 .PHONY : src/engine/lighting/Light.cpp.s
 
+src/engine/model/Model.o: src/engine/model/Model.cpp.o
+.PHONY : src/engine/model/Model.o
+
+# target to build an object file
+src/engine/model/Model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/model/Model.cpp.o
+.PHONY : src/engine/model/Model.cpp.o
+
+src/engine/model/Model.i: src/engine/model/Model.cpp.i
+.PHONY : src/engine/model/Model.i
+
+# target to preprocess a source file
+src/engine/model/Model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/model/Model.cpp.i
+.PHONY : src/engine/model/Model.cpp.i
+
+src/engine/model/Model.s: src/engine/model/Model.cpp.s
+.PHONY : src/engine/model/Model.s
+
+# target to generate assembly for a file
+src/engine/model/Model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WaveLab.dir/build.make CMakeFiles/WaveLab.dir/src/engine/model/Model.cpp.s
+.PHONY : src/engine/model/Model.cpp.s
+
 src/engine/opengl/buffer/IndexBuffer.o: src/engine/opengl/buffer/IndexBuffer.cpp.o
 .PHONY : src/engine/opengl/buffer/IndexBuffer.o
 
@@ -678,6 +702,9 @@ help:
 	@echo "... src/engine/lighting/Light.o"
 	@echo "... src/engine/lighting/Light.i"
 	@echo "... src/engine/lighting/Light.s"
+	@echo "... src/engine/model/Model.o"
+	@echo "... src/engine/model/Model.i"
+	@echo "... src/engine/model/Model.s"
 	@echo "... src/engine/opengl/buffer/IndexBuffer.o"
 	@echo "... src/engine/opengl/buffer/IndexBuffer.i"
 	@echo "... src/engine/opengl/buffer/IndexBuffer.s"

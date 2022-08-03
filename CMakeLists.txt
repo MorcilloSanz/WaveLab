@@ -17,6 +17,7 @@ set(HEADERS
         imgui/imstb_truetype.h
         # Source
         src/ImguiStyles.h
+        src/engine/Vec3.h
         src/engine/window/Window.h
         src/engine/opengl/buffer/Buffer.h
         src/engine/opengl/buffer/VertexArray.h
@@ -32,6 +33,7 @@ set(HEADERS
         src/engine/lighting/Light.h
         src/engine/texture/vendor/stb_image.h
         src/engine/texture/Texture.h
+        src/engine/model/Model.h
 )
 
 set(SOURCES
@@ -58,7 +60,8 @@ set(SOURCES
         src/engine/renderer/TrackballCamera.cpp
         src/engine/lighting/Light.cpp
         src/engine/texture/Texture.cpp
+        src/engine/model/Model.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
-target_link_libraries(${PROJECT_NAME} GL dl X11 glfw)
+target_link_libraries(${PROJECT_NAME} assimp GL dl X11 glfw)

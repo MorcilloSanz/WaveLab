@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 #include <string>
 
 #include "../../../../glew/glew.h"
@@ -73,6 +74,7 @@ public:
     void uniformFloat(const std::string& uniform, float value);
     void uniformVec3(const std::string& uniform, const glm::vec3& vec);
     void uniformMat4(const std::string& uniform, const glm::mat4& mat);
+    void uniformTextureArray(const std::string& uniform, std::vector<int>& textures);
 public:
     inline void useProgram() {
         glUseProgram(shaderProgramID);

@@ -49,16 +49,6 @@ void Polytope::updateIndices(std::vector<unsigned int>& indices, bool copy2memor
     }
 }
 
-void Polytope::bindTexture() {
-    if(texture != nullptr)
-        texture->bind();
-}
-
-void Polytope::unbindTexture() {
-    if(texture != nullptr)
-        texture->unbind();
-}
-
 void Polytope::draw(unsigned int primitive, bool showWire) {
     bind();
     if(!showWire)   glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);

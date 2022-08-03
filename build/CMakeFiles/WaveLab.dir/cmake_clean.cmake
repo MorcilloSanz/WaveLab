@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.o"
   "CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.o.d"
+  "CMakeFiles/WaveLab.dir/src/engine/model/Model.cpp.o"
+  "CMakeFiles/WaveLab.dir/src/engine/model/Model.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/IndexBuffer.cpp.o"
   "CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/IndexBuffer.cpp.o.d"
   "CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/VertexArray.cpp.o"

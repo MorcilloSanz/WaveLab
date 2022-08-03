@@ -53,13 +53,16 @@ void Renderer::render() {
         view = camera->getViewMatrix();
     }
 
-    auto textureUniform = [&](std::shared_ptr<ShaderProgram>& shaderProgram, Polytope* polytope) {
-        if(polytope->getTexture() != nullptr) {
-            polytope->bindTexture();
-            shaderProgram->uniformInt("hasTexture", true);
-            shaderProgram->uniformInt("ourTexture", polytope->getTexture()->getID() - 1);
+    auto textureUniform = [&](std::shared_ptr<ShaderProgram>& shaderProgram, std::shared_ptr<Polytope>& polytope) {
+        unsigned int index = 0;
+        shaderProgram->uniformInt("nTextures", polytope->getTextures().size());
+        for(auto& texture : polytope->getTextures()) {
+            texture->bind();
+            std::vector<int> textures;
+            for(int i = 0; i < index + 1; i ++) textures.push_back(polytope->getTextures()[i]->getID() - 1);
+            shaderProgram->uniformTextureArray("textures", textures);
+            index ++;
         }
-        else shaderProgram->uniformInt("hasTexture", false);
     };
 
     for(Group* group : groups) {
@@ -68,7 +71,7 @@ void Renderer::render() {
             glPointSize(group->getPointSize());
             glLineWidth(group->getLineWidth());
             // Draw call
-            for(Polytope* polytope : group->getPolytopes()) {
+            for(auto& polytope : group->getPolytopes()) {
                 // Calculate model view matrix
                 glm::mat4 model = group->getModelMatrix() * polytope->getModelMatrix();
                 glm::mat4 mvp = projection * view * model;
@@ -98,7 +101,8 @@ void Renderer::render() {
                 }
                 // Draw
                 polytope->draw(group->getPrimitive(), group->isShowWire());
-                polytope->unbindTexture();
+                // unbind textures
+                for(auto& texture : polytope->getTextures()) texture->unbind();
             }
         }
     }

@@ -376,6 +376,9 @@ CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.o: \
  /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/../../../glm/gtc/type_ptr.inl \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/../opengl/shader/Shader.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/../opengl/shader/../../../../glew/glew.h \
  /usr/include/GL/glu.h /usr/include/GL/gl.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/../../../glew/glew.h

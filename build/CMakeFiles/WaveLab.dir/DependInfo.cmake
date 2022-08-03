@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Group.cpp" "CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/group/Group.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/group/Polytope.cpp" "CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/group/Polytope.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/lighting/Light.cpp" "CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/lighting/Light.cpp.o.d"
+  "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/model/Model.cpp" "CMakeFiles/WaveLab.dir/src/engine/model/Model.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/model/Model.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/IndexBuffer.cpp" "CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/IndexBuffer.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/IndexBuffer.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexArray.cpp" "CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/VertexArray.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/VertexArray.cpp.o.d"
   "/home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/opengl/buffer/VertexBuffer.cpp" "CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/VertexBuffer.cpp.o" "gcc" "CMakeFiles/WaveLab.dir/src/engine/opengl/buffer/VertexBuffer.cpp.o.d"

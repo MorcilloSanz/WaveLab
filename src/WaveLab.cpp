@@ -1,10 +1,12 @@
 #include <iostream>
+#include <memory>
 
 #include "engine/window/Window.h"
 
 #include "engine/renderer/Renderer.h"
 #include "engine/renderer/TrackballCamera.h"
 #include "engine/renderer/TextureRenderer.h"
+#include "engine/model/Model.h"
 
 #include "ImguiStyles.h"
 
@@ -20,6 +22,11 @@ int main(void) {
 
     Window window("WaveLab", 1080, 720);
     window.setResizeFun(resizeFun);
+
+    // Init max texture units
+    int textureUnits;
+    glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, &textureUnits);
+    Texture::textureUnits = textureUnits;
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -102,7 +109,7 @@ int main(void) {
         Vec3f(-0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f), // top-left
         Vec3f(-0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f) // bottom-left
     };
-    Polytope cubePolytope(vertices);
+    std::shared_ptr<Polytope> cubePolytope = std::make_shared<Polytope>(vertices);
 
     std::vector<Vec3f> vertices2 = {
         // Back face
@@ -148,21 +155,22 @@ int main(void) {
         Vec3f(-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f), // top-left
         Vec3f(-0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f) // bottom-left
     };
-    Polytope cubePolytope2(vertices2);
-    cubePolytope2.translate(glm::vec3(1.5f, -1.5f, 0.f));
-    cubePolytope2.rotate(45, glm::vec3(0, 0, 1));
-    cubePolytope2.scale(glm::vec3(0.5, 0.5, 0.5));
+    std::shared_ptr<Polytope> cubePolytope2 = std::make_shared<Polytope>(vertices2);
+    cubePolytope2->translate(glm::vec3(1.5f, -1.5f, 0.f));
+    cubePolytope2->rotate(45, glm::vec3(0, 0, 1));
+    cubePolytope2->scale(glm::vec3(0.5, 0.5, 0.5));
     std::shared_ptr<Texture> texture = std::make_shared<Texture>("/home/morcillosanz/Desktop/texture2.png");
-    cubePolytope2.setTexture(texture); // vertices2's colors are all white, thats why the texture looks like texture2.png
+    cubePolytope2->addTexture(texture); // vertices2's colors are all white, thats why the texture looks like texture2.png
 
-    Polytope cubePolytope3(vertices);
-    cubePolytope3.translate(glm::vec3(1.5f, 0.f, 0.f));
+    std::shared_ptr<Polytope> cubePolytope3 = std::make_shared<Polytope>(vertices);
+    cubePolytope3->translate(glm::vec3(1.5f, 0.f, 0.f));
     std::shared_ptr<Texture> texture2 = std::make_shared<Texture>("/home/morcillosanz/Desktop/texture.png");
-    cubePolytope3.setTexture(texture2); // vertices's colors arent white, thats why we see an interpolation between the colors and the texture
+    cubePolytope3->addTexture(texture2); // vertices's colors arent white, thats why we see an interpolation between the colors and the texture
 
-    Polytope cubePolytope4(vertices2);
-    cubePolytope4.translate(glm::vec3(-1.5f, 0.f, 0.f));
-    cubePolytope4.setTexture(texture); // vertices's colors arent white, thats why we see an interpolation between the colors and the texture
+    std::shared_ptr<Polytope> cubePolytope4 = std::make_shared<Polytope>(vertices2);
+    cubePolytope4->translate(glm::vec3(-1.5f, 0.f, 0.f));
+    cubePolytope4->addTexture(texture); // vertices's colors arent white, thats why we see an interpolation between the colors and the texture
+    cubePolytope4->addTexture(texture2);
 
     Group group;
     group.setLineWidth(2.f);
@@ -189,12 +197,15 @@ int main(void) {
         gridVertices.push_back(Vec3f(b, 0, c, 0.3, 0.3, 0.3));
         c += dz;
     }
-    Polytope gridPolytope(gridVertices);
+    std::shared_ptr<Polytope> gridPolytope = std::make_shared<Polytope>(gridVertices);
 
     Group groupGrid(GL_LINES);
     groupGrid.add(gridPolytope);
     renderer.addGroup(groupGrid);
 
+    Model model("/home/morcillosanz/Desktop/model2/Stubbs.obj");
+    renderer.addGroup(model);
+    
     // Init TextureRenderer
     textureRenderer = TextureRenderer(window.getWidth(), window.getHeight());
 
@@ -214,7 +225,7 @@ int main(void) {
         textureRenderer.renderToDefault();
 
         // Rotate cubePolytope2
-        cubePolytope2.rotate(1, glm::vec3(1, 0, 1));
+        cubePolytope2->rotate(1, glm::vec3(1, 0, 1));
 
         // ImGUI
         {

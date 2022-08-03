@@ -386,6 +386,7 @@ CMakeFiles/WaveLab.dir/src/engine/renderer/Renderer.cpp.o: \
  /usr/include/GL/glu.h /usr/include/GL/gl.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/VertexBuffer.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/IndexBuffer.h \
+ /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../opengl/buffer/../../Vec3.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../lighting/Material.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../texture/Texture.h \
  /home/morcillosanz/Desktop/GitHub/WaveLab/src/engine/renderer/../group/../texture/../../../glew/glew.h \
