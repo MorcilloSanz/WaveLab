@@ -28,6 +28,7 @@ Texture::Texture(Texture&& texture) noexcept
 Texture::~Texture() {
 	unbind();
 	glActiveTexture(0);
+	glDeleteTextures(1, &id);
 }
 
 Texture& Texture::operator=(const Texture& texture) {

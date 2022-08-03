@@ -7,7 +7,7 @@
 class Texture {
 public:
     enum class Type {
-        None, TextureDiffuse, TextureSpecular, TextureNormal, TextureHeight
+        None, TextureAmbient, TextureDiffuse, TextureSpecular, TextureNormal, TextureHeight
     };
     static int textureUnits;
 protected:

@@ -123,9 +123,11 @@ std::vector<std::shared_ptr<Texture>> Model::loadMaterialTextures(aiMaterial *ma
 
         std::string texturePath = directory + "/" + str.C_Str();
         std::shared_ptr<Texture> texture = std::make_shared<Texture>(texturePath);
-        if(typeName == "texture_diffuse") texture->setType(Texture::Type::TextureDiffuse);
+        if(typeName == "texture_ambient") texture->setType(Texture::Type::TextureAmbient);
+        else if(typeName == "texture_diffuse") texture->setType(Texture::Type::TextureDiffuse);
         else if(typeName == "texture_specular") texture->setType(Texture::Type::TextureSpecular);
         else if(typeName == "texture_height") texture->setType(Texture::Type::TextureHeight);
+        else if(typeName == "texture_normal") texture->setType(Texture::Type::TextureNormal);
 
         bool contained = false;
         for(auto& tex : textures) {
